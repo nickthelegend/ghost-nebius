@@ -33,6 +33,7 @@ class CsiFrame:
     rssi: int
     amp: bytes  # one amplitude per subcarrier
     t: float = field(default_factory=time.time)  # hub clock on arrival
+    source: str = ""  # which room: a node's name, or "lamp"
 
 
 def parse_csi(datagram: bytes) -> list[CsiFrame]:
@@ -170,6 +171,8 @@ class LampHub:
         self._lamp_ready = asyncio.Event()
         self.csi_listeners: list[Callable[[CsiFrame], None]] = []
         self.csi_count = 0
+        self.sources: dict[str, str] = {}  # sender IP -> room name (nodes announce themselves)
+        self.lamp_room = "lamp"
 
     async def start(self) -> None:
         self._server = await asyncio.start_server(self._on_lamp, self.host, self.port)
@@ -178,7 +181,16 @@ class LampHub:
 
         class _Csi(asyncio.DatagramProtocol):
             def datagram_received(self, data, addr):
+                if data.startswith(b"GH1 "):  # a sensing node says which room it watches
+                    name = data[4:68].decode(errors="replace").strip()
+                    if hub.sources.get(addr[0]) != name:
+                        log.info("sensing node %s is '%s'", addr[0], name)
+                    hub.sources[addr[0]] = name
+                    return
+                lamp_ip = hub.lamp.peer.split(":")[0] if hub.lamp else None
+                src = hub.sources.get(addr[0]) or (hub.lamp_room if addr[0] == lamp_ip else addr[0])
                 for f in parse_csi(data):
+                    f.source = src
                     hub.csi_count += 1
                     for cb in hub.csi_listeners:
                         cb(f)

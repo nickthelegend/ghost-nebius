@@ -24,6 +24,7 @@ class FakeLamp:
         self.host, self.port = host, port
         self.bpm, self.reply, self.csi_hz = bpm, reply, csi_hz
         self.present = present  # False = empty room: no breathing in the CSI
+        self.walking = False  # True = someone walking about: large, fast CSI changes
         self.quiet = quiet
         self.ops: list[dict] = []
         self.checkin = False
@@ -99,7 +100,9 @@ class FakeLamp:
             while True:
                 t = time.time() - t0
                 breath = math.sin(2 * math.pi * self.bpm / 60 * t) if self.present else 0.0
-                amp = bytes(max(0, min(255, int(base[k] + gain[k] * breath + rng.gauss(0, 1.5)))) for k in range(64))
+                walk = self.walking
+                amp = bytes(max(0, min(255, int(base[k] + gain[k] * breath + (rng.gauss(0, 12) if walk else 0)
+                                              + rng.gauss(0, 1.5)))) for k in range(64))
                 batch.append(struct.pack("<Ibb", int(t * 1000), -50, 64) + amp)
                 if len(batch) == 8:
                     tr.sendto(b"GC1" + bytes([len(batch)]) + b"".join(batch))

@@ -1,0 +1,5 @@
+{
+  "bedroom":  {"pan": -40, "sleep": true},
+  "bathroom": {"pan": 35},
+  "lamp":     {"pan": 0}
+}
