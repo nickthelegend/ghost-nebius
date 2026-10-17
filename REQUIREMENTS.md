@@ -1,6 +1,6 @@
 # GHOST — what we need
 
-Due **Oct 30, 2026, 10:30 PM PT** (Nebius x NVIDIA Global AI Hackathon, Physical AI track).
+Due **Fri Oct 30, 2026, 10:00 AM PT** (Devpost rules §1; aim to submit Oct 29) (Nebius x NVIDIA Global AI Hackathon, Physical AI track).
 
 ## Hardware
 

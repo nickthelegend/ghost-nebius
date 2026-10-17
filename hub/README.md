@@ -11,6 +11,12 @@ Runs on a laptop or server on the same network as HOTARU.
 | `run.py` | GHOST live: per-room sensors, rules, Nemotron, and HOTARU acting (`--demo` compresses the timings) |
 | `demo_3am.py` | the night scene for filming, one step per Enter or `--auto` |
 | `fake_lamp.py` | a stand-in HOTARU that speaks the protocol and streams synthetic CSI with a known breathing rate |
+| `routine.py` | unsupervised per-room routine (occupancy per half hour, visit lengths) and anomaly scores; `python -m hub.routine fit <file>` |
+| `evidence.py` | numbered evidence (CSI, routine, lamp, earlier events) that explanations cite |
+| `act.py` | decision → HOTARU plan, `VirtualLamp`, `VirtualHub` |
+| `replay.py` | `.ghostcsi` recordings: `record`, `info`, and the replay driver |
+| `scenario.py` | the synthesized 3 am night and its 14-day routine (`python -m hub.scenario`) |
+| `server.py` | the dashboard (`python -m hub.server`, http://127.0.0.1:8780) |
 
 Sensing nodes (extra ESP32s, one per room): `firmware/ghost-node`, same CSI format as HOTARU,
 announcing their room name. Copy `rooms.example.json` to `rooms.json` to tell HOTARU which way each

@@ -46,11 +46,10 @@ def scene_start() -> float:
 
 # Ground truth, in recording seconds. GHOST never sees these labels.
 TRUTH = [
-    (0, "Asleep in the bedroom, breathing ~12.5/min"),
+    (0, "Asleep, breathing ~12.5/min"),
     (42, "Gets up"),
-    (47, "Walks to the bathroom"),
-    (56, "Falls"),
-    (57, "Lies still, breathing ~19/min"),
+    (47, "To the bathroom"),
+    (56, "Falls, then lies still breathing ~19/min"),
 ]
 DURATION = 130.0
 

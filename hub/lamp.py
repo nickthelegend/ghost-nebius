@@ -115,6 +115,7 @@ class Lamp:
         self.closed = asyncio.Event()
         self.state = LampState()
         self.sent: list[tuple[float, dict]] = []  # recent commands, for the dashboard
+        self.clock = time.time  # the guardian's clock (scene time in a replay)
 
     @property
     def peer(self) -> str:
@@ -124,7 +125,7 @@ class Lamp:
     def _track(self, op: str, kw: dict) -> None:
         self.state.apply(op, kw)
         if op not in ("level", "ping"):
-            self.sent.append((time.time(), {"op": op, **kw}))
+            self.sent.append((self.clock(), {"op": op, **kw}))
             del self.sent[:-40]
 
     async def send(self, op: str, **kw) -> None:

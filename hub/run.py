@@ -69,6 +69,8 @@ class Guardian:
                 events += self.rules.update(room, r, now)
                 self.witness.record(room, now, r, self.rules.rooms[room].present)
         lamp = self.hub.lamp
+        if lamp:
+            lamp.clock = self.clock
         follow = self.followed_room()
         fr = self.readings.get(follow) if follow else None
         if lamp and fr and not self.busy:

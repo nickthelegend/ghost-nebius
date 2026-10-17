@@ -32,7 +32,7 @@ from .routine import Routine
 from .run import ROOT, Guardian
 
 log = logging.getLogger("ghost.server")
-WEB = ROOT / "web"
+WEB = ROOT / "web" / "dist"  # the built dashboard (cd web && npm run build)
 
 
 def clock(t: float) -> str:

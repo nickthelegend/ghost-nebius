@@ -1,0 +1,714 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T15:54:01.015973+00:00",
+  "title": "Design System: GHOST",
+  "extensions": {
+    "colorMeta": {
+      "chassis": {
+        "role": "neutral",
+        "displayName": "Bench Chassis Grey",
+        "tonalRamp": [
+          "#282924",
+          "#45473e",
+          "#636558",
+          "#808372",
+          "#9b9e8f",
+          "#b6b8ad",
+          "#d3d4ce",
+          "#f3f3f1"
+        ]
+      },
+      "chassis-2": {
+        "role": "neutral",
+        "displayName": "Recessed Chassis",
+        "tonalRamp": [
+          "#282924",
+          "#45463e",
+          "#636458",
+          "#808273",
+          "#9b9d90",
+          "#b6b7ae",
+          "#d3d4ce",
+          "#f3f3f1"
+        ]
+      },
+      "chassis-3": {
+        "role": "neutral",
+        "displayName": "Deep Chassis",
+        "tonalRamp": [
+          "#272924",
+          "#44463e",
+          "#616459",
+          "#7e8273",
+          "#9a9d90",
+          "#b5b7ae",
+          "#d2d4ce",
+          "#f3f3f1"
+        ]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Brand Plate",
+        "tonalRamp": [
+          "#292a22",
+          "#47493c",
+          "#656855",
+          "#83876e",
+          "#9da18c",
+          "#b8baab",
+          "#d4d6cd",
+          "#f3f4f1"
+        ]
+      },
+      "seam": {
+        "role": "neutral",
+        "displayName": "Seam",
+        "tonalRamp": [
+          "#272824",
+          "#44463f",
+          "#61635a",
+          "#7e8174",
+          "#999c91",
+          "#b4b6af",
+          "#d2d3cf",
+          "#f3f3f2"
+        ]
+      },
+      "seam-2": {
+        "role": "neutral",
+        "displayName": "Key Seam",
+        "tonalRamp": [
+          "#272825",
+          "#43453f",
+          "#60635a",
+          "#7c8075",
+          "#989b92",
+          "#b4b6af",
+          "#d2d3cf",
+          "#f2f3f2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Chassis Ink",
+        "tonalRamp": [
+          "#252826",
+          "#404542",
+          "#5b625e",
+          "#767f7a",
+          "#939a96",
+          "#b0b5b2",
+          "#cfd3d1",
+          "#f2f3f2"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Chassis Ink Secondary",
+        "tonalRamp": [
+          "#262825",
+          "#424540",
+          "#5e625b",
+          "#797f76",
+          "#969a92",
+          "#b2b5b0",
+          "#d1d3cf",
+          "#f2f3f2"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Chassis Ink Dim",
+        "tonalRamp": [
+          "#262725",
+          "#424440",
+          "#5e615b",
+          "#7a7e76",
+          "#969a93",
+          "#b2b5b0",
+          "#d1d3d0",
+          "#f2f3f2"
+        ]
+      },
+      "key": {
+        "role": "neutral",
+        "displayName": "Softkey Top",
+        "tonalRamp": [
+          "#292b22",
+          "#474a3a",
+          "#656a53",
+          "#83896b",
+          "#9ea38a",
+          "#b8bca9",
+          "#d4d7cc",
+          "#f3f4f1"
+        ]
+      },
+      "key-2": {
+        "role": "neutral",
+        "displayName": "Softkey Bottom",
+        "tonalRamp": [
+          "#292a23",
+          "#47493c",
+          "#646755",
+          "#82866f",
+          "#9da18c",
+          "#b7baab",
+          "#d4d6cd",
+          "#f3f3f1"
+        ]
+      },
+      "screen": {
+        "role": "primary",
+        "displayName": "Scope Black",
+        "tonalRamp": [
+          "#202d29",
+          "#374d48",
+          "#4f6e66",
+          "#668f85",
+          "#85a89f",
+          "#a6bfb9",
+          "#c9d9d5",
+          "#f0f4f3"
+        ]
+      },
+      "screen-2": {
+        "role": "primary",
+        "displayName": "Scope Band",
+        "tonalRamp": [
+          "#212c28",
+          "#384c46",
+          "#506d63",
+          "#688d81",
+          "#87a69c",
+          "#a7beb6",
+          "#cad8d3",
+          "#f0f4f3"
+        ]
+      },
+      "screen-3": {
+        "role": "primary",
+        "displayName": "Scope Well",
+        "tonalRamp": [
+          "#212c28",
+          "#394c45",
+          "#516c62",
+          "#698c7f",
+          "#88a59a",
+          "#a8bdb5",
+          "#cbd8d3",
+          "#f0f4f3"
+        ]
+      },
+      "bezel": {
+        "role": "primary",
+        "displayName": "Bezel",
+        "tonalRamp": [
+          "#242826",
+          "#3f4642",
+          "#5a635e",
+          "#74817a",
+          "#919c96",
+          "#afb6b2",
+          "#cfd3d1",
+          "#f2f3f2"
+        ]
+      },
+      "scr-ink": {
+        "role": "neutral",
+        "displayName": "Screen Ink",
+        "tonalRamp": [
+          "#202d25",
+          "#374e40",
+          "#4e6f5b",
+          "#659076",
+          "#84a893",
+          "#a5c0b0",
+          "#c9d9d0",
+          "#f0f4f2"
+        ]
+      },
+      "scr-ink-2": {
+        "role": "neutral",
+        "displayName": "Screen Ink Secondary",
+        "tonalRamp": [
+          "#222a26",
+          "#3c4942",
+          "#55685d",
+          "#6e8779",
+          "#8ca195",
+          "#abbab2",
+          "#cdd6d1",
+          "#f1f4f2"
+        ]
+      },
+      "scr-ink-3": {
+        "role": "neutral",
+        "displayName": "Screen Ink Dim",
+        "tonalRamp": [
+          "#242926",
+          "#3e4742",
+          "#58655e",
+          "#72837a",
+          "#8f9e96",
+          "#adb8b2",
+          "#ced4d1",
+          "#f1f3f2"
+        ]
+      },
+      "ch1": {
+        "role": "secondary",
+        "displayName": "CH1 Trace Yellow",
+        "tonalRamp": [
+          "#483c04",
+          "#7d6908",
+          "#b2950b",
+          "#e7c10e",
+          "#f3d33a",
+          "#f6df6f",
+          "#faeca8",
+          "#fefae7"
+        ]
+      },
+      "ch2": {
+        "role": "secondary",
+        "displayName": "CH2 Trace Cyan",
+        "tonalRamp": [
+          "#093d43",
+          "#106974",
+          "#1795a5",
+          "#1ec2d6",
+          "#48d4e5",
+          "#79dfec",
+          "#afecf4",
+          "#e9fafc"
+        ]
+      },
+      "ch3": {
+        "role": "secondary",
+        "displayName": "CH3 Trace Magenta",
+        "tonalRamp": [
+          "#44083a",
+          "#760f65",
+          "#a81590",
+          "#da1bba",
+          "#e845cd",
+          "#ee77db",
+          "#f5ade9",
+          "#fce8f9"
+        ]
+      },
+      "ch4": {
+        "role": "secondary",
+        "displayName": "CH4 Trace Green",
+        "tonalRamp": [
+          "#113c16",
+          "#1d6827",
+          "#299337",
+          "#36bf47",
+          "#5cd16b",
+          "#88dd92",
+          "#b7ebbe",
+          "#ebf9ed"
+        ]
+      },
+      "sev-none": {
+        "role": "tertiary",
+        "displayName": "Clear Grey",
+        "tonalRamp": [
+          "#222a26",
+          "#3c4942",
+          "#55685d",
+          "#6e8779",
+          "#8ca195",
+          "#abbab2",
+          "#cdd6d1",
+          "#f1f4f2"
+        ]
+      },
+      "sev-watch": {
+        "role": "tertiary",
+        "displayName": "Watch Pale Amber",
+        "tonalRamp": [
+          "#4c3200",
+          "#855700",
+          "#bd7c00",
+          "#f5a100",
+          "#ffb82e",
+          "#ffcb66",
+          "#ffe0a3",
+          "#fff6e5"
+        ]
+      },
+      "sev-check": {
+        "role": "tertiary",
+        "displayName": "Check-in Orange",
+        "tonalRamp": [
+          "#4c2900",
+          "#854600",
+          "#bd6400",
+          "#f58200",
+          "#ff9d2e",
+          "#ffb766",
+          "#ffd4a3",
+          "#fff3e5"
+        ]
+      },
+      "sev-alert": {
+        "role": "tertiary",
+        "displayName": "Alert Red",
+        "tonalRamp": [
+          "#4c0500",
+          "#850900",
+          "#bd0d00",
+          "#f51100",
+          "#ff3c2e",
+          "#ff7066",
+          "#ffa9a3",
+          "#ffe7e5"
+        ]
+      },
+      "eye-path": {
+        "role": "tertiary",
+        "displayName": "HOTARU Path Light",
+        "tonalRamp": [
+          "#4c3200",
+          "#855700",
+          "#bd7c00",
+          "#f5a100",
+          "#ffb82e",
+          "#ffcb66",
+          "#ffe0a3",
+          "#fff6e5"
+        ]
+      },
+      "eye-follow": {
+        "role": "tertiary",
+        "displayName": "HOTARU Follow Blue",
+        "tonalRamp": [
+          "#00294c",
+          "#004885",
+          "#0066bd",
+          "#0085f5",
+          "#2e9fff",
+          "#66b9ff",
+          "#a3d5ff",
+          "#e5f3ff"
+        ]
+      },
+      "run": {
+        "role": "tertiary",
+        "displayName": "Run Green",
+        "tonalRamp": [
+          "#113c1e",
+          "#1d6734",
+          "#2a934a",
+          "#36bf5f",
+          "#5cd17f",
+          "#88dda2",
+          "#b7ebc7",
+          "#ebf9ef"
+        ]
+      },
+      "stop": {
+        "role": "tertiary",
+        "displayName": "Stop Red",
+        "tonalRamp": [
+          "#420f0a",
+          "#731a12",
+          "#a3241a",
+          "#d42f21",
+          "#e3564a",
+          "#ea847b",
+          "#f3b5b0",
+          "#fceae9"
+        ]
+      },
+      "focus-chassis": {
+        "role": "neutral",
+        "displayName": "Chassis Focus Teal",
+        "tonalRamp": [
+          "#073b46",
+          "#0c6778",
+          "#1192ab",
+          "#16bede",
+          "#41d0ec",
+          "#74dcf1",
+          "#aceaf7",
+          "#e8f9fd"
+        ]
+      },
+      "grat": {
+        "role": "neutral",
+        "displayName": "Graticule",
+        "canonical": "rgba(170, 205, 188, 0.1)"
+      },
+      "grat-2": {
+        "role": "neutral",
+        "displayName": "Graticule Strong",
+        "canonical": "rgba(170, 205, 188, 0.16)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Scene clock on the brand plate."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Capture title in the trigger screen."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "Primary numeric value per module (breathing rate), in channel colour."
+      },
+      "title": {
+        "displayName": "Silk Legend",
+        "purpose": "Module legends on the chassis above each screen."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text; tabular numerals."
+      },
+      "body-caption": {
+        "displayName": "Caption",
+        "purpose": "Capture explanation with citation chips, max 64ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Lamps, keys, badges, room names, step chains."
+      },
+      "label-micro": {
+        "displayName": "Micro Label",
+        "purpose": "Readout legends, axis scales, evidence source."
+      }
+    },
+    "shadows": [
+      {
+        "name": "key-raised",
+        "value": "0 1px 0 rgba(255,255,255,0.9) inset, 0 2px 3px rgba(30,34,30,0.22)",
+        "purpose": "Softkeys at rest."
+      },
+      {
+        "name": "key-pressed",
+        "value": "0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 1px rgba(30,34,30,0.25)",
+        "purpose": "Softkey active, with translateY(1px)."
+      },
+      {
+        "name": "plate",
+        "value": "0 1px 0 rgba(255,255,255,0.75) inset, 0 1px 3px rgba(40,44,38,0.12)",
+        "purpose": "Brand plate."
+      },
+      {
+        "name": "well",
+        "value": "inset 0 1px 2px rgba(30,34,30,0.12)",
+        "purpose": "Acquisition strip recessed into the chassis."
+      },
+      {
+        "name": "screen-mounted",
+        "value": "0 1px 0 rgba(255,255,255,0.7), 0 3px 8px rgba(30,34,30,0.22), inset 0 2px 10px rgba(0,0,0,0.7)",
+        "purpose": "Every module screen, with 6px bezel and glass sheen."
+      },
+      {
+        "name": "screen-small",
+        "value": "inset 0 2px 5px rgba(0,0,0,0.6)",
+        "purpose": "Clock and timeline display windows."
+      },
+      {
+        "name": "trigger-flash",
+        "value": "0 0 0 3px #ff9d2e",
+        "purpose": "700ms ring on the trigger screen when a new capture lands."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing curve for state transitions."
+      },
+      {
+        "name": "key-press",
+        "value": "120ms",
+        "purpose": "Softkey transform/shadow/background."
+      },
+      {
+        "name": "highlight",
+        "value": "150ms",
+        "purpose": "Citation chips and evidence rows."
+      },
+      {
+        "name": "lamp",
+        "value": "200ms",
+        "purpose": "Severity lamp lighting."
+      },
+      {
+        "name": "presence",
+        "value": "600ms",
+        "purpose": "Room floor fill on the plan."
+      },
+      {
+        "name": "trigger-flash",
+        "value": "700ms",
+        "purpose": "New capture ring."
+      },
+      {
+        "name": "bearing",
+        "value": "1.1s",
+        "purpose": "HOTARU cone and dial needle rotation."
+      },
+      {
+        "name": "breath-pulse",
+        "value": "60/bpm s, ease-in-out, infinite",
+        "purpose": "Room fill pulse at the measured breathing period."
+      },
+      {
+        "name": "alarm",
+        "value": "1.6s ease-in-out infinite",
+        "purpose": "Alert lamp, only when current."
+      },
+      {
+        "name": "listen",
+        "value": "1.2s ease-in-out infinite",
+        "purpose": "Listening icon opacity."
+      },
+      {
+        "name": "armed",
+        "value": "1.4s ease-in-out infinite",
+        "purpose": "Armed HOTARU tap key halo."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "medium",
+        "value": "1100px"
+      },
+      {
+        "name": "single-column",
+        "value": "860px"
+      },
+      {
+        "name": "narrow",
+        "value": "420px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Softkey",
+      "kind": "button",
+      "refersTo": "key",
+      "description": "Raised grey instrument key on the chassis; presses 1px down.",
+      "html": "<button class=\"ds-key\">Restart</button>",
+      "css": ".ds-key{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 13px;border-radius:7px;cursor:pointer;background:linear-gradient(var(--key,#ecede8),var(--key-2,#e2e3dd));border:1px solid var(--seam-2,#9ea198);color:var(--ink,#1a1c1b);font:600 13.5px/1 var(--cond,'Barlow Condensed',sans-serif);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 2px 3px rgba(30,34,30,.22);transition:transform .12s cubic-bezier(.16,1,.3,1),box-shadow .12s cubic-bezier(.16,1,.3,1),background .12s}.ds-key:hover{background:linear-gradient(#f5f6f2,#ecede8)}.ds-key:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 1px 1px rgba(30,34,30,.25)}.ds-key:focus-visible{outline:2px solid #0f7f95;outline-offset:2px}"
+    },
+    {
+      "name": "Softkey Selected",
+      "kind": "button",
+      "refersTo": "key-on",
+      "description": "Latched key in a group (e.g. speed 4x): inverts to a black key.",
+      "html": "<button class=\"ds-key-on\" aria-pressed=\"true\">4×</button>",
+      "css": ".ds-key-on{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border-radius:7px;background:linear-gradient(#2b302d,#1e2220);color:#fff;border:1px solid #111;font:600 13.5px/1 'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 2px 3px rgba(30,34,30,.22);cursor:pointer}.ds-key-on:focus-visible{outline:2px solid #0f7f95;outline-offset:2px}"
+    },
+    {
+      "name": "RUN/STOP Key",
+      "kind": "button",
+      "refersTo": "key",
+      "description": "Softkey with a lamp window: green while running, red while stopped.",
+      "html": "<button class=\"ds-run\"><span class=\"ds-run-win\"></span>Run/Stop</button>",
+      "css": ".ds-run{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 13px;border-radius:7px;background:linear-gradient(#ecede8,#e2e3dd);border:1px solid #9ea198;color:#1a1c1b;font:600 13.5px/1 'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 2px 3px rgba(30,34,30,.22);cursor:pointer}.ds-run:active{transform:translateY(1px)}.ds-run:focus-visible{outline:2px solid #0f7f95;outline-offset:2px}.ds-run-win{width:12px;height:12px;border-radius:3px;background:radial-gradient(circle at 35% 30%,#ffd2cc,#e0473a 50%,#8f2219);box-shadow:inset 0 1px 2px rgba(0,0,0,.5)}.ds-run:hover .ds-run-win{background:radial-gradient(circle at 35% 30%,#d2fadc,#3cc463 50%,#1f7a3a)}"
+    },
+    {
+      "name": "Module Screen",
+      "kind": "card",
+      "refersTo": "screen",
+      "description": "Silk legend above a recessed near-black screen with bezel, graticule and glass sheen.",
+      "html": "<section class=\"ds-mod\"><h2 class=\"ds-silk\">Plan<span>XY · presence by Wi-Fi</span></h2><div class=\"ds-screen\"><p>Graticule data view</p></div></section>",
+      "css": ".ds-mod{display:grid;gap:7px;background:#d5d6d0;padding:14px}.ds-silk{margin:0;display:flex;gap:10px;align-items:baseline;font:700 14px/1.2 'Barlow Condensed',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#1a1c1b}.ds-silk span{font-weight:500;font-size:12.5px;letter-spacing:.06em;text-transform:none;color:#41443f}.ds-screen{position:relative;min-height:120px;padding:14px;background-color:#0a0e0d;background-image:linear-gradient(rgba(170,205,188,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(170,205,188,.1) 1px,transparent 1px);background-size:24px 24px;color:#dde7e1;border-radius:10px;border:6px solid #262a28;box-shadow:0 1px 0 rgba(255,255,255,.7),0 3px 8px rgba(30,34,30,.22),inset 0 2px 10px rgba(0,0,0,.7);overflow:hidden;font:15px/1.5 'Barlow',sans-serif}.ds-screen::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.045),transparent 38%)}.ds-screen p{margin:0}"
+    },
+    {
+      "name": "Severity Lamp Bank",
+      "kind": "custom",
+      "refersTo": "severity-lamp-alert",
+      "description": "Three lamps; the current severity and those below it light, alert pulses when current.",
+      "html": "<div class=\"ds-lamps\"><span class=\"ds-lamp w\">Watch</span><span class=\"ds-lamp c\">Check-in</span><span class=\"ds-lamp a\">Alert</span></div>",
+      "css": ".ds-lamps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px 14px;background:#111715}.ds-lamp{text-align:center;padding:6px 4px;border-radius:5px;font:700 12.5px/1 'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6f8077;border:1px solid #26312c;background:#0d1311;transition:background .2s,color .2s}.ds-lamp.w{color:#1d1606;background:#ffe3ad;border-color:#ffe3ad}.ds-lamp.c{color:#231200;background:#ff9d2e;border-color:#ff9d2e}.ds-lamp.a{color:#fff;background:#ff4d40;border-color:#ff4d40;animation:ds-alarm 1.6s ease-in-out infinite}@keyframes ds-alarm{50%{background:#b8281e}}@media (prefers-reduced-motion:reduce){.ds-lamp.a{animation:none}}"
+    },
+    {
+      "name": "Channel Tag",
+      "kind": "chip",
+      "refersTo": "channel-tag",
+      "description": "CH n label filled in the room's scope colour.",
+      "html": "<span class=\"ds-ch\" style=\"--c:#f3d33b\">CH1</span> <span class=\"ds-ch\" style=\"--c:#39d0e3\">CH2</span> <span class=\"ds-ch\" style=\"--c:#ec66d6\">CH3</span> <span class=\"ds-ch\" style=\"--c:#66d474\">CH4</span>",
+      "css": ".ds-ch{display:inline-block;font:700 12px/1 'Barlow Condensed',sans-serif;letter-spacing:.1em;color:#0a0e0d;background:var(--c);padding:3px 5px 2px;border-radius:3px}"
+    },
+    {
+      "name": "Citation Chip",
+      "kind": "chip",
+      "refersTo": "cite",
+      "description": "Inline evidence reference in a caption; fills cyan on hover/focus.",
+      "html": "<p class=\"ds-cap\">No answer to the check-in after 15 s. <button class=\"ds-cite\">E1</button><button class=\"ds-cite\">E3</button></p>",
+      "css": ".ds-cap{margin:0;padding:14px;background:#0a0e0d;color:#dde7e1;font:16px/1.55 'Barlow',sans-serif}.ds-cite{display:inline-block;margin:0 1px;padding:0 5px;min-width:26px;border-radius:4px;border:1px solid #39504a;background:#12201c;color:#39d0e3;font:600 12.5px/19px 'Barlow Condensed',sans-serif;letter-spacing:.06em;cursor:pointer;transition:background .15s,color .15s}.ds-cite:hover,.ds-cite:focus-visible{background:#39d0e3;color:#0a0e0d;border-color:#39d0e3;outline:none}"
+    },
+    {
+      "name": "Status LED",
+      "kind": "custom",
+      "refersTo": "brand-plate",
+      "description": "Domed indicator with condensed legend and value on the brand plate.",
+      "html": "<div class=\"ds-plate\"><span class=\"ds-led g\"></span><b>Sense</b><i>4 channels</i><span class=\"ds-led y\"></span><b>Reason</b><i>Rules + templates</i></div>",
+      "css": ".ds-plate{display:grid;grid-template-columns:auto auto auto auto auto auto;gap:8px;align-items:center;padding:12px 16px;background:#e3e4de;border:1px solid #b3b5ad;border-radius:10px;box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 1px 3px rgba(40,44,38,.12)}.ds-led{width:10px;height:10px;border-radius:50%;box-shadow:0 1px 1px rgba(255,255,255,.8),inset 0 1px 2px rgba(0,0,0,.45)}.ds-led.g{background:radial-gradient(circle at 35% 32%,#c8f7d4,#3cc463 45%,#1f7a3a)}.ds-led.y{background:radial-gradient(circle at 35% 32%,#ffe7b8,#f0a12c 45%,#9a5d06)}.ds-plate b{font:600 12.5px/1 'Barlow Condensed',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#1a1c1b}.ds-plate i{font:13px 'Barlow',sans-serif;font-style:normal;color:#41443f;margin-right:18px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Instrument Front Panel",
+    "overview": "GHOST is drawn as a bench measuring instrument for a home: a warm light-grey chassis carrying silk-screened condensed legends, raised grey softkeys, a lit RUN/STOP key and indicator LEDs, with every measurement shown inside recessed near-black screens behind a dark bezel. Inside the screens the world is an oscilloscope: graticules, one channel colour per room (CH1 bedroom, CH2 bathroom, CH3 kitchen, CH4 living room), traces that move at the measured rate, and a trigger panel whose captures cite their evidence.\n\nThe two materials never mix roles. The chassis is for identity, controls, labels and status; the screens are for data. Density is high and deliberate, like a real front panel: small condensed uppercase legends, tabular numbers everywhere, and the large readouts reserved for the few values that matter (scene clock, breathing rate, capture title). The build rejects the category's dark card-grid monitoring dashboard: there are no free-floating cards, only screens mounted in a chassis.",
+    "keyCharacteristics": [
+      "Light chassis outside, near-black recessed screens inside; nothing else.",
+      "Four fixed scope channel colours, each bound to one room, used on every surface that names that room.",
+      "A separate severity scale (watch / check-in / alert) that is never confused with channel colour and never conveyed by colour alone.",
+      "Condensed uppercase legends with wide tracking; tabular numerals globally.",
+      "Physical depth: raised keys, recessed screens, glass sheen, lamp windows."
+    ],
+    "rules": [
+      {
+        "name": "The Channel Ownership Rule",
+        "body": "A room's channel colour appears wherever that room is named (plan outline, trace, CH tag, mask row, dial dot, capture room label). No other element may use CH1–CH4 hues, with the one sanctioned exception that CH2 cyan is the in-screen interaction accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Scales Rule",
+        "body": "Channel colour says *where*; severity colour says *how serious*. A severity is always paired with its word (WATCH, CHECK-IN, ALERT) or its position in the three-lamp bank.",
+        "section": "colors"
+      },
+      {
+        "name": "The Materials Rule",
+        "body": "Chassis colours never appear inside a screen and screen colours never become a page background. Data lives behind glass.",
+        "section": "colors"
+      },
+      {
+        "name": "The Silk-Screen Rule",
+        "body": "Every legend, key, lamp and axis label is Barlow Condensed uppercase with 0.06–0.2em tracking; running sentences (captions, evidence, notes) are Barlow sentence case. Never set a paragraph in the condensed face or a legend in the body face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Glass Rule",
+        "body": "Anything showing data sits behind a recessed screen; anything you press stands proud of the chassis.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do mount every new data view as a legend-over-screen module with the 6px bezel, inset shadow and glass sheen.",
+      "Do colour a room by its channel (CH1 #f3d33b, CH2 #39d0e3, CH3 #ec66d6, CH4 #66d474) on every surface that names it.",
+      "Do pair every severity colour with its word or lamp position.",
+      "Do set legends in Barlow Condensed uppercase with tracking, numbers tabular, and use the large readout size only for the one value each module exists to show.",
+      "Do keep controls as raised softkeys on the chassis; selected state inverts to a black key.",
+      "Do tie looping motion to a measured or live state, and honour reduced motion."
+    ],
+    "donts": [
+      "Don't build a dark page of floating cards; the page is the light chassis.",
+      "Don't use a channel hue for severity, decoration or a non-room meaning (CH2 cyan as the in-screen interaction accent is the only exception).",
+      "Don't put chassis greys inside a screen, or use screen blacks as a chassis surface (small display windows, the logo mark and the selected-key inversion are the only dark elements on the chassis).",
+      "Don't set running prose in the condensed face or legends in sentence-case body type.",
+      "Don't introduce a second easing curve or decorative ambient animation."
+    ]
+  }
+}

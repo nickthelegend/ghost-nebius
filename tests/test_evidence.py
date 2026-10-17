@@ -69,3 +69,21 @@ def test_witness_writes_numbers_from_the_readings():
     ev = w.for_event(e)
     assert [x.source for x in ev] == ["rule", "csi"] and [x.id for x in ev] == ["E1", "E2"]
     assert "19.0 breaths/min" in ev[1].text and "jolt 900" in ev[1].text
+
+
+def test_log_line_asks_for_no_thinking_and_falls_back(monkeypatch):
+    import httpx
+    r = Reasoner()
+    r.key, r.log_model = "k", "nvidia/Nemotron-3_5-Lightning"
+    calls = []
+
+    async def fake_chat(model, system, user, max_tokens, extra=None):
+        calls.append(extra)
+        if extra:
+            raise httpx.HTTPStatusError("bad", request=httpx.Request("POST", "http://x"),
+                                        response=httpx.Response(400))
+        return "<think>hmm</think>Bedroom: still, 13 breaths/min."
+    monkeypatch.setattr(r, "_chat", fake_chat)
+    line = asyncio.run(r.summarize({"bedroom": Reading(13.0, 0.6, 1.0, 0.5, 900, 30)}))
+    assert line == "Bedroom: still, 13 breaths/min."
+    assert calls == [{"chat_template_kwargs": {"enable_thinking": False}}, None]

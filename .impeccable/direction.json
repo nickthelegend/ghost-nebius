@@ -1,0 +1,120 @@
+{
+  "title": "GHOST hub dashboard: choose the visual world",
+  "question": "The roll assigned the Living Figure Plate. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Living Figure Plate",
+      "kicker": "THE ROLL",
+      "lineage": "Multi-panel journal figures (Nature/Science), with numbered references",
+      "thesis": "The dashboard is a published figure that is still running: panels a–e, and every alert caption cites its references [E1].",
+      "palette": ["#f7f7f4", "#16181a", "#0b6e99", "#d98c00", "#c8331f"],
+      "materials": ["matte figure paper", "hairline axes with ticks", "bold lowercase panel letters", "tabular figures"],
+      "viewport": "Panel a, the floor plan as a measured figure with lit rooms and HOTARU's bearing line, beside panel b, breathing traces per room; the caption under it is the latest Nemotron explanation with [E#] links to a references list.",
+      "risk": "Light 'paper' can read academic and quiet; it must stay alive with real-time traces and a severity band that is impossible to miss.",
+      "raised": [
+        {"from": "challenger-datamatics", "raise": "Panel f shows the raw 64-subcarrier CSI as a real barcode field per room, not decoration."},
+        {"from": "challenger-wayfinding", "raise": "One accent is reserved for exactly one meaning: where GHOST's attention is now (the followed room, HOTARU's bearing)."},
+        {"from": "challenger-star-atlas", "raise": "Anomaly is a mark size on a fixed ramp, read without a legend."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Instrument Front Panel",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Bench oscilloscopes and spectrum analysers",
+      "thesis": "GHOST as a four-channel scope: one graticule trace per room, softkeys for replay, the alert log as a measurement readout.",
+      "palette": ["#0d1110", "#9fe6b0", "#f2c14e", "#ff5a4a"],
+      "materials": ["graticule grid", "phosphor trace", "softkey bezel"],
+      "viewport": "Four stacked channel traces with readouts (breaths/min, motion, jolt) and a floor-plan inset; alerts as triggered captures.",
+      "risk": "Familiar: most sensing demos look like a scope, and dark-with-glow is a category default."
+    },
+    {
+      "id": "challenger-datamatics",
+      "label": "Datamatics Field",
+      "verdict": "competitive",
+      "lineage": "Ryoji Ikeda's data-sublime installations",
+      "thesis": "The house as pure data: 64-subcarrier CSI as barcode columns, a sine lattice for breathing, inversion for alarm.",
+      "palette": ["#000000", "#ffffff"],
+      "materials": ["hairline bars", "monospace numerics", "full-frame inversion"],
+      "viewport": "Four barcode fields, one per room, breathing drawn as a sine through each; an alert inverts the whole frame.",
+      "case": "Fuses truthfully (CSI really is 64 bars a frame) and wins on wow for builders; loses on clarity for citations and severity without color.",
+      "risk": "Strobing and pure B/W make long explanations and the timeline hard to read."
+    },
+    {
+      "id": "challenger-console",
+      "label": "Dark Developer Console",
+      "verdict": "competitive",
+      "lineage": "IDE and devtools panel layouts",
+      "thesis": "Persistent graphite panels split by 1px seams; state colors come from syntax highlighting.",
+      "palette": ["#16181b", "#e6e6e6", "#7cc4ff", "#e5c07b", "#e06c75"],
+      "materials": ["hairline seams", "monospaced figures", "panel headers in small caps"],
+      "viewport": "Tiled panels: plan, traces, routine, timeline, lamp; nothing moves but the panels' contents.",
+      "case": "Holds clarity for an Operate tool; loses on identification: indistinguishable from any monitoring console.",
+      "risk": "Reads as the category default."
+    },
+    {
+      "id": "challenger-wayfinding",
+      "label": "Terminal Yellow Wayfinding",
+      "verdict": "competitive",
+      "lineage": "Schiphol airport signage",
+      "thesis": "Yellow bands tell you where the person is and what HOTARU does next, one decision at a time.",
+      "palette": ["#ffd200", "#111111", "#ffffff"],
+      "materials": ["overhead sign bands", "pictograms on black insets"],
+      "viewport": "A monumental yellow band: 'Bathroom · 9 min · checking in', the plan beneath.",
+      "case": "Very clear about the next decision; loses on identification for a sensing/AI audience.",
+      "risk": "Yellow everywhere fights the severity colours."
+    },
+    {
+      "id": "challenger-star-atlas",
+      "label": "Star Atlas Plate",
+      "verdict": "declined",
+      "lineage": "celestial charts",
+      "thesis": "Rooms as constellations, presence as magnitude.",
+      "palette": ["#0e1a33", "#f4f1e6", "#ff6a3d"],
+      "materials": ["coordinate grid", "magnitude dots"],
+      "viewport": "A night chart of the flat.",
+      "case": "Fuses poorly: rooms are not stars.",
+      "kept": "Hierarchy by mark size on a fixed ramp.",
+      "risk": "Metaphor over product."
+    },
+    {
+      "id": "challenger-feed",
+      "label": "Vertical Feed",
+      "verdict": "declined",
+      "lineage": "full-screen video feeds",
+      "thesis": "One alert per screen.",
+      "palette": ["#000000", "#ffffff"],
+      "materials": ["full-bleed media", "action rail"],
+      "viewport": "The latest alert fills the phone.",
+      "case": "Loses the loop: you can't see sense, reason and act together.",
+      "kept": "On a phone, the newest decision owns the first screen.",
+      "risk": "Hides context."
+    },
+    {
+      "id": "challenger-acetate",
+      "label": "Acetate Tab Manual",
+      "verdict": "declined",
+      "lineage": "boxed-software reference manuals",
+      "thesis": "Every panel a leaf over a coloured tab board.",
+      "palette": ["#e8a317", "#f2f0e8", "#1d1d1b"],
+      "materials": ["acetate leaves", "stepped tab rail"],
+      "viewport": "The manual opened at the 3 am tab.",
+      "case": "Loses both: a manual is static, GHOST is live.",
+      "kept": "Changes snap in two steps; no decorative easing.",
+      "risk": "Nostalgia."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": false},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A dark monitoring dashboard of cards and charts, executed impeccably.",
+    "palette": ["#0f1115", "#e8eaed", "#4f8cff", "#f5a524", "#ef4444"],
+    "materials": ["card grid", "line charts", "status pills"],
+    "viewport": "Header with status, a card per room, a chart row, an alert list.",
+    "risk": "Indistinguishable from the competition by design."
+  },
+  "steer": true
+}

@@ -366,9 +366,16 @@ class Reasoner:
         plain = "; ".join(parts) or "no readings"
         if not (self.key and self.log_model):
             return plain
+        sys_ = "Rewrite this home-sensing status as one short, calm log line. Keep every number. No preamble."
         try:
-            return (await self._chat(self.log_model, "Rewrite this home-sensing status as one short, calm log line. "
-                                     "Keep every number. No preamble.", plain, 60)).strip() or plain
+            try:  # a log line needs no reasoning: switch Nemotron's thinking off (chat-template flag)
+                out = await self._chat(self.log_model, sys_, plain, 80,
+                                       {"chat_template_kwargs": {"enable_thinking": False}})
+            except httpx.HTTPStatusError as ex:
+                if ex.response.status_code not in (400, 422):
+                    raise
+                out = await self._chat(self.log_model, sys_, plain, 400)
+            return _THINK.sub("", out).strip() or plain
         except Exception:  # noqa: BLE001
             return plain
 
@@ -382,10 +389,11 @@ class Reasoner:
         except KeyError:  # a fact the template expects is missing: say less, never crash
             return f"{e.kind.replace('_', ' ')} in the {e.room}.", say.format_map(_Blank(f)), fam.format_map(_Blank(f))
 
-    async def _chat(self, model: str, system: str, user: str, max_tokens: int) -> str:
-        async with httpx.AsyncClient(timeout=30) as c:
+    async def _chat(self, model: str, system: str, user: str, max_tokens: int, extra: dict | None = None) -> str:
+        async with httpx.AsyncClient(timeout=60) as c:
             r = await c.post(f"{self.base}/chat/completions", headers={"Authorization": f"Bearer {self.key}"},
                              json={"model": model, "max_tokens": max_tokens, "temperature": 0.2,
-                                   "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]})
+                                   "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+                                   **(extra or {})})
         r.raise_for_status()
         return r.json()["choices"][0]["message"]["content"]
