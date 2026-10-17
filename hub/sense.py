@@ -10,7 +10,8 @@ Pipeline per update:
   3. keep the subcarriers that carry the most breathing-band energy and take
      their first principal component (signs and gains differ per subcarrier)
   4. band-pass 0.1-0.6 Hz -> breathing waveform; FFT peak -> breaths/min
-  5. 0.8-4 Hz energy across all subcarriers -> motion index
+  5. 0.8-4 Hz energy across all subcarriers -> motion index; the strongest
+     half-second of it -> jolt (an impact, like a fall, is short and violent)
 """
 
 from __future__ import annotations
@@ -26,6 +27,7 @@ from .lamp import CsiFrame
 FS = 20.0  # analysis rate, Hz
 BREATH_BAND = (0.1, 0.6)  # Hz -> 6..36 breaths/min
 MOTION_BAND = (0.8, 4.0)
+QUIET_MIN_S = 12  # breathing is read from at least this much stillness after movement
 
 
 @dataclass
@@ -36,6 +38,7 @@ class Reading:
     wave: float  # latest breathing waveform value, 0..1, for the lamp's ring
     frames: int  # CSI frames in the window
     rate_hz: float  # CSI packet rate actually received
+    jolt: float = 0.0  # strongest half-second of motion energy in the last 4 s, same scale as motion
 
 
 class BreathSensor:
@@ -45,6 +48,7 @@ class BreathSensor:
         self.buf: deque[tuple[float, np.ndarray]] = deque()
         self._wave_scale = 1e-6
         self._motion_base: float | None = None
+        self.trace: list[float] = []  # last ~20 s of the breathing waveform at 5 Hz, -1..1, for the dashboard
 
     def add(self, f: CsiFrame) -> None:
         if len(f.amp) < 8:
@@ -88,19 +92,33 @@ class BreathSensor:
         if self._motion_base is None:
             self._motion_base = m_now
         motion = m_now / max(self._motion_base, 1e-6)
+        half = int(0.5 * FS)
+        e_all = np.mean(xm ** 2, axis=1)
+        e = e_all[-int(4 * FS):]
+        jolt = float(np.max(np.convolve(e, np.ones(half) / half, mode="valid"))) / max(self._motion_base, 1e-6)
         if motion < 2:  # only learn the baseline while the room is calm
             self._motion_base = 0.98 * self._motion_base + 0.02 * m_now
 
-        # Breathing: PCA over the subcarriers that carry the most breathing energy.
+        # Breathing: only from the quiet stretch after the last movement, so a burst of walking
+        # (or a fall) doesn't drown the breathing for a whole window after it stops.
+        busy = np.convolve(e_all, np.ones(half) / half, mode="same") > 3 * max(self._motion_base, 1e-6)
+        if busy.any():
+            last = int(np.nonzero(busy)[0][-1])
+            quiet = len(x) - last - half
+            if quiet >= QUIET_MIN_S * FS:
+                xb = sps.sosfiltfilt(sos_b, sps.detrend(x[-quiet:], axis=0), axis=0)
         energy = np.var(xb, axis=0)
         top = np.argsort(energy)[::-1][: self.top_k]
+        # A chest moves some subcarriers far more than others; noise lifts them all alike.
+        contrast = float(np.mean(energy[top]) / max(float(np.median(energy)), 1e-9))
         sub = xb[:, top]
         u, s, vt = np.linalg.svd(sub - sub.mean(axis=0), full_matrices=False)
         pc = u[:, 0] * s[0]
 
         win = np.hanning(len(pc))
-        spec = np.abs(np.fft.rfft(pc * win)) ** 2
-        f = np.fft.rfftfreq(len(pc), 1 / FS)
+        nfft = max(len(pc), int(30 * FS))  # zero-pad a short quiet stretch to the full window's resolution
+        spec = np.abs(np.fft.rfft(pc * win, nfft)) ** 2
+        f = np.fft.rfftfreq(nfft, 1 / FS)
         band = (f >= BREATH_BAND[0]) & (f <= BREATH_BAND[1])
         if not band.any():
             return None
@@ -120,7 +138,10 @@ class BreathSensor:
         peak = float(np.max(np.abs(pc[-int(10 * FS):])))
         self._wave_scale = max(peak, 0.9 * self._wave_scale)
         wave = 0.5 + 0.5 * float(pc[-1]) / (self._wave_scale or 1)
+        tail = pc[-int(20 * FS)::4] / (self._wave_scale or 1)
+        self.trace = [round(float(v), 3) for v in np.clip(tail, -1, 1)]
 
         moving = motion > 3
-        good = conf > 0.35 and not moving
-        return Reading(bpm if good else None, conf, motion, min(1.0, max(0.0, wave)), len(self.buf), rate)
+        edge = i == 0 or i == len(sb) - 1  # a peak pinned to the band's edge is drift, not breathing
+        good = conf > 0.35 and contrast >= 4 and not edge and not moving
+        return Reading(bpm if good else None, conf, motion, min(1.0, max(0.0, wave)), len(self.buf), rate, jolt)

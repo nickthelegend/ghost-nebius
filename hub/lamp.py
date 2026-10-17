@@ -52,23 +52,83 @@ def parse_csi(datagram: bytes) -> list[CsiFrame]:
     return out
 
 
+@dataclass
+class LampState:
+    """What HOTARU is doing, as far as the hub can tell: what it was told and what it said back."""
+    eye: str = "off"
+    bright: int | None = None
+    pan: float = 0.0
+    action: str = ""
+    level: float = 0.5
+    speaking: str = ""  # the line being spoken right now
+    said: str = ""  # the last line spoken
+    listening: bool = False
+    checkin: bool = False  # a tap now means "I'm OK"
+    heard: str = ""
+    updated: float = 0.0
+
+    def apply(self, op: str, kw: dict) -> None:
+        self.updated = time.time()
+        if op == "eye":
+            self.eye, self.bright = kw.get("mode", self.eye), kw.get("bright", self.bright)
+        elif op == "look":
+            self.pan = float(kw.get("pan", self.pan))
+        elif op == "pose":
+            self.pan = float(kw.get("a", [self.pan])[0])
+        elif op == "action":
+            self.action = kw.get("name", "")
+        elif op == "level":
+            self.level = float(kw.get("v", self.level))
+        elif op == "say":
+            self.speaking = self.said = kw.get("text", "")
+        elif op == "listen":
+            self.listening, self.heard = True, ""
+        elif op == "checkin":
+            self.checkin = bool(kw.get("on", True))
+        elif op == "stop":
+            self.speaking, self.listening = "", False
+
+    def event(self, ev: dict) -> None:
+        kind = ev.get("ev")
+        if kind == "said":
+            self.speaking = ""
+        elif kind == "heard":
+            self.listening, self.heard = False, ev.get("text", "")
+        elif kind == "ok":
+            self.heard, self.checkin = "(tapped: I'm OK)", False
+
+    def as_dict(self) -> dict:
+        return {k: getattr(self, k) for k in self.__dataclass_fields__}
+
+
 class Lamp:
     """One connected HOTARU."""
 
-    def __init__(self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter):
+    kind = "hotaru"
+
+    def __init__(self, reader: asyncio.StreamReader | None, writer: asyncio.StreamWriter | None):
         self.reader, self.writer = reader, writer
         self.hello: dict = {}
         self.status: dict = {}
         self.events: asyncio.Queue[dict] = asyncio.Queue()
         self._waiters: list[tuple[Callable[[dict], bool], asyncio.Future]] = []
         self.closed = asyncio.Event()
+        self.state = LampState()
+        self.sent: list[tuple[float, dict]] = []  # recent commands, for the dashboard
 
     @property
     def peer(self) -> str:
         p = self.writer.get_extra_info("peername")
         return f"{p[0]}:{p[1]}" if p else "?"
 
+    def _track(self, op: str, kw: dict) -> None:
+        self.state.apply(op, kw)
+        if op not in ("level", "ping"):
+            self.sent.append((time.time(), {"op": op, **kw}))
+            del self.sent[:-40]
+
     async def send(self, op: str, **kw) -> None:
+        self._track(op, kw)
         msg = json.dumps({"op": op, **kw}, separators=(",", ":")) + "\n"
         self.writer.write(msg.encode())
         await self.writer.drain()
@@ -88,6 +148,7 @@ class Lamp:
             self.hello = ev
         elif ev.get("ev") == "status":
             self.status = ev
+        self.state.event(ev)
         for pred, fut in list(self._waiters):
             if not fut.done() and pred(ev):
                 fut.set_result(ev)
@@ -136,7 +197,7 @@ class Lamp:
         await self.send("listen", ms=ms)
         return await self.wait_event(lambda e: e.get("ev") == "heard", ms / 1000 + 20)
 
-    async def ask(self, text: str, listen_ms: int = 5000) -> dict:
+    async def ask(self, text: str, listen_ms: int = 5000, grace_s: float = 6) -> dict:
         """Say something, then listen, while also accepting a tap ("I'm OK") as the answer."""
         await self.checkin(True)
         await self.say(text)
@@ -151,7 +212,7 @@ class Lamp:
         if not text:
             # Nothing said: a tap can still come in once the recording ends.
             await self.checkin(True)
-            late = await self.wait_event(lambda e: e.get("ev") == "ok", 6)
+            late = await self.wait_event(lambda e: e.get("ev") == "ok", grace_s)
             await self.checkin(False)
             if late:
                 return {"answered": True, "how": "button", "text": ""}

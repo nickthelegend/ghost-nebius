@@ -1,0 +1,14 @@
+{
+  "name": "Demo flat",
+  "person": "Dad",
+  "family": "Priya",
+  "plan": {"w": 100, "h": 60, "lamp": [47, 44], "lamp_room": "living"},
+  "rooms": {
+    "bedroom":  {"label": "Bedroom",  "pan": -47, "sleep": true, "plan": [0, 0, 38, 34]},
+    "bathroom": {"label": "Bathroom", "pan": 7,                  "plan": [38, 0, 24, 20]},
+    "hall":     {"label": "Hall",     "sensor": false,           "plan": [38, 20, 24, 14]},
+    "kitchen":  {"label": "Kitchen",  "pan": 54,                 "plan": [62, 0, 38, 34]},
+    "living":   {"label": "Living room", "pan": -90,             "plan": [0, 34, 100, 26]}
+  },
+  "doors": [[38, 27, "v"], [50, 20, "h"], [62, 27, "v"], [50, 34, "h"], [19, 34, "h"]]
+}
