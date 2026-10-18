@@ -15,3 +15,5 @@ data/live/
 .impeccable/review/
 .impeccable/mocks/
 .impeccable/questions/
+# Loom's local state (event log, attachments, machine config)
+.loom/

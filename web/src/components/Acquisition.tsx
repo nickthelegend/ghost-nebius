@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Gauge, RotateCcw } from "lucide-react";
+import { FastForward, Gauge, RotateCcw } from "lucide-react";
 import type { Snapshot } from "../types";
 import { EVENT_LABEL, SEV_LABEL } from "../util";
 
@@ -60,6 +60,12 @@ export function Acquisition({ snap, act, onPick }: { snap: Snapshot; act: (p: st
           <RotateCcw size={15} />
           <span>Restart</span>
         </button>
+        {r.jump_to != null && (
+          <button className="key" onClick={() => act("replay/jump")} aria-label="Jump to just before he gets up">
+            <FastForward size={15} />
+            <span>3 am event</span>
+          </button>
+        )}
         <div className="speed" role="group" aria-label="Replay speed">
           <Gauge size={15} aria-hidden="true" />
           {[1, 2, 4].map((s) => (

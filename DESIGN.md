@@ -227,22 +227,24 @@ A neutral warm-grey hardware palette carrying two independent signal vocabularie
 ### Hierarchy
 - **Display** (600, 32px, 1): the scene clock in its own small screen on the brand plate. The wordmark GHOST is 700 26px at 0.2em tracking.
 - **Headline** (600, 23px, 1.1): capture title in the trigger screen, white.
-- **Readout** (600, 22px, 1.15): primary numeric values (breathing rate) in the channel colour; secondary readouts 600 18px (HOTARU ring, bearing, doing).
-- **Title** (700, 14px, 0.16em, uppercase): module legends ("PLAN", "TRIGGER") on the chassis above each screen, followed by a 500 12.5px sentence-case sub-legend in ink-2.
-- **Body** (400, 15px/1.5): default; capture explanation text is 16px/1.55 capped at 64ch; evidence and logs 13–13.5px.
+- **Readout** (600, 24px, 1.15): primary numeric values (breathing rate) in the channel colour; secondary readouts 600 19px (HOTARU ring, bearing, doing).
+- **Title** (700, 15px, 0.16em, uppercase): module legends ("PLAN", "TRIGGER") on the chassis above each screen, followed by a 500 13.5px sentence-case sub-legend in ink-2.
+- **Body** (400, 15px/1.5): default; capture explanation text is 16px/1.55 capped at 64ch; evidence, logs, notes and command lines 14–14.5px.
 - **Label** (600, 12.5px, 0.12–0.14em, uppercase): lamp names, severity badges, room names, step chains, key text (13.5px, 0.1em).
-- **Label micro** (600, 10.5–11.5px, 0.12em, uppercase): readout `dt` legends, axis scales, evidence source.
+- **Label micro** (600, 12–12.5px, 0.12em, uppercase): readout `dt` legends, axis scales, evidence source.
+
+**The Projection Floor.** Nothing a viewer must read is under 12px (labels) or 14px (sentences), because the dashboard is filmed and projected. Plan SVG text is sized in screen pixels (~13–14px) from the plan's rendered scale, not in plan units; when the plan is small, room names drop the CH prefix and rely on the room colour.
 
 ### Named Rules
 **The Silk-Screen Rule.** Every legend, key, lamp and axis label is Barlow Condensed uppercase with 0.06–0.2em tracking; running sentences (captions, evidence, notes) are Barlow sentence case. Never set a paragraph in the condensed face or a legend in the body face.
 
 ## Layout
 
-- **Chassis:** a single centred column, max 1680px, padding 18px 22px 28px, 14px gap between stacked rows. Order: brand plate, acquisition strip, bench, footer.
+- **Chassis:** a single centred column, max 1840px, padding 18px 22px 28px, 14px gap between stacked rows. Order: brand plate, acquisition strip, bench, footer.
 - **Brand plate:** three-column grid (mark | centred SENSE/REASON/ACT lamps | clock screen), 22px gap.
 - **Acquisition strip:** keys at left, then a track of TRUTH lane / 14px timeline screen / GHOST lane / time scale, with a 64px label column. Mark labels are spread over 2–4 lanes so neighbours never overprint; labels near the right edge flip to grow leftward.
-- **Bench:** two independent column stacks, `minmax(0, 1.5fr)` sensing (Plan, Breathing, then Routine, Log) and `minmax(360px, 1fr)` decision (Trigger, HOTARU) spanning both rows. Each module is a legend above a screen with a 7px gap.
-- **Inside screens:** 12–14px padding; row grids share a fixed label column (82px) so CH tags align across Breathing and Routine; readouts sit in a fixed right column (176px traces, 128px mask).
+- **Bench:** two independent column stacks (at ≥1600px Plan and Breathing sit side by side inside the sensing stack so the whole loop fits one 1080p view), `minmax(0, 1.5fr)` sensing (Plan, Breathing, then Routine, Log) and `minmax(360px, 1fr)` decision (Trigger, HOTARU) spanning both rows. Each module is a legend above a screen with a 7px gap.
+- **Inside screens:** 12–14px padding; row grids share a fixed label column (96px) so CH tags align across Breathing and Routine; readouts sit in a fixed right column (200px traces, 140px mask).
 - **Responsive:** at ≤1100px the plate lamps drop to a second row and the acquisition strip stacks. At ≤860px the bench becomes one column reordered Trigger, Plan, Breathing, HOTARU, Routine, Log; chassis padding 12px; label column 66px; one trace readout hidden; evidence shows only cited items behind a "Show all evidence" key and loses its scroll fade; plan SVG text scales up. At ≤420px the clock screen spans the full plate width.
 
 ## Elevation & Depth
@@ -277,13 +279,22 @@ Gently rounded hardware: panels and screens 10px, inset wells 6px, keys 7px, row
 Three equal lamps (WATCH, CHECK-IN, ALERT) on screen-2. Unlit lamps are dark with dim legends; the current severity and everything below it light in their colour; the ALERT lamp pulses only when it is the current state. Beneath it, a status line: bold condensed state word plus a plain sentence.
 
 ### Capture readout
-Number (#05), white headline, room label in its channel colour, time right-aligned; a filled or outlined severity badge with the provenance ("Rules + template" or "Nemotron · model"); the explanation with inline citation chips (E1…) in CH2 cyan that fill on hover/focus and highlight the matching evidence row; the HOTARU step chain joined by 14px rules; quoted speech in a screen-3 well in path-light amber; evidence rows (id | source | text) where cited ids turn cyan.
+Number (#05), white headline, room label in its channel colour, time right-aligned; a filled or outlined severity badge with the provenance ("Rules + template" or "Nemotron · model"); the explanation with inline citation chips (E1…) in CH2 cyan that fill on hover/focus and highlight the matching evidence row; an OUTCOME line; quoted speech in a screen-3 well in path-light amber; evidence rows (id | source | text) where cited ids turn cyan.
 
 ### Trace row
 Channel tag (CH n on its colour, screen-black text) and room name; a canvas trace in the channel colour at 1.7px over a 10-division graticule; readouts (breathing large in channel colour, CONF / MOTION / JOLT micro-labelled). A room that is not breathing draws its trace at 42% opacity.
 
 ### Plan (XY) screen
 Rooms as channel-coloured outlines on a 5-unit graticule; present rooms fill to 16% and brighten their wall; breathing rooms pulse at the measured breath period; the followed room gets white corner brackets; HOTARU is a ring with a dashed bearing ray and 13% cone in its eye colour, turning over 1.1s.
+
+### Sense → reason → act strip
+Every capture opens with three joined cells (SENSE: the channel tag and the one measurement that fired; REASON: rules or Nemotron, the severity and how many evidence items it cites; ACT: what HOTARU did). The strip wears the capture's severity: a 1px border and keys in that colour over a 6% tint, cells divided by 1px seams with a small chevron joint. On phones the cells stack and the joint points down.
+
+### The chain highlight
+When a capture fires, for 3.6s the Plan, Breathing, Trigger and HOTARU screens take a 3px ring in the capture's severity colour, their legends gain a matching square, the room's wall turns that colour and its floor pulses twice, and the room's trace row is outlined and tinted. It is the only cross-module animation.
+
+### Armed panel
+Before any capture the Trigger screen is not empty: an "Armed" headline, one row per sensed room (channel tag, state, AS USUAL in CH4 green or UNUSUAL in amber against the learned routine), the rules it is waiting for with their severity dots, and on a replay a full-width "Jump to 03:02" key. HOTARU's ring starts in follow mode, so its panel reads "Breathing with bedroom" rather than idle.
 
 ### Brand plate, LEDs, acquisition strip, routine mask, HOTARU dial
 LEDs are 10px domed circles (green good, amber warn, grey off) with condensed label and Barlow value. The acquisition timeline is a cyan-filled scope strip with a 2px CH2 playhead and severity ticks. The routine mask draws learned occupancy as a 20% channel-colour area, today as solid channel bars, violations as red diamonds above, and "now" as a white line. The HOTARU dial is a 180° arc with 30° ticks, room dots in channel colour, and a needle and ring in the current eye colour.

@@ -4,7 +4,7 @@ import { channel, reducedMotion } from "../util";
 
 const PER_SECOND = 5; // trace samples per second (the hub decimates the 20 Hz waveform)
 
-function TraceRow({ name, room, speed }: { name: string; room: RoomView; speed: number }) {
+function TraceRow({ name, room, speed, linked }: { name: string; room: RoomView; speed: number; linked: boolean }) {
   const ref = useRef<HTMLCanvasElement>(null);
   const data = useRef<{ trace: number[]; at: number }>({ trace: [], at: 0 });
   const live = useRef({ alive: room.state === "breathing", speed });
@@ -64,7 +64,7 @@ function TraceRow({ name, room, speed }: { name: string; room: RoomView; speed: 
   const c = channel(name);
   const motion = room.motion ?? 0;
   return (
-    <div className={`trace trace-${room.state.replace(" ", "-")}`} style={{ ["--c" as string]: c.color }}>
+    <div className={`trace trace-${room.state.replace(" ", "-")} ${linked ? "is-linked" : ""}`} style={{ ["--c" as string]: c.color }}>
       <div className="trace-id">
         <span className="trace-ch">CH{c.ch}</span>
         <span className="trace-room">{room.label}</span>
@@ -72,7 +72,7 @@ function TraceRow({ name, room, speed }: { name: string; room: RoomView; speed: 
       <canvas ref={ref} className="trace-cv" aria-hidden="true" />
       <dl className="trace-read">
         <div className="trace-big">
-          <dt>Breathing</dt>
+          <dt className="sr-only">Breathing</dt>
           <dd>{room.bpm ? <>{room.bpm.toFixed(1)}<small> /min</small></> : <span className="dim">{room.state === "moving" ? "moving" : "—"}</span>}</dd>
         </div>
         <div>
@@ -92,11 +92,11 @@ function TraceRow({ name, room, speed }: { name: string; room: RoomView; speed: 
   );
 }
 
-export function Traces({ rooms, speed }: { rooms: Record<string, RoomView>; speed: number }) {
+export function Traces({ rooms, speed, linkedRoom = null }: { rooms: Record<string, RoomView>; speed: number; linkedRoom?: string | null }) {
   const sensed = Object.entries(rooms).filter(([, r]) => r.sensor !== false && r.state !== "no sensor");
   return (
     <div className="traces" aria-label="Breathing waveform per room, last 20 seconds">
-      {sensed.map(([n, r]) => <TraceRow key={n} name={n} room={r} speed={speed} />)}
+      {sensed.map(([n, r]) => <TraceRow key={n} name={n} room={r} speed={speed} linked={linkedRoom === n} />)}
       <p className="traces-scale" aria-hidden="true"><span>−20 s</span><span>2 s/div</span><span>now</span></p>
     </div>
   );

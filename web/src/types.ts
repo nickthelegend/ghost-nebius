@@ -105,5 +105,6 @@ export interface Snapshot {
     start: number;
     end: number;
     markers: { t: number; label: string; clock: string }[];
+    jump_to?: number | null;
   };
 }

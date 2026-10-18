@@ -52,6 +52,7 @@ TRUTH = [
     (56, "Falls, then lies still breathing ~19/min"),
 ]
 DURATION = 130.0
+JUMP_TO = 36.0  # "jump to the 3 am event": a few seconds before he gets up
 
 
 def _person(t: float) -> dict[str, dict]:
@@ -73,6 +74,7 @@ def write_night(path: str | Path = RECORDING, seed: int = 3) -> Path:
     rng = np.random.default_rng(seed)
     w = Writer(path, {"scene_start": scene_start(), "scale": SCALE, "synthetic": True, "csi_hz": CSI_HZ,
                       "markers": [{"t": t, "label": s} for t, s in TRUTH],
+                      "jump_to": JUMP_TO,
                       "note": "Synthesized from the channel model in hub/scenario.py until a real night is recorded."})
     streams = []
     for k, room in enumerate(SENSED):

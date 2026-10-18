@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import type { Capture, Severity, Snapshot } from "../types";
-import { EVENT_LABEL, SEV_LABEL, SEV_RANK, channel, stepText } from "../util";
+import { EVENT_LABEL, SEV_LABEL, SEV_RANK, channel, senseLine, stepText } from "../util";
+import { FastForward } from "lucide-react";
 
 const SOURCE: Record<string, string> = { rule: "Rule", csi: "Wi-Fi", routine: "Routine", lamp: "HOTARU", earlier: "Earlier" };
 const LEVELS: Severity[] = ["watch", "check_in", "alert"];
@@ -75,13 +76,22 @@ export function CaptureDetail({ c }: { c: Capture }) {
           {by}
         </span>
       </div>
+      <ol className={`loop sev-${c.severity}`} aria-label="Sense, reason, act">
+        <li className="loop-cell">
+          <span className="loop-k">Sense</span>
+          <span className="loop-v"><span className="loop-ch" style={{ ["--c" as string]: channel(c.room).color }}>{channel(c.room).ch ? `CH${channel(c.room).ch}` : "HOTARU"}</span>{senseLine(c.event, c.facts)}</span>
+        </li>
+        <li className="loop-cell">
+          <span className="loop-k">Reason</span>
+          <span className="loop-v">{c.by.startsWith("rules") ? "Rules" : "Nemotron"} → {SEV_LABEL[c.severity].toLowerCase()} · cites {c.cites.length} of {c.evidence.length}</span>
+        </li>
+        <li className="loop-cell">
+          <span className="loop-k">Act</span>
+          <span className="loop-v">{c.lamp.length ? c.lamp.filter((s) => s.op !== "call").map(stepText).slice(0, 3).join(" · ") + (c.lamp.some((s) => s.op === "call") ? " · call family" : "") : "log only"}</span>
+        </li>
+      </ol>
       <Caption c={c} hover={hover} setHover={setHover} />
-      {c.lamp.length > 0 && (
-        <ol className="cap-steps" aria-label="What HOTARU did">
-          {c.lamp.map((s, i) => <li key={i}>{stepText(s)}</li>)}
-          {c.outcome && <li className="cap-outcome">{c.outcome}</li>}
-        </ol>
-      )}
+      {c.outcome && <p className="cap-outcome"><span>Outcome</span> {c.outcome}</p>}
       {(ask || c.say) && <blockquote className="cap-say">“{String(ask?.text ?? c.say)}”</blockquote>}
       {c.family && <p className="cap-family"><b>To family:</b> {c.family}</p>}
       <ol className="evidence" aria-label="Evidence">
@@ -106,7 +116,54 @@ export function CaptureDetail({ c }: { c: Capture }) {
   );
 }
 
-export function Trigger({ snap, pinned, setPinned }: { snap: Snapshot; pinned: number | null; setPinned: (n: number | null) => void }) {
+const RULES: { sev: Severity; when: string; then: string }[] = [
+  { sev: "watch", when: "Gets up at night", then: "path light, HOTARU follows" },
+  { sev: "watch", when: "A jolt, then stillness", then: "watch closely" },
+  { sev: "check_in", when: "Stays far longer than the learned routine", then: "HOTARU asks" },
+  { sev: "alert", when: "Nobody answers", then: "call family" },
+];
+
+function Armed({ snap, act }: { snap: Snapshot; act: (p: string) => void }) {
+  const rooms = Object.entries(snap.rooms).filter(([, r]) => r.sensor !== false && r.state !== "no sensor");
+  const jump = snap.replay?.jump_to;
+  const odd = rooms.filter(([, r]) => r.routine_p != null && (r.present ? r.routine_p < 0.5 : r.routine_p >= 0.5)).length;
+  return (
+    <div className="armed">
+      <h3 className="cap-title">Armed</h3>
+      <p className="armed-lead">
+        Watching {rooms.length} rooms through the walls.{" "}
+        {odd ? `${odd} ${odd === 1 ? "room differs" : "rooms differ"} from the routine it learned; no rule has fired.` : "Everything matches the routine it learned."}
+      </p>
+      <ul className="armed-rooms">
+        {rooms.map(([n, r]) => {
+          const usual = r.routine_p == null ? null : r.present ? r.routine_p >= 0.5 : r.routine_p < 0.5;
+          return (
+            <li key={n} style={{ ["--c" as string]: channel(n).color }}>
+              <span className="trace-ch">CH{channel(n).ch}</span>
+              <span className="armed-room">{r.label}</span>
+              <span className="armed-state">{r.state === "breathing" && r.bpm ? `breathing ${r.bpm.toFixed(1)}/min` : r.state === "empty" ? "empty" : r.state}</span>
+              <span className={`armed-usual ${usual === false ? "is-odd" : ""}`}>{usual == null ? "" : usual ? "as usual" : "unusual"}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <h4 className="silk armed-h">Waiting for</h4>
+      <ul className="armed-rules">
+        {RULES.map((r) => (
+          <li key={r.when}><span className={`cap-row-dot sev-dot-${r.sev}`} aria-hidden="true" /><span>{r.when}</span><span className="armed-then">{r.then}</span></li>
+        ))}
+      </ul>
+      {jump != null && snap.replay && snap.replay.pos < jump && (
+        <button className="key key-jump" onClick={() => act("replay/jump")}>
+          <FastForward size={16} aria-hidden="true" />
+          <span>Jump to {new Date((snap.replay.start + jump * snap.replay.scale) * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}, just before he gets up</span>
+        </button>
+      )}
+    </div>
+  );
+}
+
+export function Trigger({ snap, pinned, setPinned, act }: { snap: Snapshot; pinned: number | null; setPinned: (n: number | null) => void; act: (p: string) => void }) {
   const t = snap.timeline;
   const state = loopState(t);
   const shown = (pinned != null ? t.find((c) => c.id === pinned) : undefined) ?? t[t.length - 1];
@@ -130,10 +187,7 @@ export function Trigger({ snap, pinned, setPinned }: { snap: Snapshot; pinned: n
           <CaptureDetail c={shown} />
         </>
       ) : (
-        <div className="cap-empty">
-          <p><b>No captures yet.</b> GHOST triggers when a rule fires: getting up at night, a jolt then stillness, a stay far longer than the routine it learned, breathing lost, or a check-in nobody answers.</p>
-          <p>Each capture lands here with Nemotron's explanation, every claim cited to the measurement behind it.</p>
-        </div>
+        <Armed snap={snap} act={act} />
       )}
       {t.length > 1 && (
         <div className="cap-list">

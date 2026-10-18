@@ -89,13 +89,18 @@ def test_dashboard_api(night, tmp_path):
         st3, _ = await get("/../hub/server.py")
         st4, _ = await get("/api/lamp/tap", "POST")
         st5, _ = await get("/api/replay/pause", "POST")
+        st6, _ = await get("/api/replay/jump", "POST")
+        _, body = await get("/api/state")
+        jumped = json.loads(body)
         dash.session.stop()
         server.close()
-        return st, snap, st2, html, st3, st4, st5
-    st, snap, st2, html, st3, st4, st5 = asyncio.run(go())
+        return st, snap, st2, html, st3, st4, st5, st6, jumped
+    st, snap, st2, html, st3, st4, st5, st6, jumped = asyncio.run(go())
     assert st == 200 and snap["mode"] == "replay" and snap["replay"]["scale"] == 20
     assert set(snap["rooms"]) >= {"bedroom", "bathroom", "kitchen", "living", "hall"}
     assert len(snap["routine"]["rooms"]["bedroom"]["baseline"]) == 48
     assert snap["lamp"]["kind"] == "virtual" and snap["rooms"]["bedroom"]["trace"]
     assert st2 == 200 and b"GHOST" in html
     assert st3 == 404 and st4 == 200 and st5 == 200
+    assert st6 == 200 and jumped["replay"]["pos"] >= jumped["replay"]["jump_to"] == 36
+    assert jumped["lamp"]["state"]["eye"] == "follow"  # the ring breathes from the start

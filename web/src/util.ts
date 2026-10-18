@@ -62,3 +62,21 @@ export function stepText(s: { op: string; [k: string]: unknown }): string {
 }
 
 export const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const f1 = (v: unknown) => (typeof v === "number" ? (Number.isInteger(v) ? String(v) : v.toFixed(1)) : String(v ?? ""));
+
+/** One line: what the Wi-Fi saw that made this capture fire. */
+export function senseLine(event: string, facts: Record<string, unknown>): string {
+  const bpm = facts.bpm ? ` · ${f1(facts.bpm)} br/min` : "";
+  switch (event) {
+    case "got_up": return `movement after ${f1(facts.still_minutes)} min still`;
+    case "moved": return `movement here, came from the ${facts.from}`;
+    case "fall_suspected": return `jolt ${f1(facts.jolt)}, then ${f1(facts.seconds_still_after)} s still${bpm}`;
+    case "long_stay": return `${f1(facts.minutes_in_room)} min here vs ${f1(facts.typical_visit_min)} usual${bpm}`;
+    case "too_still": return `no movement for ${f1(facts.minutes_without_motion)} min`;
+    case "breath_lost": return `breathing gone ${f1(facts.seconds_without_breathing_signal)} s`;
+    case "no_answer": return `no voice, no tap in ${f1(facts.seconds)} s`;
+    case "answered": return `answered by ${facts.how}`;
+    default: return event.replace(/_/g, " ");
+  }
+}

@@ -43,13 +43,13 @@ export function Hotaru({ snap, act }: { snap: Snapshot; act: (p: string) => void
         <dl className="hotaru-read">
           <div><dt>Ring</dt><dd><span className="eye-dot" style={{ background: e.color }} aria-hidden="true" />{e.label}</dd></div>
           <div><dt>Turned</dt><dd>{pan > 0 ? "+" : ""}{pan}°</dd></div>
-          <div><dt>Doing</dt><dd>{s?.speaking ? "Speaking" : s?.listening ? "Listening" : s?.checkin ? "Waiting for a tap" : s?.action || "Idle"}</dd></div>
+          <div><dt>Doing</dt><dd>{s?.speaking ? "Speaking" : s?.listening ? "Listening" : s?.checkin ? "Waiting for a tap" : s?.action ? s.action : s?.eye === "follow" ? `Breathing with ${snap.followed ? snap.rooms[snap.followed]?.label.toLowerCase() ?? "the room" : "the room"}` : "Standing by"}</dd></div>
         </dl>
       </div>
       <div className={`voice ${s?.speaking ? "is-speaking" : ""} ${s?.listening ? "is-listening" : ""}`}>
         {s?.listening ? <Mic size={16} aria-hidden="true" /> : <Volume2 size={16} aria-hidden="true" />}
         <p>
-          {s?.said ? <>“{s.said}”</> : <span className="dim">Nothing said yet.</span>}
+          {s?.said ? <>“{s.said}”</> : <span className="dim">Quiet. HOTARU speaks only when something needs a person.</span>}
           {s?.heard && <span className="voice-heard">Heard: {s.heard}</span>}
         </p>
       </div>

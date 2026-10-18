@@ -51,6 +51,7 @@ class Guardian:
         self.busy = False  # a check-in is in progress
         self.decisions: list[dict] = []  # the alert timeline, newest last
         self.log_lines: list[tuple[float, str]] = []
+        self._ring_set = False  # the ring is put in "follow" (breathing) mode on the first tick
         self._queue: asyncio.Queue[Event] | None = None
         self._worker: asyncio.Task | None = None
         if live_csi:
@@ -71,6 +72,9 @@ class Guardian:
         lamp = self.hub.lamp
         if lamp:
             lamp.clock = self.clock
+            if not self._ring_set and not self.decisions:
+                self._ring_set = True
+                await lamp.eye("follow", bright=140)  # calm: the ring breathes with whoever is asleep
         follow = self.followed_room()
         fr = self.readings.get(follow) if follow else None
         if lamp and fr and not self.busy:

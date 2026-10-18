@@ -80,8 +80,11 @@ class Session:
         if self._ticks % 10 == 0:  # the running log, in Nemotron Nano's words when configured
             await self.g.status_line()
 
-    async def start(self) -> None:
+    async def start(self, at: float = 0.0) -> None:
+        """Start the run; a replay can first fast-forward (deciding everything on the way) to `at`."""
         if self.replay:
+            if at > 0:
+                await self.replay.fast(at)
             self.task = asyncio.create_task(self.replay.run())
         else:
             self.task = asyncio.create_task(self._live())
@@ -145,6 +148,7 @@ class Session:
             out["replay"] = {"pos": round(rp.pos, 2), "duration": rec.duration, "scale": rec.scale, "speed": rp.speed,
                              "paused": rp.paused, "done": rp.done, "synthetic": bool(rec.header.get("synthetic")),
                              "start": rec.scene_start, "end": rec.scene_start + rec.duration * rec.scale,
+                             "jump_to": rec.header.get("jump_to"),
                              "markers": [{**m, "clock": clock(rec.scene_start + m["t"] * rec.scale)}
                                          for m in rec.header.get("markers", [])]}
         return out
@@ -155,11 +159,11 @@ class Dashboard:
         self.make_session = make_session
         self.session: Session | None = None
 
-    async def restart(self) -> None:
+    async def restart(self, at: float = 0.0) -> None:
         if self.session:
             self.session.stop()
         self.session = self.make_session()
-        await self.session.start()
+        await self.session.start(at)
 
     # ---------------------------------------------------------------- http ----
     async def handle(self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter) -> None:
@@ -203,6 +207,8 @@ class Dashboard:
             act = path[5:]
             if act == "replay/restart":
                 await self.restart()
+            elif act == "replay/jump" and s.replay:
+                await self.restart(float(s.rec.header.get("jump_to", 0)))
             elif act == "replay/pause" and s.replay:
                 s.replay.paused = True
             elif act == "replay/resume" and s.replay:
