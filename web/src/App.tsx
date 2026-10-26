@@ -50,6 +50,14 @@ export default function App() {
   return (
     <div className="chassis">
       <BrandPlate snap={snap} link={link} />
+      <section className="art" aria-labelledby="art-line">
+        <div className="art-img">
+          <img src="art/through-walls.webp" width={1600} height={901} decoding="async"
+            alt="Illustration: Wi-Fi ripples reveal a bedroom through a wall while a robot desk lamp looks on" />
+          <span className="art-credit">Illustration (AI-generated)</span>
+        </div>
+        <h2 id="art-line" className="art-line">No cameras. <em>The Wi-Fi already passes through every wall.</em></h2>
+      </section>
       {snap && link === "lost" && <p className="err" role="status"><b>Lost the hub.</b> Last received snapshot; reconnecting…</p>}
       {!snap ? (
         <div className="boot screen">

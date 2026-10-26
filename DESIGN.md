@@ -240,7 +240,7 @@ A neutral warm-grey hardware palette carrying two independent signal vocabularie
 
 ## Layout
 
-- **Chassis:** a single centred column, max 1840px, padding 18px 22px 28px, 14px gap between stacked rows. Order: brand plate, acquisition strip, bench, footer.
+- **Chassis:** a single centred column, max 1840px, padding 18px 22px 28px, 14px gap between stacked rows. Order: brand plate, art band, acquisition strip, bench, footer. The art band is a bezelled window (1600:360, 16:9 above a caption line on phones) showing generated art of Wi-Fi seeing through a wall, with one line of copy and an "Illustration (AI-generated)" label; it is decoration, never a reading.
 - **Brand plate:** three-column grid (mark | centred SENSE/REASON/ACT lamps | clock screen), 22px gap.
 - **Acquisition strip:** keys at left, then a track of TRUTH lane / 14px timeline screen / GHOST lane / time scale, with a 64px label column. Mark labels are spread over 2–4 lanes so neighbours never overprint; labels near the right edge flip to grow leftward.
 - **Bench:** two independent column stacks (at ≥1600px Plan and Breathing sit side by side inside the sensing stack so the whole loop fits one 1080p view), `minmax(0, 1.5fr)` sensing (Plan, Breathing, then Routine, Log) and `minmax(360px, 1fr)` decision (Trigger, HOTARU) spanning both rows. Each module is a legend above a screen with a 7px gap.
@@ -300,7 +300,7 @@ Before any capture the Trigger screen is not empty: an "Armed" headline, one row
 LEDs are 10px domed circles (green good, amber warn, grey off) with condensed label and Barlow value. The acquisition timeline is a cyan-filled scope strip with a 2px CH2 playhead and severity ticks. The routine mask draws learned occupancy as a 20% channel-colour area, today as solid channel bars, violations as red diamonds above, and "now" as a white line. The HOTARU dial is a 180° arc with 30° ticks, room dots in channel colour, and a needle and ring in the current eye colour.
 
 ### Motion
-One easing, `cubic-bezier(0.16, 1, 0.3, 1)`: keys 120ms, row/cite highlights 150ms, lamps 200ms, room presence 600ms, trigger flash ring 700ms on a new capture, HOTARU bearing and needle 1.1s. Loops exist only where they mean something: breath pulse at the real rate, alert lamp 1.6s, listening 1.2s, armed tap key 1.4s. `prefers-reduced-motion` removes all animation and the trace draws without its scroll lag.
+One easing, `cubic-bezier(0.16, 1, 0.3, 1)`: keys 120ms, row/cite highlights 150ms, lamps 200ms, room presence 600ms, trigger flash ring 700ms on a new capture, HOTARU bearing and needle 1.1s. Loops exist only where they mean something: breath pulse at the real rate, alert lamp 1.6s, listening 1.2s, armed tap key 1.4s. The art band is the one exception: a 24s linear drift and a 9s path-light sweep. `prefers-reduced-motion` removes all animation and the trace draws without its scroll lag.
 
 ## Do's and Don'ts
 
