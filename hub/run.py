@@ -54,7 +54,7 @@ class Guardian:
         self._ring_set = False  # the ring is put in "follow" (breathing) mode on the first tick
         self._queue: asyncio.Queue[Event] | None = None
         self._worker: asyncio.Task | None = None
-        if live_csi:
+        if live_csi and hub is not None:
             hub.csi_listeners.append(self.feed)
 
     def feed(self, f: CsiFrame) -> None:
@@ -69,7 +69,7 @@ class Guardian:
             if r is not None:
                 events += self.rules.update(room, r, now)
                 self.witness.record(room, now, r, self.rules.rooms[room].present)
-        lamp = self.hub.lamp
+        lamp = self.hub.lamp if self.hub else None
         if lamp:
             lamp.clock = self.clock
             if not self._ring_set and not self.decisions:
@@ -131,7 +131,7 @@ class Guardian:
                  "lamp": [], "outcome": ""}
         self.decisions.append(entry)
         log.info("[%s] %s in %s -> %s (%s): %s", d.by, e.kind, e.room, d.severity, e.floor, d.explain)
-        lamp = self.hub.lamp
+        lamp = self.hub.lamp if self.hub else None
         for step in plan(d, e, self.rooms):
             if step["op"] == "call":
                 entry["lamp"].append(step)
