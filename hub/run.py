@@ -188,7 +188,7 @@ class Guardian:
         sensor = self.sensors.get(room)
         present = bool(s and s.present)
         moving = bool(r and r.motion >= self.cfg.motion_on)
-        state = "moving" if moving else ("breathing" if r and r.bpm else ("still" if present else "empty"))
+        state = "waiting" if r is None else "moving" if moving else ("breathing" if r.bpm else ("still" if present else "empty"))
         view = {"present": present, "state": state, "bpm": round(r.bpm, 1) if r and r.bpm else None,
                 "confidence": round(r.confidence, 2) if r else None, "motion": round(r.motion, 1) if r else None,
                 "jolt": round(r.jolt) if r else None, "trace": sensor.trace if sensor else [],
