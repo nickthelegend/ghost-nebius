@@ -47,6 +47,8 @@ def parse_csi(datagram: bytes) -> list[CsiFrame]:
         ms, rssi, n = struct.unpack_from("<Ibb", datagram, at)
         n &= 0xFF
         at += 6
+        if at + n > len(datagram):
+            break
         out.append(CsiFrame(ms, rssi, datagram[at:at + n]))
         at += n
     return out
