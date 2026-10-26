@@ -76,3 +76,35 @@ def test_decision_queue_recovers_after_invalid_event():
         g._worker.cancel()
         await asyncio.gather(g._worker, return_exceptions=True)
     asyncio.run(go())
+
+
+def test_headless_calendar_maintenance_uses_real_persisted_history(tmp_path):
+    import time
+    from hub.routine import Routine
+    from hub.run import maintain_routine
+
+    now = scenario.scene_start()
+    r = scenario.build_routine(now)  # the same explicitly synthetic bundled history
+    path = tmp_path / 'routine.json'
+    fitted_day = time.localtime(now).tm_yday
+    baseline = list(r.model['bathroom'].baseline)
+    for k in range(30):
+        r.observe(now + k * 60, 'bathroom', True)
+    saved, fitted_day = maintain_routine(r, path, now, 0, fitted_day)
+    assert saved == now and Routine.load(path).to_json() == r.to_json()
+    assert r.model['bathroom'].baseline == baseline
+
+    lt = time.localtime(now)
+    before_noon = time.mktime((lt.tm_year, lt.tm_mon, lt.tm_mday + 1, 11, 59, 0, 0, 0, -1))
+    saved, same_day = maintain_routine(r, path, before_noon, saved, fitted_day)
+    assert same_day == fitted_day and r.model['bathroom'].baseline == baseline
+    noon = before_noon + 60
+    saved, fitted_day = maintain_routine(r, path, noon, saved, fitted_day)
+    assert fitted_day == time.localtime(noon).tm_yday
+    assert r.model['bathroom'].baseline != baseline
+    model = r.model
+    saved, _ = maintain_routine(r, path, noon + 60, saved, fitted_day)
+    assert r.model is model  # a second tick on this day does not fit a second model
+    loaded = Routine.load(path)
+    loaded.fit(before=noon)
+    assert loaded.model['bathroom'].baseline == r.model['bathroom'].baseline

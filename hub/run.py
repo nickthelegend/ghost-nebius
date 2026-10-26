@@ -209,6 +209,19 @@ def load_rooms(path: str | Path | None = None) -> dict:
     return j.get("rooms", j)  # either {"rooms": {...}, "plan": ...} or the bare room map
 
 
+def maintain_routine(routine: Routine, path: Path, now: float, last_save: float,
+                     fitted_day: int) -> tuple[float, int]:
+    """Save and refit against the same sampled wall-clock time, including at midnight."""
+    if now - last_save > 600:
+        routine.save(path)
+        last_save = now
+    today = time.localtime(now)
+    if today.tm_yday != fitted_day and today.tm_hour >= 12:
+        routine.fit(before=now)
+        fitted_day = today.tm_yday
+    return last_save, fitted_day
+
+
 async def main(demo: bool, port: int, follow: str | None) -> None:
     rooms = load_rooms()
     hub = LampHub(port=port)
@@ -231,12 +244,7 @@ async def main(demo: bool, port: int, follow: str | None) -> None:
         if now - last_log > (15 if demo else 60):
             last_log = now
             log.info("status: %s", await g.status_line())
-        if now - last_save > 600:
-            last_save = now
-            routine.save(routine_path)
-        if time.localtime().tm_yday != fitted_day and time.localtime().tm_hour >= 12:
-            fitted_day = time.localtime().tm_yday  # the nightly refit (or run it as a Nebius Serverless Job)
-            routine.fit()
+        last_save, fitted_day = maintain_routine(routine, routine_path, now, last_save, fitted_day)
 
 
 if __name__ == "__main__":
