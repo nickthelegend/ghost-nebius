@@ -1,0 +1,164 @@
+{
+  "id": "G52",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    }
+  ],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/stream"
+    },
+    {
+      "event": "failed",
+      "url": "http://127.0.0.1:8780/api/stream",
+      "error": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/stream"
+    },
+    {
+      "event": "failed",
+      "url": "http://127.0.0.1:8780/api/stream",
+      "error": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/stream"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/stream",
+      "type": "text/event-stream"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/html"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+      "type": "text/css"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+      "type": "text/javascript"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/stream"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/stream",
+      "type": "text/event-stream"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+      "type": "font/woff2"
+    }
+  ],
+  "expectedFault": true,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

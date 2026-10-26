@@ -1,0 +1,34 @@
+{
+  "id": "G4",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/stream"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/stream",
+      "type": "text/event-stream"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+      "type": "font/woff2"
+    }
+  ],
+  "expectedFault": true,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

@@ -1,0 +1,23 @@
+{
+  "id": "G7",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/resume"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/resume",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

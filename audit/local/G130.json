@@ -1,0 +1,19 @@
+{
+  "id": "G130",
+  "status": "PASS",
+  "note": "All explicit assertions passed.",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit": 0,
+      "stdout": "\n> ghost-hub-dashboard@0.1.0 build\n> tsc -b && vite build\n\nvite v5.4.21 building for production...\ntransforming...\n\u2713 1951 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                                                      2.27 kB \u2502 gzip:  1.34 kB\ndist/assets/barlow-condensed-vietnamese-500-normal-CsrJDWc5.woff     6.04 kB\ndist/assets/barlow-condensed-vietnamese-600-normal-CNlPk46_.woff     6.08 kB\ndist/assets/barlow-vietnamese-400-normal-BFeobeCK.woff               6.09 kB\ndist/assets/barlow-condensed-vietnamese-700-normal-DhIzd8Tb.woff     6.10 kB\ndist/assets/barlow-vietnamese-500-normal-GNfB7rCE.woff               6.15 kB\ndist/assets/barlow-vietnamese-600-normal-CA_GiK2e.woff               6.23 kB\ndist/assets/barlow-condensed-vietnamese-500-normal-DjeaNLFD.woff2    7.52 kB\ndist/assets/barlow-vietnamese-400-normal-Dpl4UHAZ.woff2              7.59 kB\ndist/assets/barlow-condensed-vietnamese-700-normal-DYeBwlKR.woff2    7.64 kB\ndist/assets/barlow-vietnamese-500-normal-zTViEIzf.woff2              7.67 kB\ndist/assets/barlow-condensed-vietnamese-600-normal-A5AYRdjN.woff2    7.70 kB\ndist/assets/barlow-vietnamese-600-normal-DcjprdFV.woff2              7.90 kB\ndist/assets/barlow-condensed-latin-ext-500-normal-B1RE8WP7.woff     11.86 kB\ndist/assets/barlow-condensed-latin-ext-600-normal-Clv9cIcR.woff     11.97 kB\ndist/assets/barlow-condensed-latin-ext-700-normal-BIHFfxf0.woff     11.99 kB\ndist/assets/barlow-latin-ext-400-normal-CvBsJvxq.woff               12.31 kB\ndist/assets/barlow-latin-ext-500-normal-CJPcKP2Q.woff               12.41 kB\ndist/assets/barlow-latin-ext-600-normal-DMVRjfRT.woff               12.60 kB\ndist/assets/barlow-condensed-latin-ext-500-normal-yA5ONLQ9.woff2    14.18 kB\ndist/assets/barlow-latin-ext-400-normal-HxX4XjxC.woff2              14.27 kB\ndist/assets/barlow-latin-ext-500-normal-DOaysfXq.woff2              14.42 kB\ndist/assets/barlow-condensed-latin-ext-600-normal-18ESti3H.woff2    14.52 kB\ndist/assets/barlow-condensed-latin-ext-700-normal-CwuXbfVR.woff2    14.64 kB\ndist/assets/barlow-latin-ext-600-normal-B8NK_A3D.woff2              14.97 kB\ndist/assets/barlow-condensed-latin-500-normal-HIEiP5Ov.woff         18.60 kB\ndist/assets/barlow-condensed-latin-700-normal-Dmwat-ge.woff         18.82 kB\ndist/assets/barlow-condensed-latin-600-normal-BFJEwTuo.woff         18.89 kB\ndist/assets/barlow-latin-500-normal-C1h8hMer.woff                   19.52 kB\ndist/assets/barlow-latin-400-normal-fsAxiSwU.woff                   19.58 kB\ndist/assets/barlow-latin-600-normal-CNwfPWQD.woff                   19.88 kB\ndist/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2        21.42 kB\ndist/assets/barlow-latin-500-normal-BPAOfeC8.woff2                  22.01 kB\ndist/assets/barlow-latin-400-normal-qiz4-Cze.woff2                  22.20 kB\ndist/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2        22.31 kB\ndist/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2        22.44 kB\ndist/assets/barlow-latin-600-normal-DILqtrty.woff2                  22.77 kB\ndist/assets/index-D_pus9pb.css                                      33.91 kB \u2502 gzip:  7.48 kB\ndist/assets/index-DG4q_cWV.js                                      183.50 kB \u2502 gzip: 58.97 kB\n\u2713 built in 738ms\n",
+      "stderr": ""
+    }
+  ]
+}

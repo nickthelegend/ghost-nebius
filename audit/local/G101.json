@@ -1,0 +1,33 @@
+{
+  "id": "G101",
+  "status": "PASS",
+  "note": "..                                                                       [100%]\n2 passed in 2.45s\n",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "hub.fake_lamp",
+        "--help"
+      ],
+      "exit": 0,
+      "stdout": "usage: python -m hub.fake_lamp [-h] [--hub HUB] [--port PORT] [--bpm BPM]\n                               [--reply REPLY]\n\noptions:\n  -h, --help     show this help message and exit\n  --hub HUB\n  --port PORT\n  --bpm BPM\n  --reply REPLY  what the person answers to a check-in; '' = silence\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_hub.py::test_link_hello_commands_and_csi",
+        "tests/test_hub.py::test_ask_voice_answer"
+      ],
+      "exit": 0,
+      "stdout": "..                                                                       [100%]\n2 passed in 2.45s\n",
+      "stderr": ""
+    }
+  ]
+}

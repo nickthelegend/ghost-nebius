@@ -1,0 +1,32 @@
+{
+  "id": "G65",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "expected-raw-response",
+      "url": "http://127.0.0.1:8780/../hub/server.py",
+      "status": 404
+    },
+    {
+      "event": "expected-raw-response",
+      "url": "http://127.0.0.1:8780/../../../../etc/passwd",
+      "status": 404
+    },
+    {
+      "event": "expected-raw-response",
+      "url": "http://127.0.0.1:8780/assets/",
+      "status": 404
+    },
+    {
+      "event": "expected-raw-response",
+      "url": "http://127.0.0.1:8780/not-present.js",
+      "status": 404
+    }
+  ],
+  "expectedFault": true,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

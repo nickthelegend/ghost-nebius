@@ -1,0 +1,11 @@
+{
+  "id": "G38",
+  "status": "PASS",
+  "note": "{\"events\":[[\"got_up\",\"bedroom\",\"watch\"],[\"moved\",\"bathroom\",\"watch\"],[\"fall_suspected\",\"bathroom\",\"watch\"],[\"long_stay\",\"bathroom\",\"check_in\"],[\"no_answer\",\"bathroom\",\"alert\"]],\"outcome\":\"family alerted (dry run: replay never places real calls)\",\"hubOutboundConnections\":0}",
+  "console": [],
+  "pageErrors": [],
+  "network": [],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

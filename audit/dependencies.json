@@ -1,0 +1,14 @@
+{
+  "G116": "needs NEBIUS_API_KEY",
+  "G117": "needs NEBIUS_API_KEY",
+  "G119": "needs TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM and ALERT_PHONE; no real-money call authorized",
+  "G120": "needs TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID",
+  "G121": "needs ESP32 CSI nodes on the LAN",
+  "G122": "needs ESP32 CSI nodes on the LAN",
+  "G123": "needs ESP32 CSI nodes on the LAN and local Wi-Fi configuration",
+  "G124": "needs HOTARU hardware",
+  "G125": "needs HOTARU hardware and its external GHOST-link firmware",
+  "G126": "needs ESP32 CSI nodes on the LAN and HOTARU hardware",
+  "G127": "needs HOTARU hardware and ESP32 CSI nodes on the LAN",
+  "G128": "needs HOTARU hardware and an Arduino harness/firmware integrating these headers"
+}

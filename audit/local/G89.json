@@ -1,0 +1,21 @@
+{
+  "id": "G89",
+  "status": "PASS",
+  "note": "All explicit assertions passed.",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "hub.replay",
+        "info",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/data/replay/3am.ghostcsi"
+      ],
+      "exit": 0,
+      "stdout": "{\n \"scene_start\": 1792185600.0,\n \"scale\": 20,\n \"synthetic\": true,\n \"csi_hz\": 30,\n \"markers\": [\n  {\n   \"t\": 0,\n   \"label\": \"Asleep, breathing ~12.5/min\"\n  },\n  {\n   \"t\": 42,\n   \"label\": \"Gets up\"\n  },\n  {\n   \"t\": 47,\n   \"label\": \"To the bathroom\"\n  },\n  {\n   \"t\": 56,\n   \"label\": \"Falls, then lies still breathing ~19/min\"\n  }\n ],\n \"jump_to\": 36.0,\n \"note\": \"Synthesized from the channel model in hub/scenario.py until a real night is recorded.\"\n}\n15594 frames, 130.0 s, rooms ['bedroom', 'bathroom', 'living', 'kitchen']\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "G108",
+  "status": "PASS",
+  "note": "..                                                                       [100%]\n2 passed in 2.86s\n",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_audit_contracts.py::test_decision_queue_recovers_after_invalid_event",
+        "tests/test_replay.py::test_the_3am_night_end_to_end"
+      ],
+      "exit": 0,
+      "stdout": "..                                                                       [100%]\n2 passed in 2.86s\n",
+      "stderr": ""
+    }
+  ]
+}
