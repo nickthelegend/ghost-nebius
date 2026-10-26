@@ -1,0 +1,21 @@
+{
+  "id": "G114",
+  "status": "PASS",
+  "note": ".                                                                        [100%]\n1 passed in 0.99s\n",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_hub.py::test_link_hello_commands_and_csi"
+      ],
+      "exit": 0,
+      "stdout": ".                                                                        [100%]\n1 passed in 0.99s\n",
+      "stderr": ""
+    }
+  ]
+}

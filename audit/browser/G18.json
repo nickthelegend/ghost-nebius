@@ -1,0 +1,34 @@
+{
+  "id": "G18",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/restart"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/restart",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/pause"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/pause",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

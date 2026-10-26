@@ -35,7 +35,7 @@ export function Acquisition({ snap, act, onPick }: { snap: Snapshot; act: (p: st
     );
   }
   const span = r.end - r.start;
-  const pct = (t: number) => Math.min(100, Math.max(0, ((t - r.start) / span) * 100));
+  const pct = (t: number) => span > 0 ? Math.min(100, Math.max(0, ((t - r.start) / span) * 100)) : 0;
   const x = (t: number) => `${pct(t)}%`;
   const gap = narrow ? 26 : 9;
   const truthLanes = lanes(r.markers.map((m) => pct(r.start + m.t * r.scale)), gap, narrow ? 3 : 2);

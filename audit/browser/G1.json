@@ -1,0 +1,11 @@
+{
+  "id": "G1",
+  "status": "PASS",
+  "note": "{\"url\":\"http://127.0.0.1:8780\",\"browser\":\"156.0.8078.4\",\"builtIndexMatch\":true}",
+  "console": [],
+  "pageErrors": [],
+  "network": [],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

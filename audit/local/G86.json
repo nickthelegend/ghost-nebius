@@ -1,0 +1,57 @@
+{
+  "id": "G86",
+  "status": "PASS",
+  "note": "All explicit assertions passed.",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "hub.replay",
+        "info",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/invalid.ghostcsi"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 194, in <module>\n    rec = Recording.load(a.path)\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 75, in load\n    data = gzip.open(path, \"rb\").read()\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/gzip.py\", line 351, in read\n    return self._buffer.read(size)\n           ~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/compression/_common/_streams.py\", line 118, in readall\n    while data := self.read(sys.maxsize):\n                  ~~~~~~~~~^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/gzip.py\", line 572, in read\n    if not self._read_gzip_header():\n           ~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/gzip.py\", line 541, in _read_gzip_header\n    last_mtime = _read_gzip_header(self._fp)\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/gzip.py\", line 501, in _read_gzip_header\n    raise BadGzipFile('Not a gzipped file (%r)' % magic)\ngzip.BadGzipFile: Not a gzipped file (b'ba')\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "hub.replay",
+        "info",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/magic.ghostcsi"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 194, in <module>\n    rec = Recording.load(a.path)\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 77, in load\n    raise ValueError(f\"{path} is not a GHOST CSI recording\")\nValueError: /var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/magic.ghostcsi is not a GHOST CSI recording\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "hub.replay",
+        "info",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/record.ghostcsi"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 194, in <module>\n    rec = Recording.load(a.path)\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 96, in load\n    raise ValueError(\"truncated frame header\")\nValueError: truncated frame header\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "hub.replay",
+        "info",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/missing.ghostcsi"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 194, in <module>\n    rec = Recording.load(a.path)\n  File \"/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/hub/replay.py\", line 75, in load\n    data = gzip.open(path, \"rb\").read()\n           ~~~~~~~~~^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/gzip.py\", line 66, in open\n    binary_file = GzipFile(filename, gz_mode, compresslevel)\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/gzip.py\", line 210, in __init__\n    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')\n                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/missing.ghostcsi'\n"
+    }
+  ]
+}

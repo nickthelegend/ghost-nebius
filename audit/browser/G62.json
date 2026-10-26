@@ -1,0 +1,11 @@
+{
+  "id": "G62",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "console": [],
+  "pageErrors": [],
+  "network": [],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

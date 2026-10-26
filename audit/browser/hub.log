@@ -1,0 +1,79 @@
+18:45:10 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:45:12 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:45:48 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:45:50 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:45:54 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:45:57 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:46:13 [rules] no_answer in bathroom -> alert (alert): No answer to the check-in after 15 s. Alerting the family. [E1][E3][E4]
+18:46:13 calling family: family alerted (dry run: replay never places real calls)
+18:46:18 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:46:20 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:46:24 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:46:27 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:46:30 [rules] answered in bathroom -> none (none): They answered (button). Standing down. [E1][E3][E4]
+18:46:34 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:46:36 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:46:40 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:46:43 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:46:46 [rules] answered in bathroom -> none (none): They answered (button). Standing down. [E1][E3][E4]
+18:46:50 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:46:52 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:46:56 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:46:59 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:47:09 [rules] answered in bathroom -> none (none): They answered (button). Standing down. [E1][E3][E4]
+18:47:13 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:47:15 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:47:19 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:47:22 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:47:25 [rules] answered in bathroom -> none (none): They answered (button). Standing down. [E1][E3][E4]
+18:47:29 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:47:31 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:47:34 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:47:38 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:47:53 [rules] no_answer in bathroom -> alert (alert): No answer to the check-in after 15 s. Alerting the family. [E1][E3][E4]
+18:47:53 calling family: family alerted (dry run: replay never places real calls)
+18:47:57 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:47:59 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:48:02 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:48:06 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:48:26 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:48:28 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:48:31 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:48:35 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:48:57 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:48:59 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:49:01 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:49:04 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:49:08 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:49:09 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:49:13 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:49:17 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:49:20 [rules] answered in bathroom -> none (none): They answered (button). Standing down. [E1][E3][E4]
+18:49:26 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:49:28 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:49:31 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:49:35 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:49:50 [rules] no_answer in bathroom -> alert (alert): No answer to the check-in after 15 s. Alerting the family. [E1][E3][E4]
+18:49:50 calling family: family alerted (dry run: replay never places real calls)
+18:50:04 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:50:06 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:50:09 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:50:13 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:50:16 [rules] answered in bathroom -> none (none): They answered (button). Standing down. [E1][E3][E4]
+18:50:18 GHOST hub listening on tcp 38770, csi udp 38771
+18:50:18 GHOST dashboard on http://127.0.0.1:8780  (live boards)
+18:50:19 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:50:20 GHOST dashboard on http://127.0.0.1:8780  (replaying custom.ghostcsi, virtual HOTARU)
+18:50:21 GHOST dashboard on http://127.0.0.1:8780  (replaying plain.ghostcsi, virtual HOTARU)
+18:50:22 GHOST dashboard on http://127.0.0.1:8780  (replaying empty.ghostcsi, virtual HOTARU)
+18:50:22 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:50:23 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:50:26 [rules] got_up in bedroom -> watch (watch): Movement in the bedroom after 11.3 minutes of stillness at night: probably getting up. [E1][E2][E3]
+18:50:28 [rules] moved in bathroom -> watch (watch): Now moving in the bathroom, 2.7 min after getting up in the bedroom. Turning to follow. [E1][E2][E3]
+18:50:32 [rules] fall_suspected in bathroom -> watch (watch): A sharp motion burst in the bathroom (jolt 1197, walking stays under 600), then 120 s of stillness: possibly a fall. Watching closely. [E1][E2][E3]
+18:50:35 [rules] long_stay in bathroom -> check_in (check_in): 9.3 min in the bathroom, 6.3 min of it without moving. Visits within 2 h of 03:07 usually last 4.0 min (longest 5.0 of 9). Checking in. [E1][E2][E3]
+18:50:44 [rules] answered in bathroom -> none (none): They answered (voice). Standing down. [E1][E3][E4]
+18:50:45 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)
+18:50:46 GHOST hub listening on tcp 38770, csi udp 38771
+18:50:46 GHOST dashboard on http://127.0.0.1:8780  (live boards)
+18:50:47 GHOST dashboard on http://127.0.0.1:8780  (replaying 3am.ghostcsi, virtual HOTARU)

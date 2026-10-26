@@ -1,0 +1,29 @@
+{
+  "id": "G77",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 409 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    }
+  ],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/lamp/tap"
+    },
+    {
+      "event": "response",
+      "status": 409,
+      "url": "http://127.0.0.1:8780/api/lamp/tap",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": true,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

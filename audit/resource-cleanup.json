@@ -1,0 +1,38 @@
+{
+  "checked_utc": "2026-10-26T13:36:10.778530+00:00",
+  "owned_hub_and_chrome_pids": [
+    22859,
+    23132,
+    23134,
+    23136,
+    23138,
+    23144,
+    23235,
+    30598,
+    30693,
+    32134,
+    92204,
+    92212,
+    92773,
+    94049,
+    99610,
+    99704,
+    99808
+  ],
+  "remaining_owned_processes": [],
+  "earlier_owned_main_processes_checked": [
+    43080,
+    43181,
+    98843,
+    99024,
+    34186,
+    34570,
+    34189,
+    78349,
+    78350
+  ],
+  "ghost_slot_owner_present": false,
+  "unrelated_processes_untouched": true,
+  "port_used": 8780,
+  "chrome_for_testing_processes_at_cleanup": []
+}

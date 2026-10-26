@@ -1,0 +1,24 @@
+{
+  "id": "G115",
+  "status": "PASS",
+  "note": "..........                                                               [100%]\n10 passed in 11.26s\n",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_act.py",
+        "tests/test_hub.py::test_ask_voice_answer",
+        "tests/test_hub.py::test_ask_button_answer",
+        "tests/test_hub.py::test_ask_no_answer"
+      ],
+      "exit": 0,
+      "stdout": "..........                                                               [100%]\n10 passed in 11.26s\n",
+      "stderr": ""
+    }
+  ]
+}

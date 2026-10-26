@@ -41,7 +41,7 @@ IEEE 802.11bf), and we credit it. GHOST closes the loop around it:
 - The dashboard is a live instrument panel: floor plan, breathing traces, routine mask test, alert
   captures with cited evidence, and the lamp's output.
 - A recorded-CSI format lets the 3 am scene replay end to end with no hardware.
-- 47 tests.
+- 57 tests.
 
 **Who it's for.** Older people living alone, their families, and senior-living operators. Cameras
 in bedrooms and bathrooms are a non-starter; a lamp that notices is not. Business: $15–30 per

@@ -17,6 +17,7 @@ import argparse
 import asyncio
 import json
 import logging
+import math
 import mimetypes
 import os
 import time
@@ -55,10 +56,10 @@ class Session:
         if recording is not None:
             self.rec = Recording.load(recording)
             live = ROOT / "data" / "live" / "routine.json"
-            if self.rec.header.get("synthetic") or not live.exists():
+            if self.rec.header.get("synthetic"):
                 self.routine = scenario.build_routine(self.rec.scene_start)  # the demo's two weeks
             else:
-                self.routine = Routine.load(live)
+                self.routine = Routine.load(live) if live.exists() else Routine()
                 self.routine.fit(before=self.rec.scene_start)
             self.hub = lamp_hub or VirtualHub(VirtualLamp(reply=reply))
             self.g = Guardian(self.hub, Config.replay() if self.rec.scale > 1 else Config(), rooms, reasoner, "auto",
@@ -162,6 +163,8 @@ class Dashboard:
     async def restart(self, at: float = 0.0) -> None:
         if self.session:
             self.session.stop()
+            await asyncio.gather(*(task for task in (self.session.task, self.session.g._worker) if task),
+                                 return_exceptions=True)
         self.session = self.make_session()
         await self.session.start(at)
 
@@ -179,10 +182,17 @@ class Dashboard:
             writer.close()
             return
         headers = {k.strip().lower(): v.strip() for k, v in (l.split(":", 1) for l in lines[1:] if ":" in l)}
-        if int(headers.get("content-length", 0) or 0):
-            await reader.readexactly(min(int(headers["content-length"]), 65536))
-        url = urlsplit(target)
-        q = {k: v[-1] for k, v in parse_qs(url.query).items()}
+        try:
+            length = int(headers.get("content-length", 0) or 0)
+            if length < 0 or length > 65536:
+                raise ValueError("invalid Content-Length")
+            if length:
+                await asyncio.wait_for(reader.readexactly(length), 10)
+            url = urlsplit(target)
+        except (ValueError, asyncio.IncompleteReadError, asyncio.TimeoutError, ConnectionError):
+            writer.close()
+            return
+        q = {k: v[-1] for k, v in parse_qs(url.query, keep_blank_values=True).items()}
         try:
             if url.path == "/api/stream" and method == "GET":
                 await self._stream(writer)
@@ -201,7 +211,7 @@ class Dashboard:
     async def route(self, method: str, path: str, q: dict) -> tuple[int, bytes, str]:
         s = self.session
         js = "application/json"
-        if path == "/api/state":
+        if path == "/api/state" and method in ("GET", "POST"):
             return 200, json.dumps(s.snapshot()).encode(), js
         if method == "POST" and path.startswith("/api/"):
             act = path[5:]
@@ -214,7 +224,13 @@ class Dashboard:
             elif act == "replay/resume" and s.replay:
                 s.replay.paused = False
             elif act == "replay/speed" and s.replay:
-                s.replay.speed = max(0.25, min(4.0, float(q.get("x", 1))))
+                try:
+                    speed = float(q.get("x") or 1)
+                    if not math.isfinite(speed):
+                        raise ValueError("nonfinite speed")
+                except (TypeError, ValueError):
+                    return 400, b'{"error": "speed must be a finite number"}', js
+                s.replay.speed = max(0.25, min(4.0, speed))
             elif act == "lamp/tap":
                 lamp = s.hub.lamp if s.hub else None
                 if not lamp or not hasattr(lamp, "tap"):

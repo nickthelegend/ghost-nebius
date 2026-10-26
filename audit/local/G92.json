@@ -1,0 +1,21 @@
+{
+  "id": "G92",
+  "status": "PASS",
+  "note": "All explicit assertions passed.",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "-m",
+        "hub.routine",
+        "fit",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/routine.json"
+      ],
+      "exit": 0,
+      "stdout": "fit /var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-l853d9_l/routine.json: 15 days, rooms ['bathroom', 'bedroom', 'kitchen', 'living']\n",
+      "stderr": ""
+    }
+  ]
+}
