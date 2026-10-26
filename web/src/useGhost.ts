@@ -3,7 +3,7 @@ import type { Snapshot } from "./types";
 
 export type Link = "connecting" | "live" | "lost";
 
-/** The hub's snapshot stream (server-sent events), with a polling fallback. */
+/** The hub's snapshot stream (server-sent events), with reconnect on failure. */
 export function useGhost() {
   const [snap, setSnap] = useState<Snapshot | null>(null);
   const [link, setLink] = useState<Link>("connecting");
@@ -16,8 +16,12 @@ export function useGhost() {
     let closed = false;
     if (new URLSearchParams(location.search).has("once")) {
       // one frozen snapshot, no stream: for screenshots and print
-      fetch("api/state").then((r) => r.json()).then((j) => { setSnap(j); setLink("live"); }).catch(() => setLink("lost"));
-      return;
+      const controller = new AbortController();
+      fetch("api/state", { signal: controller.signal }).then((r) => {
+        if (!r.ok) throw new Error(`Snapshot refused (${r.status})`);
+        return r.json();
+      }).then((j) => { if (!closed) { setSnap(j); setLink("live"); } }).catch(() => { if (!closed) setLink("lost"); });
+      return () => { closed = true; controller.abort(); };
     }
     const open = () => {
       es = new EventSource("api/stream");

@@ -46,6 +46,7 @@ export default function App() {
   return (
     <div className="chassis">
       <BrandPlate snap={snap} link={link} />
+      {snap && link === "lost" && <p className="err" role="status"><b>Lost the hub.</b> Last received snapshot; reconnecting…</p>}
       {!snap ? (
         <div className="boot screen">
           <p><b>{link === "lost" ? "Lost the hub." : "Connecting to the GHOST hub…"}</b></p>
