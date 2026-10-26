@@ -118,6 +118,7 @@ class Lamp:
         self.state = LampState()
         self.sent: list[tuple[float, dict]] = []  # recent commands, for the dashboard
         self.clock = time.time  # the guardian's clock (scene time in a replay)
+        self._button_answer = False
 
     @property
     def peer(self) -> str:
@@ -147,6 +148,8 @@ class Lamp:
             self._waiters = [w for w in self._waiters if w[1] is not fut]
 
     def _dispatch(self, ev: dict) -> None:
+        if ev.get("ev") == "ok" and self.state.checkin:
+            self._button_answer = True
         if ev.get("ev") == "hello":
             self.hello = ev
         elif ev.get("ev") == "status":
@@ -202,24 +205,29 @@ class Lamp:
 
     async def ask(self, text: str, listen_ms: int = 5000, grace_s: float = 6) -> dict:
         """Say something, then listen, while also accepting a tap ("I'm OK") as the answer."""
-        await self.checkin(True)
-        await self.say(text)
-        await self.send("listen", ms=listen_ms)
-        ev = await self.wait_event(lambda e: e.get("ev") in ("heard", "ok"), listen_ms / 1000 + 20)
-        await self.checkin(False)
-        if ev is None:
-            return {"answered": False, "how": "timeout", "text": ""}
-        if ev["ev"] == "ok":
-            return {"answered": True, "how": "button", "text": ""}
-        text = (ev.get("text") or "").strip()
-        if not text:
-            # Nothing said: a tap can still come in once the recording ends.
+        self._button_answer = False
+        try:
             await self.checkin(True)
-            late = await self.wait_event(lambda e: e.get("ev") == "ok", grace_s)
-            await self.checkin(False)
-            if late:
+            await self.say(text)
+            if self._button_answer:
                 return {"answered": True, "how": "button", "text": ""}
-        return {"answered": bool(text), "how": "voice" if text else "silence", "text": text}
+            await self.send("listen", ms=listen_ms)
+            if self._button_answer:
+                return {"answered": True, "how": "button", "text": ""}
+            ev = await self.wait_event(lambda e: e.get("ev") in ("heard", "ok"), listen_ms / 1000 + 20)
+            if self._button_answer:
+                return {"answered": True, "how": "button", "text": ""}
+            if ev is None:
+                return {"answered": False, "how": "timeout", "text": ""}
+            text = (ev.get("text") or "").strip()
+            if not text:
+                # Stay armed through silence's grace interval, including taps during speech.
+                await self.wait_event(lambda e: e.get("ev") == "ok", grace_s)
+                if self._button_answer:
+                    return {"answered": True, "how": "button", "text": ""}
+            return {"answered": bool(text), "how": "voice" if text else "silence", "text": text}
+        finally:
+            await self.checkin(False)
 
     async def lamp(self, on: bool, bright: int | None = None):
         await self.send("lamp", on=on, **({"bright": bright} if bright is not None else {}))

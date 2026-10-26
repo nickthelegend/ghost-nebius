@@ -163,6 +163,8 @@ class Dashboard:
     async def restart(self, at: float = 0.0) -> None:
         if self.session:
             self.session.stop()
+            await asyncio.gather(*(task for task in (self.session.task, self.session.g._worker) if task),
+                                 return_exceptions=True)
         self.session = self.make_session()
         await self.session.start(at)
 
