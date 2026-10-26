@@ -79,7 +79,7 @@ says "Setup required: NEBIUS_API_KEY"; captures remain attributed to rules + tem
 | `run.py` | the guardian; `python -m hub.run` runs it headless |
 
 ```bash
-.venv/bin/python -m pytest -q        # 47 tests: sensing, routine, rules, citations, act path, the whole night
+.venv/bin/python -m pytest -q        # 56 tests: sensing, routine, rules, citations, act path, the whole night
 ```
 
 ## Prior art
