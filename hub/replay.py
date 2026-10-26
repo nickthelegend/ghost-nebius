@@ -84,12 +84,20 @@ class Recording:
             kind = data[at]
             at += 1
             if kind == 1:
+                if at + 2 > len(data):
+                    raise ValueError("truncated room record")
                 i, n = data[at], data[at + 1]
+                if at + 2 + n > len(data):
+                    raise ValueError("truncated room name")
                 names[i] = data[at + 2:at + 2 + n].decode()
                 at += 2 + n
             elif kind == 0:
+                if at + rec.size > len(data):
+                    raise ValueError("truncated frame header")
                 t, i, ms, rssi, n = rec.unpack_from(data, at)
                 at += rec.size
+                if at + n > len(data) or i not in names:
+                    raise ValueError("truncated frame amplitudes or unknown room")
                 frames.append((t, CsiFrame(ms, rssi, data[at:at + n], source=names[i])))
                 at += n
             else:
