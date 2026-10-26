@@ -1,7 +1,0 @@
-date: 2026-10-26
-command: .venv/bin/python -m pytest -q
-exit_code: 0
-summary: 47 passed in 82.64s (0:01:22)
-readme_claim: 47 tests
-result: README claim matches this run. 47 passed, 0 failed, 0 errors.
-failures: none

@@ -1,29 +1,38 @@
-# Verified audit — 2026-10-26
+# Independent audit — 2026-10-26
 
-AUDIT.md contains **122 PASS, 0 FAIL, 12 UNTESTED** across 134 rows. No testable row remains PENDING. The final run contains 86 browser/API rows and 36 local CLI/algorithm/documentation rows.
+[AUDIT.md](AUDIT.md) records **122 PASS / 0 FAIL / 12 UNTESTED** across 134 rows, with zero PENDING and zero testable FAIL. The final run executed **G1–G134 in table order**, including every previous PASS: 86 browser/API checks and 36 local CLI, protocol, algorithm and documentation checks. [Timestamped order](audit/sequence.jsonl) and [run metadata](audit/run.json) identify this run.
 
-The complete command `.venv/bin/python -m pytest -q` exited **0: 57 passed in 68.02s**. The Phase 1 baseline was 47 passed; ten regressions were added. See [the full-suite output](audit/pytest-final.txt).
+`.venv/bin/python -m pytest -q` exited **0: 57 passed in 68.00s (0:01:07)**. Test collection independently reported 57 tests. [Full output](audit/pytest-final.txt).
 
-Chrome for Testing **156.0.8078.4**, driven through Playwright, tested the committed `web/dist` served by `python -m hub.server` at **http://127.0.0.1:8780**. The index served by the hub matched the built file byte for byte. Desktop checks used 1440px width; phone checks used 375px. Screenshots, console/page errors, and requests/responses are linked per row in [AUDIT.md](AUDIT.md).
+Chrome for Testing **156.0.8078.4**, driven by Playwright, tested the production `web/dist` served by `.venv/bin/python -m hub.server --host 127.0.0.1 --port 8780` at **http://127.0.0.1:8780**. Desktop width was 1440px; phone width was 375px. The served index matched the built file byte for byte. `npm run build --prefix web` passed and reproduced the existing build.
 
-G8 passed with NEBIUS_API_KEY, GHOST_REASON_MODEL and GHOST_LOG_MODEL unset: the Reason lamp displayed **Setup required: NEBIUS_API_KEY**, `model.online` was false, and captures used rules/templates. No Token Factory request was sent. The browser request log and the hub's observed outbound socket-connect log also show no Twilio or Telegram request during replay. Missing-credential alert functions returned `printed`.
+G8 passed with the model configuration unset: the Reason lamp displayed **Setup required: NEBIUS_API_KEY**, `model.online` was false, and capture attribution stayed on rules/templates. The browser and hub socket-connect logs recorded **zero requests to api.tokenfactory.nebius.com**, Twilio or Telegram. The missing-credential alert functions returned `printed`, with no socket connection. Live Nebius rows G116/G117 and the ten unavailable hardware/alert rows remain **UNTESTED**, each with its exact dependency in [dependencies.json](audit/dependencies.json).
 
-Normal browser flows had no console errors, page errors, failed requests, or unexpected HTTP errors. Deliberate hub shutdowns, explicit negative API probes and intentional stream cancellation are identified in their logs. G83's four 404 responses are required by its expected result; its classification was corrected against the unchanged raw console/network evidence. No HTTP 500 or page error was accepted.
+Every browser row retains console, page-error and network evidence. There were **zero page errors, unexpected console/network errors or HTTP 500 responses**. Expected negative probes (400/404/405/409), deliberate hub shutdowns and intentional stream cancellation remain visible in the logs; they are not counted as normal successful requests.
 
-No replacement snapshots, mocked cloud responses, or fallback sensor data were used for browser passes. The bundled night retained its **synthetic night** label and synthetic-history disclaimer. Virtual HOTARU stayed explicitly virtual. Existing model-mocked unit tests are not evidence of live Nebius integration. The twelve [missing-dependency rows](audit/dependencies.json) remain UNTESTED; physical ESP32/HOTARU operation and live alert sends are not claimed.
+No mocks, response stubs or substituted snapshots stood in for the tested browser surface or production rules, sensing, persistence and routing logic. The following simulations remain explicit:
 
-Local rows retain actual command output and per-row assertions. Their shared dashboard screenshot provides running-product context, not proof of the CLI result. Headless save/reload was exercised through the real CLI; the production maintenance function also wrote/read a real JSON journal across an eligible calendar boundary and verified that a second tick did not fit another model. That test used the bundled synthetic history and explicit timestamp inputs, without substituting routine logic, cloud services, hardware or a clock implementation.
+- The bundled replay and 14-day routine are synthetic and labelled in the product; HOTARU is explicitly virtual.
+- G101 runs the actual, explicitly synthetic `hub.fake_lamp` CLI against real localhost TCP/UDP, including retry, hello, CSI, commands and voice reply. Protocol unit tests also use `FakeLamp`; none validates physical hardware.
+- Four full-suite model tests replace `Reasoner._chat`: two in `tests/test_agent.py` and two in `tests/test_evidence.py`. They verify local contracts only and do not establish live Nebius success.
+- G3/G49/G51 delay genuine HTTP requests to reproduce boot, interruption and refusal races; they do not replace any response. EventSource instrumentation only records real snapshots and connection counts. Local algorithms use deterministic input fixtures and real JSON files.
 
-Every screenshot is WebP and at most 200,000 bytes. Only final-plan evidence is retained; `audit/` is under 15 MiB. [Cleanup evidence](audit/resource-cleanup.json) records the owned hub/Chrome PIDs and slot release. Port 4180 and unrelated processes were left alone. Nothing was pushed or deployed.
+No production fix was needed in this re-audit. The audit harness now executes rows in order, resets each required precondition, allows the full wall-clock check-in cycle, observes CLI socket connections separately and exercises the fake-lamp CLI directly. G32/G77/G82 passed from their starting states after correcting harness timing, setup and SSE synchronization, followed by the entire final run. Existing product fix commits remain named per former FAIL in AUDIT.md.
 
-To reproduce on this machine, install the Python requirements, run `npm ci` in `web/`, and install Playwright with `npm install --prefix /tmp/ghost-browser-tools playwright`. The browser harness uses the installed Chrome for Testing binary. Acquire the shared heavy slot in the foreground before the browser harness, and release it in an EXIT trap:
+Only the final full-plan evidence is retained. All 86 screenshots are WebP, the largest is **93,930 bytes** (limit 200,000), and `audit/` remains below 15 MiB. [Final checks](audit/final-verification.json) and [cleanup](audit/resource-cleanup.json) record the assertions, owned PIDs, no remaining owned hub/Chrome/CLI processes and release of **ghost-nebius-reaudit** through an EXIT trap. Unrelated processes were left alone. No external service call, deployment, mainnet action, real-money action or origin push was made.
+
+Final-run commands (the browser harness invokes each selected local row itself):
 
 ```sh
-/Volumes/Extreme\ SSD/Projects/grokbot/tools/heavy-slot.sh acquire ghost-nebius-audit
-trap '/Volumes/Extreme\ SSD/Projects/grokbot/tools/heavy-slot.sh release ghost-nebius-audit' EXIT
+npm run build --prefix web
+unset NEBIUS_API_KEY GHOST_REASON_MODEL GHOST_LOG_MODEL GHOST_LLM_BASE_URL
+unset TWILIO_ACCOUNT_SID TWILIO_AUTH_TOKEN TWILIO_FROM ALERT_PHONE TELEGRAM_BOT_TOKEN TELEGRAM_CHAT_ID
+slot='/Volumes/Extreme SSD/Projects/grokbot/tools/heavy-slot.sh'
+"$slot" acquire ghost-nebius-reaudit
+trap '"$slot" release ghost-nebius-reaudit' EXIT
 node audit/browser-audit.mjs
+.venv/bin/python -m pytest -q > audit/pytest-final.txt 2>&1
+.venv/bin/python audit/finalize-audit.py
 ```
 
-Run `audit/local-audit.py` while the same audit owns the slot, because its headless CLI checks bind local hub sockets. Run the full pytest command above, then `audit/finalize-audit.py`; finalization rejects missing rows, failures, changed expected results, oversized screenshots or excess evidence size.
-
-[Commit subjects](audit/commit-subjects.txt) list the separate fixes and final evidence commit.
+This run used the existing project Python environment and web dependencies through temporary worktree links; Playwright is installed under `/tmp/ghost-browser-tools`. The Chrome executable is recorded in the harness. These worker changes are left uncommitted for Loom, as required by the authoritative session instructions. [Existing fix commit subjects](audit/commit-subjects.txt) remain available for review.

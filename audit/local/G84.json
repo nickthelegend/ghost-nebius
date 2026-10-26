@@ -7,113 +7,113 @@
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.server",
         "--help"
       ],
       "exit": 0,
-      "stdout": "usage: python -m hub.server [-h] [--host HOST] [--port PORT]\n                            [--recording RECORDING] [--live] [--lamp]\n                            [--lamp-port LAMP_PORT] [--speed SPEED]\n                            [--reply REPLY]\n\noptions:\n  -h, --help            show this help message and exit\n  --host HOST\n  --port PORT\n  --recording RECORDING\n                        a .ghostcsi file (default: the bundled 3 am night)\n  --live                the real boards instead of a recording\n  --lamp                let the real HOTARU act out the replay\n  --lamp-port LAMP_PORT\n  --speed SPEED\n  --reply REPLY         what the virtual person answers a check-in ('' =\n                        silence)\n",
+      "stdout": "usage: server.py [-h] [--host HOST] [--port PORT] [--recording RECORDING]\n                 [--live] [--lamp] [--lamp-port LAMP_PORT] [--speed SPEED]\n                 [--reply REPLY]\n\noptions:\n  -h, --help            show this help message and exit\n  --host HOST\n  --port PORT\n  --recording RECORDING\n                        a .ghostcsi file (default: the bundled 3 am night)\n  --live                the real boards instead of a recording\n  --lamp                let the real HOTARU act out the replay\n  --lamp-port LAMP_PORT\n  --speed SPEED\n  --reply REPLY         what the virtual person answers a check-in ('' =\n                        silence)\n",
       "stderr": ""
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.server",
         "--not-a-real-option"
       ],
       "exit": 2,
       "stdout": "",
-      "stderr": "usage: python -m hub.server [-h] [--host HOST] [--port PORT]\n                            [--recording RECORDING] [--live] [--lamp]\n                            [--lamp-port LAMP_PORT] [--speed SPEED]\n                            [--reply REPLY]\npython -m hub.server: error: unrecognized arguments: --not-a-real-option\n"
+      "stderr": "usage: server.py [-h] [--host HOST] [--port PORT] [--recording RECORDING]\n                 [--live] [--lamp] [--lamp-port LAMP_PORT] [--speed SPEED]\n                 [--reply REPLY]\nserver.py: error: unrecognized arguments: --not-a-real-option\n"
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.run",
         "--help"
       ],
       "exit": 0,
-      "stdout": "usage: python -m hub.run [-h] [--demo] [--port PORT] [--follow FOLLOW]\n\noptions:\n  -h, --help       show this help message and exit\n  --demo\n  --port PORT\n  --follow FOLLOW  room whose breathing HOTARU's ring follows ('auto', a name,\n                   or '' = off)\n",
+      "stdout": "usage: run.py [-h] [--demo] [--port PORT] [--follow FOLLOW]\n\noptions:\n  -h, --help       show this help message and exit\n  --demo\n  --port PORT\n  --follow FOLLOW  room whose breathing HOTARU's ring follows ('auto', a name,\n                   or '' = off)\n",
       "stderr": ""
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.run",
         "--not-a-real-option"
       ],
       "exit": 2,
       "stdout": "",
-      "stderr": "usage: python -m hub.run [-h] [--demo] [--port PORT] [--follow FOLLOW]\npython -m hub.run: error: unrecognized arguments: --not-a-real-option\n"
+      "stderr": "usage: run.py [-h] [--demo] [--port PORT] [--follow FOLLOW]\nrun.py: error: unrecognized arguments: --not-a-real-option\n"
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.replay",
         "--help"
       ],
       "exit": 0,
-      "stdout": "usage: python -m hub.replay [-h] {record,info} ...\n\npositional arguments:\n  {record,info}\n\noptions:\n  -h, --help     show this help message and exit\n",
+      "stdout": "usage: replay.py [-h] {record,info} ...\n\npositional arguments:\n  {record,info}\n\noptions:\n  -h, --help     show this help message and exit\n",
       "stderr": ""
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.replay",
         "--not-a-real-option"
       ],
       "exit": 2,
       "stdout": "",
-      "stderr": "usage: python -m hub.replay [-h] {record,info} ...\npython -m hub.replay: error: the following arguments are required: cmd\n"
+      "stderr": "usage: replay.py [-h] {record,info} ...\nreplay.py: error: the following arguments are required: cmd\n"
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.demo_3am",
         "--help"
       ],
       "exit": 0,
-      "stdout": "usage: python -m hub.demo_3am [-h] [--auto] [--port PORT]\n\noptions:\n  -h, --help   show this help message and exit\n  --auto\n  --port PORT\n",
+      "stdout": "usage: demo_3am.py [-h] [--auto] [--port PORT]\n\noptions:\n  -h, --help   show this help message and exit\n  --auto\n  --port PORT\n",
       "stderr": ""
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.demo_3am",
         "--not-a-real-option"
       ],
       "exit": 2,
       "stdout": "",
-      "stderr": "usage: python -m hub.demo_3am [-h] [--auto] [--port PORT]\npython -m hub.demo_3am: error: unrecognized arguments: --not-a-real-option\n"
+      "stderr": "usage: demo_3am.py [-h] [--auto] [--port PORT]\ndemo_3am.py: error: unrecognized arguments: --not-a-real-option\n"
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.fake_lamp",
         "--help"
       ],
       "exit": 0,
-      "stdout": "usage: python -m hub.fake_lamp [-h] [--hub HUB] [--port PORT] [--bpm BPM]\n                               [--reply REPLY]\n\noptions:\n  -h, --help     show this help message and exit\n  --hub HUB\n  --port PORT\n  --bpm BPM\n  --reply REPLY  what the person answers to a check-in; '' = silence\n",
+      "stdout": "usage: fake_lamp.py [-h] [--hub HUB] [--port PORT] [--bpm BPM] [--reply REPLY]\n\noptions:\n  -h, --help     show this help message and exit\n  --hub HUB\n  --port PORT\n  --bpm BPM\n  --reply REPLY  what the person answers to a check-in; '' = silence\n",
       "stderr": ""
     },
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.fake_lamp",
         "--not-a-real-option"
       ],
       "exit": 2,
       "stdout": "",
-      "stderr": "usage: python -m hub.fake_lamp [-h] [--hub HUB] [--port PORT] [--bpm BPM]\n                               [--reply REPLY]\npython -m hub.fake_lamp: error: unrecognized arguments: --not-a-real-option\n"
+      "stderr": "usage: fake_lamp.py [-h] [--hub HUB] [--port PORT] [--bpm BPM] [--reply REPLY]\nfake_lamp.py: error: unrecognized arguments: --not-a-real-option\n"
     }
   ]
 }

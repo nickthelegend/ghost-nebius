@@ -1,34 +1,42 @@
-hub PID 99610 port 8780 args
-Chrome PID 99704
-stopped hub PID 99610
-hub PID 99808 port 8780 args
-stopped hub PID 99808
-hub PID 92204 port 8780 args
-stopped hub PID 92204
-hub PID 92212 port 8780 args
-stopped hub PID 92212
-hub PID 92773 port 8780 args
-stopped hub PID 92773
-hub PID 94049 port 8780 args
-stopped hub PID 94049
-hub PID 22859 port 8780 args --live --lamp-port 38770
-stopped hub PID 22859
-hub PID 23132 port 8780 args
-stopped hub PID 23132
-hub PID 23134 port 8780 args --recording /tmp/ghost-audit-observer-U0nBBi/custom.ghostcsi --speed 2
-stopped hub PID 23134
-hub PID 23136 port 8780 args --recording /tmp/ghost-audit-observer-U0nBBi/plain.ghostcsi --speed 2
-stopped hub PID 23136
-hub PID 23138 port 8780 args --recording /tmp/ghost-audit-observer-U0nBBi/empty.ghostcsi
-stopped hub PID 23138
-hub PID 23144 port 8780 args
-stopped hub PID 23144
-hub PID 23235 port 8780 args --reply I'm OK
-stopped hub PID 23235
-hub PID 30598 port 8780 args
-stopped hub PID 30598
-hub PID 30693 port 8780 args --live --lamp-port 38770
-stopped hub PID 30693
-hub PID 32134 port 8780 args
-closed Chrome PID 99704
-stopped hub PID 32134
+hub PID 54072 port 8780
+Chrome PID 54073
+stopped hub PID 54072
+hub PID 54093 port 8780
+stopped hub PID 54093
+hub PID 56713 port 8780
+stopped hub PID 56713
+hub PID 75039 port 8780 args --live --lamp-port 38770
+stopped hub PID 75039
+hub PID 75040 port 8780
+stopped hub PID 75040
+hub PID 79373 port 8780
+stopped hub PID 79373
+hub PID 79382 port 8780
+stopped hub PID 79382
+hub PID 79389 port 8780 args --live --lamp-port 38770
+stopped hub PID 79389
+hub PID 80926 port 8780
+stopped hub PID 80926
+hub PID 82192 port 8780
+stopped hub PID 82192
+hub PID 7984 port 8780 args --live --lamp-port 38770
+stopped hub PID 7984
+hub PID 7985 port 8780
+stopped hub PID 7985
+hub PID 7998 port 8780 args --live --lamp-port 38770
+stopped hub PID 7998
+hub PID 8189 port 8780
+stopped hub PID 8189
+hub PID 9652 port 8780 args --recording /tmp/ghost-audit-observer-VFayPV/custom.ghostcsi --speed 2
+stopped hub PID 9652
+hub PID 9654 port 8780 args --recording /tmp/ghost-audit-observer-VFayPV/plain.ghostcsi --speed 2
+stopped hub PID 9654
+hub PID 9661 port 8780 args --recording /tmp/ghost-audit-observer-VFayPV/empty.ghostcsi
+stopped hub PID 9661
+hub PID 9887 port 8780
+stopped hub PID 9887
+hub PID 12281 port 8780 args --reply I'm OK
+stopped hub PID 12281
+hub PID 23855 port 8780
+closed Chrome PID 54073
+stopped hub PID 23855

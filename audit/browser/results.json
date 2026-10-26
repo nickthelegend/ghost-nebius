@@ -1,22 +1,10 @@
 [
   {
-    "id": "G3",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G3.webp",
-    "log": "audit/browser/G3.json"
-  },
-  {
-    "id": "G4",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G4.webp",
-    "log": "audit/browser/G4.json"
-  },
-  {
     "id": "G1",
     "status": "PASS",
     "note": "{\"url\":\"http://127.0.0.1:8780\",\"browser\":\"156.0.8078.4\",\"builtIndexMatch\":true}",
+    "startedAt": "2026-10-26T14:32:52.019Z",
+    "finishedAt": "2026-10-26T14:32:52.184Z",
     "screenshot": "audit/browser/G1.webp",
     "log": "audit/browser/G1.json"
   },
@@ -24,13 +12,44 @@
     "id": "G2",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:32:52.313Z",
+    "finishedAt": "2026-10-26T14:32:52.643Z",
     "screenshot": "audit/browser/G2.webp",
     "log": "audit/browser/G2.json"
+  },
+  {
+    "id": "G3",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:32:52.740Z",
+    "finishedAt": "2026-10-26T14:32:53.150Z",
+    "screenshot": "audit/browser/G3.webp",
+    "log": "audit/browser/G3.json"
+  },
+  {
+    "id": "G4",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:32:53.225Z",
+    "finishedAt": "2026-10-26T14:32:54.499Z",
+    "screenshot": "audit/browser/G4.webp",
+    "log": "audit/browser/G4.json"
+  },
+  {
+    "id": "G5",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:32:54.630Z",
+    "finishedAt": "2026-10-26T14:32:56.218Z",
+    "screenshot": "audit/browser/G5.webp",
+    "log": "audit/browser/G5.json"
   },
   {
     "id": "G6",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:32:56.333Z",
+    "finishedAt": "2026-10-26T14:32:56.402Z",
     "screenshot": "audit/browser/G6.webp",
     "log": "audit/browser/G6.json"
   },
@@ -38,6 +57,8 @@
     "id": "G7",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:32:56.506Z",
+    "finishedAt": "2026-10-26T14:33:06.362Z",
     "screenshot": "audit/browser/G7.webp",
     "log": "audit/browser/G7.json"
   },
@@ -45,6 +66,8 @@
     "id": "G8",
     "status": "PASS",
     "note": "{\"model\":{\"online\":false,\"reason\":null,\"log\":null},\"hubOutboundConnections\":0,\"TokenFactoryRequests\":0}",
+    "startedAt": "2026-10-26T14:33:06.479Z",
+    "finishedAt": "2026-10-26T14:33:06.550Z",
     "screenshot": "audit/browser/G8.webp",
     "log": "audit/browser/G8.json"
   },
@@ -52,6 +75,8 @@
     "id": "G9",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:06.640Z",
+    "finishedAt": "2026-10-26T14:33:06.708Z",
     "screenshot": "audit/browser/G9.webp",
     "log": "audit/browser/G9.json"
   },
@@ -59,6 +84,8 @@
     "id": "G10",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:06.806Z",
+    "finishedAt": "2026-10-26T14:33:06.877Z",
     "screenshot": "audit/browser/G10.webp",
     "log": "audit/browser/G10.json"
   },
@@ -66,6 +93,8 @@
     "id": "G11",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:06.973Z",
+    "finishedAt": "2026-10-26T14:33:09.586Z",
     "screenshot": "audit/browser/G11.webp",
     "log": "audit/browser/G11.json"
   },
@@ -73,6 +102,8 @@
     "id": "G12",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:09.740Z",
+    "finishedAt": "2026-10-26T14:33:14.064Z",
     "screenshot": "audit/browser/G12.webp",
     "log": "audit/browser/G12.json"
   },
@@ -80,6 +111,8 @@
     "id": "G13",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:14.176Z",
+    "finishedAt": "2026-10-26T14:33:14.507Z",
     "screenshot": "audit/browser/G13.webp",
     "log": "audit/browser/G13.json"
   },
@@ -87,6 +120,8 @@
     "id": "G14",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:14.612Z",
+    "finishedAt": "2026-10-26T14:33:16.293Z",
     "screenshot": "audit/browser/G14.webp",
     "log": "audit/browser/G14.json"
   },
@@ -94,13 +129,26 @@
     "id": "G15",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:16.400Z",
+    "finishedAt": "2026-10-26T14:33:16.467Z",
     "screenshot": "audit/browser/G15.webp",
     "log": "audit/browser/G15.json"
+  },
+  {
+    "id": "G16",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:16.567Z",
+    "finishedAt": "2026-10-26T14:33:25.139Z",
+    "screenshot": "audit/browser/G16.webp",
+    "log": "audit/browser/G16.json"
   },
   {
     "id": "G17",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:25.264Z",
+    "finishedAt": "2026-10-26T14:33:25.331Z",
     "screenshot": "audit/browser/G17.webp",
     "log": "audit/browser/G17.json"
   },
@@ -108,69 +156,17 @@
     "id": "G18",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:25.446Z",
+    "finishedAt": "2026-10-26T14:33:26.187Z",
     "screenshot": "audit/browser/G18.webp",
     "log": "audit/browser/G18.json"
-  },
-  {
-    "id": "G21",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G21.webp",
-    "log": "audit/browser/G21.json"
-  },
-  {
-    "id": "G24",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G24.webp",
-    "log": "audit/browser/G24.json"
-  },
-  {
-    "id": "G31",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G31.webp",
-    "log": "audit/browser/G31.json"
-  },
-  {
-    "id": "G33",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G33.webp",
-    "log": "audit/browser/G33.json"
-  },
-  {
-    "id": "G46",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G46.webp",
-    "log": "audit/browser/G46.json"
-  },
-  {
-    "id": "G43",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G43.webp",
-    "log": "audit/browser/G43.json"
-  },
-  {
-    "id": "G44",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G44.webp",
-    "log": "audit/browser/G44.json"
-  },
-  {
-    "id": "G47",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G47.webp",
-    "log": "audit/browser/G47.json"
   },
   {
     "id": "G19",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:26.300Z",
+    "finishedAt": "2026-10-26T14:33:31.231Z",
     "screenshot": "audit/browser/G19.webp",
     "log": "audit/browser/G19.json"
   },
@@ -178,13 +174,26 @@
     "id": "G20",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:31.347Z",
+    "finishedAt": "2026-10-26T14:33:31.417Z",
     "screenshot": "audit/browser/G20.webp",
     "log": "audit/browser/G20.json"
+  },
+  {
+    "id": "G21",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:31.532Z",
+    "finishedAt": "2026-10-26T14:33:31.610Z",
+    "screenshot": "audit/browser/G21.webp",
+    "log": "audit/browser/G21.json"
   },
   {
     "id": "G22",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:31.732Z",
+    "finishedAt": "2026-10-26T14:33:31.996Z",
     "screenshot": "audit/browser/G22.webp",
     "log": "audit/browser/G22.json"
   },
@@ -192,13 +201,26 @@
     "id": "G23",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:32.115Z",
+    "finishedAt": "2026-10-26T14:33:32.618Z",
     "screenshot": "audit/browser/G23.webp",
     "log": "audit/browser/G23.json"
+  },
+  {
+    "id": "G24",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:32.751Z",
+    "finishedAt": "2026-10-26T14:33:33.783Z",
+    "screenshot": "audit/browser/G24.webp",
+    "log": "audit/browser/G24.json"
   },
   {
     "id": "G25",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:33.892Z",
+    "finishedAt": "2026-10-26T14:33:42.404Z",
     "screenshot": "audit/browser/G25.webp",
     "log": "audit/browser/G25.json"
   },
@@ -206,6 +228,8 @@
     "id": "G26",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:42.531Z",
+    "finishedAt": "2026-10-26T14:33:42.601Z",
     "screenshot": "audit/browser/G26.webp",
     "log": "audit/browser/G26.json"
   },
@@ -213,6 +237,8 @@
     "id": "G27",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:42.729Z",
+    "finishedAt": "2026-10-26T14:33:42.796Z",
     "screenshot": "audit/browser/G27.webp",
     "log": "audit/browser/G27.json"
   },
@@ -220,20 +246,17 @@
     "id": "G28",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:42.913Z",
+    "finishedAt": "2026-10-26T14:33:43.002Z",
     "screenshot": "audit/browser/G28.webp",
     "log": "audit/browser/G28.json"
-  },
-  {
-    "id": "G16",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G16.webp",
-    "log": "audit/browser/G16.json"
   },
   {
     "id": "G29",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:43.134Z",
+    "finishedAt": "2026-10-26T14:33:45.520Z",
     "screenshot": "audit/browser/G29.webp",
     "log": "audit/browser/G29.json"
   },
@@ -241,41 +264,44 @@
     "id": "G30",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:45.655Z",
+    "finishedAt": "2026-10-26T14:33:49.728Z",
     "screenshot": "audit/browser/G30.webp",
     "log": "audit/browser/G30.json"
+  },
+  {
+    "id": "G31",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:49.853Z",
+    "finishedAt": "2026-10-26T14:33:50.599Z",
+    "screenshot": "audit/browser/G31.webp",
+    "log": "audit/browser/G31.json"
   },
   {
     "id": "G32",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:33:50.689Z",
+    "finishedAt": "2026-10-26T14:34:18.200Z",
     "screenshot": "audit/browser/G32.webp",
     "log": "audit/browser/G32.json"
   },
   {
-    "id": "G38",
-    "status": "PASS",
-    "note": "{\"events\":[[\"got_up\",\"bedroom\",\"watch\"],[\"moved\",\"bathroom\",\"watch\"],[\"fall_suspected\",\"bathroom\",\"watch\"],[\"long_stay\",\"bathroom\",\"check_in\"],[\"no_answer\",\"bathroom\",\"alert\"]],\"outcome\":\"family alerted (dry run: replay never places real calls)\",\"hubOutboundConnections\":0}",
-    "screenshot": "audit/browser/G38.webp",
-    "log": "audit/browser/G38.json"
-  },
-  {
-    "id": "G39",
+    "id": "G33",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G39.webp",
-    "log": "audit/browser/G39.json"
-  },
-  {
-    "id": "G42",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G42.webp",
-    "log": "audit/browser/G42.json"
+    "startedAt": "2026-10-26T14:34:18.339Z",
+    "finishedAt": "2026-10-26T14:34:19.194Z",
+    "screenshot": "audit/browser/G33.webp",
+    "log": "audit/browser/G33.json"
   },
   {
     "id": "G34",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:34:19.294Z",
+    "finishedAt": "2026-10-26T14:34:35.004Z",
     "screenshot": "audit/browser/G34.webp",
     "log": "audit/browser/G34.json"
   },
@@ -283,6 +309,8 @@
     "id": "G35",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:34:35.133Z",
+    "finishedAt": "2026-10-26T14:34:51.505Z",
     "screenshot": "audit/browser/G35.webp",
     "log": "audit/browser/G35.json"
   },
@@ -290,6 +318,8 @@
     "id": "G36",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:34:51.634Z",
+    "finishedAt": "2026-10-26T14:35:13.750Z",
     "screenshot": "audit/browser/G36.webp",
     "log": "audit/browser/G36.json"
   },
@@ -297,13 +327,35 @@
     "id": "G37",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:35:13.885Z",
+    "finishedAt": "2026-10-26T14:35:29.994Z",
     "screenshot": "audit/browser/G37.webp",
     "log": "audit/browser/G37.json"
+  },
+  {
+    "id": "G38",
+    "status": "PASS",
+    "note": "{\"events\":[[\"got_up\",\"bedroom\",\"watch\"],[\"moved\",\"bathroom\",\"watch\"],[\"fall_suspected\",\"bathroom\",\"watch\"],[\"long_stay\",\"bathroom\",\"check_in\"],[\"no_answer\",\"bathroom\",\"alert\"]],\"outcome\":\"family alerted (dry run: replay never places real calls)\",\"hubOutboundConnections\":0}",
+    "startedAt": "2026-10-26T14:35:30.115Z",
+    "finishedAt": "2026-10-26T14:35:57.242Z",
+    "screenshot": "audit/browser/G38.webp",
+    "log": "audit/browser/G38.json"
+  },
+  {
+    "id": "G39",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:35:57.374Z",
+    "finishedAt": "2026-10-26T14:35:57.443Z",
+    "screenshot": "audit/browser/G39.webp",
+    "log": "audit/browser/G39.json"
   },
   {
     "id": "G40",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:35:57.570Z",
+    "finishedAt": "2026-10-26T14:36:25.515Z",
     "screenshot": "audit/browser/G40.webp",
     "log": "audit/browser/G40.json"
   },
@@ -311,55 +363,116 @@
     "id": "G41",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:36:25.653Z",
+    "finishedAt": "2026-10-26T14:37:22.870Z",
     "screenshot": "audit/browser/G41.webp",
     "log": "audit/browser/G41.json"
+  },
+  {
+    "id": "G42",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:37:22.991Z",
+    "finishedAt": "2026-10-26T14:37:51.291Z",
+    "screenshot": "audit/browser/G42.webp",
+    "log": "audit/browser/G42.json"
+  },
+  {
+    "id": "G43",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:37:51.401Z",
+    "finishedAt": "2026-10-26T14:37:51.471Z",
+    "screenshot": "audit/browser/G43.webp",
+    "log": "audit/browser/G43.json"
+  },
+  {
+    "id": "G44",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:37:51.579Z",
+    "finishedAt": "2026-10-26T14:37:51.649Z",
+    "screenshot": "audit/browser/G44.webp",
+    "log": "audit/browser/G44.json"
+  },
+  {
+    "id": "G45",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:37:51.755Z",
+    "finishedAt": "2026-10-26T14:37:52.382Z",
+    "screenshot": "audit/browser/G45.webp",
+    "log": "audit/browser/G45.json"
+  },
+  {
+    "id": "G46",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:37:52.481Z",
+    "finishedAt": "2026-10-26T14:38:03.872Z",
+    "screenshot": "audit/browser/G46.webp",
+    "log": "audit/browser/G46.json"
+  },
+  {
+    "id": "G47",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:04.005Z",
+    "finishedAt": "2026-10-26T14:38:04.071Z",
+    "screenshot": "audit/browser/G47.webp",
+    "log": "audit/browser/G47.json"
   },
   {
     "id": "G48",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:04.180Z",
+    "finishedAt": "2026-10-26T14:38:05.542Z",
     "screenshot": "audit/browser/G48.webp",
     "log": "audit/browser/G48.json"
-  },
-  {
-    "id": "G82",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G82.webp",
-    "log": "audit/browser/G82.json"
-  },
-  {
-    "id": "G5",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G5.webp",
-    "log": "audit/browser/G5.json"
-  },
-  {
-    "id": "G50",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G50.webp",
-    "log": "audit/browser/G50.json"
-  },
-  {
-    "id": "G52",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G52.webp",
-    "log": "audit/browser/G52.json"
   },
   {
     "id": "G49",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:05.643Z",
+    "finishedAt": "2026-10-26T14:38:07.275Z",
     "screenshot": "audit/browser/G49.webp",
     "log": "audit/browser/G49.json"
+  },
+  {
+    "id": "G50",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:07.378Z",
+    "finishedAt": "2026-10-26T14:38:08.158Z",
+    "screenshot": "audit/browser/G50.webp",
+    "log": "audit/browser/G50.json"
+  },
+  {
+    "id": "G51",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:08.256Z",
+    "finishedAt": "2026-10-26T14:38:09.743Z",
+    "screenshot": "audit/browser/G51.webp",
+    "log": "audit/browser/G51.json"
+  },
+  {
+    "id": "G52",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:09.853Z",
+    "finishedAt": "2026-10-26T14:38:13.046Z",
+    "screenshot": "audit/browser/G52.webp",
+    "log": "audit/browser/G52.json"
   },
   {
     "id": "G53",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:13.140Z",
+    "finishedAt": "2026-10-26T14:38:25.324Z",
     "screenshot": "audit/browser/G53.webp",
     "log": "audit/browser/G53.json"
   },
@@ -367,6 +480,8 @@
     "id": "G54",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:25.432Z",
+    "finishedAt": "2026-10-26T14:38:25.536Z",
     "screenshot": "audit/browser/G54.webp",
     "log": "audit/browser/G54.json"
   },
@@ -374,6 +489,8 @@
     "id": "G55",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:25.638Z",
+    "finishedAt": "2026-10-26T14:38:25.735Z",
     "screenshot": "audit/browser/G55.webp",
     "log": "audit/browser/G55.json"
   },
@@ -381,6 +498,8 @@
     "id": "G56",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:25.843Z",
+    "finishedAt": "2026-10-26T14:38:25.937Z",
     "screenshot": "audit/browser/G56.webp",
     "log": "audit/browser/G56.json"
   },
@@ -388,6 +507,8 @@
     "id": "G57",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:26.039Z",
+    "finishedAt": "2026-10-26T14:38:26.174Z",
     "screenshot": "audit/browser/G57.webp",
     "log": "audit/browser/G57.json"
   },
@@ -395,6 +516,8 @@
     "id": "G58",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:26.279Z",
+    "finishedAt": "2026-10-26T14:38:26.371Z",
     "screenshot": "audit/browser/G58.webp",
     "log": "audit/browser/G58.json"
   },
@@ -402,6 +525,8 @@
     "id": "G59",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:26.481Z",
+    "finishedAt": "2026-10-26T14:38:26.570Z",
     "screenshot": "audit/browser/G59.webp",
     "log": "audit/browser/G59.json"
   },
@@ -409,6 +534,8 @@
     "id": "G60",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:26.674Z",
+    "finishedAt": "2026-10-26T14:38:30.889Z",
     "screenshot": "audit/browser/G60.webp",
     "log": "audit/browser/G60.json"
   },
@@ -416,181 +543,17 @@
     "id": "G61",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:30.979Z",
+    "finishedAt": "2026-10-26T14:38:58.465Z",
     "screenshot": "audit/browser/G61.webp",
     "log": "audit/browser/G61.json"
-  },
-  {
-    "id": "G64",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G64.webp",
-    "log": "audit/browser/G64.json"
-  },
-  {
-    "id": "G65",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G65.webp",
-    "log": "audit/browser/G65.json"
-  },
-  {
-    "id": "G66",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G66.webp",
-    "log": "audit/browser/G66.json"
-  },
-  {
-    "id": "G67",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G67.webp",
-    "log": "audit/browser/G67.json"
-  },
-  {
-    "id": "G68",
-    "status": "PASS",
-    "note": "{\"status\":200,\"type\":\"text/event-stream\",\"cache\":\"no-store\",\"connection\":\"keep-alive\",\"eventSpacingMs\":503}",
-    "screenshot": "audit/browser/G68.webp",
-    "log": "audit/browser/G68.json"
-  },
-  {
-    "id": "G69",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G69.webp",
-    "log": "audit/browser/G69.json"
-  },
-  {
-    "id": "G70",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G70.webp",
-    "log": "audit/browser/G70.json"
-  },
-  {
-    "id": "G71",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G71.webp",
-    "log": "audit/browser/G71.json"
-  },
-  {
-    "id": "G72",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G72.webp",
-    "log": "audit/browser/G72.json"
-  },
-  {
-    "id": "G73",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G73.webp",
-    "log": "audit/browser/G73.json"
-  },
-  {
-    "id": "G74",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G74.webp",
-    "log": "audit/browser/G74.json"
-  },
-  {
-    "id": "G75",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G75.webp",
-    "log": "audit/browser/G75.json"
-  },
-  {
-    "id": "G76",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G76.webp",
-    "log": "audit/browser/G76.json"
-  },
-  {
-    "id": "G78",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G78.webp",
-    "log": "audit/browser/G78.json"
-  },
-  {
-    "id": "G79",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G79.webp",
-    "log": "audit/browser/G79.json"
-  },
-  {
-    "id": "G80",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G80.webp",
-    "log": "audit/browser/G80.json"
-  },
-  {
-    "id": "G81",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G81.webp",
-    "log": "audit/browser/G81.json"
-  },
-  {
-    "id": "G45",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G45.webp",
-    "log": "audit/browser/G45.json"
-  },
-  {
-    "id": "G77",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G77.webp",
-    "log": "audit/browser/G77.json"
-  },
-  {
-    "id": "G83",
-    "status": "PASS",
-    "note": "All four live-mode replay actions returned the expected 404 JSON unknown-action response; restart returned 200 and retained live mode. Expected 404s and the deliberate hub-swap transport outage are identified negative probes.",
-    "screenshot": "audit/browser/G83.webp",
-    "log": "audit/browser/G83.json"
-  },
-  {
-    "id": "G85",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G85.webp",
-    "log": "audit/browser/G85.json"
-  },
-  {
-    "id": "G87",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G87.webp",
-    "log": "audit/browser/G87.json"
-  },
-  {
-    "id": "G88",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G88.webp",
-    "log": "audit/browser/G88.json"
-  },
-  {
-    "id": "G51",
-    "status": "PASS",
-    "note": "Assertions matched the expected result.",
-    "screenshot": "audit/browser/G51.webp",
-    "log": "audit/browser/G51.json"
   },
   {
     "id": "G62",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:58.571Z",
+    "finishedAt": "2026-10-26T14:38:58.643Z",
     "screenshot": "audit/browser/G62.webp",
     "log": "audit/browser/G62.json"
   },
@@ -598,7 +561,216 @@
     "id": "G63",
     "status": "PASS",
     "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:58.732Z",
+    "finishedAt": "2026-10-26T14:38:58.796Z",
     "screenshot": "audit/browser/G63.webp",
     "log": "audit/browser/G63.json"
+  },
+  {
+    "id": "G64",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:58.880Z",
+    "finishedAt": "2026-10-26T14:38:58.949Z",
+    "screenshot": "audit/browser/G64.webp",
+    "log": "audit/browser/G64.json"
+  },
+  {
+    "id": "G65",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:59.050Z",
+    "finishedAt": "2026-10-26T14:38:59.114Z",
+    "screenshot": "audit/browser/G65.webp",
+    "log": "audit/browser/G65.json"
+  },
+  {
+    "id": "G66",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:59.196Z",
+    "finishedAt": "2026-10-26T14:38:59.267Z",
+    "screenshot": "audit/browser/G66.webp",
+    "log": "audit/browser/G66.json"
+  },
+  {
+    "id": "G67",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:38:59.366Z",
+    "finishedAt": "2026-10-26T14:38:59.962Z",
+    "screenshot": "audit/browser/G67.webp",
+    "log": "audit/browser/G67.json"
+  },
+  {
+    "id": "G68",
+    "status": "PASS",
+    "note": "{\"status\":200,\"type\":\"text/event-stream\",\"cache\":\"no-store\",\"connection\":\"keep-alive\",\"eventSpacingMs\":502}",
+    "startedAt": "2026-10-26T14:39:00.059Z",
+    "finishedAt": "2026-10-26T14:39:00.735Z",
+    "screenshot": "audit/browser/G68.webp",
+    "log": "audit/browser/G68.json"
+  },
+  {
+    "id": "G69",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:00.846Z",
+    "finishedAt": "2026-10-26T14:39:01.108Z",
+    "screenshot": "audit/browser/G69.webp",
+    "log": "audit/browser/G69.json"
+  },
+  {
+    "id": "G70",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:01.184Z",
+    "finishedAt": "2026-10-26T14:39:01.756Z",
+    "screenshot": "audit/browser/G70.webp",
+    "log": "audit/browser/G70.json"
+  },
+  {
+    "id": "G71",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:01.838Z",
+    "finishedAt": "2026-10-26T14:39:02.918Z",
+    "screenshot": "audit/browser/G71.webp",
+    "log": "audit/browser/G71.json"
+  },
+  {
+    "id": "G72",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:03.003Z",
+    "finishedAt": "2026-10-26T14:39:04.189Z",
+    "screenshot": "audit/browser/G72.webp",
+    "log": "audit/browser/G72.json"
+  },
+  {
+    "id": "G73",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:04.286Z",
+    "finishedAt": "2026-10-26T14:39:05.780Z",
+    "screenshot": "audit/browser/G73.webp",
+    "log": "audit/browser/G73.json"
+  },
+  {
+    "id": "G74",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:05.885Z",
+    "finishedAt": "2026-10-26T14:39:07.813Z",
+    "screenshot": "audit/browser/G74.webp",
+    "log": "audit/browser/G74.json"
+  },
+  {
+    "id": "G75",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:07.923Z",
+    "finishedAt": "2026-10-26T14:39:09.689Z",
+    "screenshot": "audit/browser/G75.webp",
+    "log": "audit/browser/G75.json"
+  },
+  {
+    "id": "G76",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:09.785Z",
+    "finishedAt": "2026-10-26T14:39:25.375Z",
+    "screenshot": "audit/browser/G76.webp",
+    "log": "audit/browser/G76.json"
+  },
+  {
+    "id": "G77",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:25.467Z",
+    "finishedAt": "2026-10-26T14:39:26.084Z",
+    "screenshot": "audit/browser/G77.webp",
+    "log": "audit/browser/G77.json"
+  },
+  {
+    "id": "G78",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:26.160Z",
+    "finishedAt": "2026-10-26T14:39:26.880Z",
+    "screenshot": "audit/browser/G78.webp",
+    "log": "audit/browser/G78.json"
+  },
+  {
+    "id": "G79",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:26.965Z",
+    "finishedAt": "2026-10-26T14:39:27.035Z",
+    "screenshot": "audit/browser/G79.webp",
+    "log": "audit/browser/G79.json"
+  },
+  {
+    "id": "G80",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:27.118Z",
+    "finishedAt": "2026-10-26T14:39:27.193Z",
+    "screenshot": "audit/browser/G80.webp",
+    "log": "audit/browser/G80.json"
+  },
+  {
+    "id": "G81",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:27.267Z",
+    "finishedAt": "2026-10-26T14:39:27.331Z",
+    "screenshot": "audit/browser/G81.webp",
+    "log": "audit/browser/G81.json"
+  },
+  {
+    "id": "G82",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:27.416Z",
+    "finishedAt": "2026-10-26T14:39:30.116Z",
+    "screenshot": "audit/browser/G82.webp",
+    "log": "audit/browser/G82.json"
+  },
+  {
+    "id": "G83",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:30.216Z",
+    "finishedAt": "2026-10-26T14:39:32.087Z",
+    "screenshot": "audit/browser/G83.webp",
+    "log": "audit/browser/G83.json"
+  },
+  {
+    "id": "G85",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:35.752Z",
+    "finishedAt": "2026-10-26T14:39:37.345Z",
+    "screenshot": "audit/browser/G85.webp",
+    "log": "audit/browser/G85.json"
+  },
+  {
+    "id": "G87",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:38.176Z",
+    "finishedAt": "2026-10-26T14:39:39.592Z",
+    "screenshot": "audit/browser/G87.webp",
+    "log": "audit/browser/G87.json"
+  },
+  {
+    "id": "G88",
+    "status": "PASS",
+    "note": "Assertions matched the expected result.",
+    "startedAt": "2026-10-26T14:39:39.682Z",
+    "finishedAt": "2026-10-26T14:40:01.812Z",
+    "screenshot": "audit/browser/G88.webp",
+    "log": "audit/browser/G88.json"
   }
 ]

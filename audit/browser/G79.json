@@ -2,6 +2,8 @@
   "id": "G79",
   "status": "PASS",
   "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:39:26.965Z",
+  "finishedAt": "2026-10-26T14:39:27.035Z",
   "console": [
     {
       "type": "error",

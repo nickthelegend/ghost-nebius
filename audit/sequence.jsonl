@@ -1,0 +1,134 @@
+{"id":"G1","status":"PASS","startedAt":"2026-10-26T14:32:52.019Z","finishedAt":"2026-10-26T14:32:52.184Z"}
+{"id":"G2","status":"PASS","startedAt":"2026-10-26T14:32:52.313Z","finishedAt":"2026-10-26T14:32:52.643Z"}
+{"id":"G3","status":"PASS","startedAt":"2026-10-26T14:32:52.740Z","finishedAt":"2026-10-26T14:32:53.150Z"}
+{"id":"G4","status":"PASS","startedAt":"2026-10-26T14:32:53.225Z","finishedAt":"2026-10-26T14:32:54.499Z"}
+{"id":"G5","status":"PASS","startedAt":"2026-10-26T14:32:54.630Z","finishedAt":"2026-10-26T14:32:56.218Z"}
+{"id":"G6","status":"PASS","startedAt":"2026-10-26T14:32:56.333Z","finishedAt":"2026-10-26T14:32:56.402Z"}
+{"id":"G7","status":"PASS","startedAt":"2026-10-26T14:32:56.506Z","finishedAt":"2026-10-26T14:33:06.362Z"}
+{"id":"G8","status":"PASS","startedAt":"2026-10-26T14:33:06.479Z","finishedAt":"2026-10-26T14:33:06.550Z"}
+{"id":"G9","status":"PASS","startedAt":"2026-10-26T14:33:06.640Z","finishedAt":"2026-10-26T14:33:06.708Z"}
+{"id":"G10","status":"PASS","startedAt":"2026-10-26T14:33:06.806Z","finishedAt":"2026-10-26T14:33:06.877Z"}
+{"id":"G11","status":"PASS","startedAt":"2026-10-26T14:33:06.973Z","finishedAt":"2026-10-26T14:33:09.586Z"}
+{"id":"G12","status":"PASS","startedAt":"2026-10-26T14:33:09.740Z","finishedAt":"2026-10-26T14:33:14.064Z"}
+{"id":"G13","status":"PASS","startedAt":"2026-10-26T14:33:14.176Z","finishedAt":"2026-10-26T14:33:14.507Z"}
+{"id":"G14","status":"PASS","startedAt":"2026-10-26T14:33:14.612Z","finishedAt":"2026-10-26T14:33:16.293Z"}
+{"id":"G15","status":"PASS","startedAt":"2026-10-26T14:33:16.400Z","finishedAt":"2026-10-26T14:33:16.467Z"}
+{"id":"G16","status":"PASS","startedAt":"2026-10-26T14:33:16.567Z","finishedAt":"2026-10-26T14:33:25.139Z"}
+{"id":"G17","status":"PASS","startedAt":"2026-10-26T14:33:25.264Z","finishedAt":"2026-10-26T14:33:25.331Z"}
+{"id":"G18","status":"PASS","startedAt":"2026-10-26T14:33:25.446Z","finishedAt":"2026-10-26T14:33:26.187Z"}
+{"id":"G19","status":"PASS","startedAt":"2026-10-26T14:33:26.300Z","finishedAt":"2026-10-26T14:33:31.231Z"}
+{"id":"G20","status":"PASS","startedAt":"2026-10-26T14:33:31.347Z","finishedAt":"2026-10-26T14:33:31.417Z"}
+{"id":"G21","status":"PASS","startedAt":"2026-10-26T14:33:31.532Z","finishedAt":"2026-10-26T14:33:31.610Z"}
+{"id":"G22","status":"PASS","startedAt":"2026-10-26T14:33:31.732Z","finishedAt":"2026-10-26T14:33:31.996Z"}
+{"id":"G23","status":"PASS","startedAt":"2026-10-26T14:33:32.115Z","finishedAt":"2026-10-26T14:33:32.618Z"}
+{"id":"G24","status":"PASS","startedAt":"2026-10-26T14:33:32.751Z","finishedAt":"2026-10-26T14:33:33.783Z"}
+{"id":"G25","status":"PASS","startedAt":"2026-10-26T14:33:33.892Z","finishedAt":"2026-10-26T14:33:42.404Z"}
+{"id":"G26","status":"PASS","startedAt":"2026-10-26T14:33:42.531Z","finishedAt":"2026-10-26T14:33:42.601Z"}
+{"id":"G27","status":"PASS","startedAt":"2026-10-26T14:33:42.729Z","finishedAt":"2026-10-26T14:33:42.796Z"}
+{"id":"G28","status":"PASS","startedAt":"2026-10-26T14:33:42.913Z","finishedAt":"2026-10-26T14:33:43.002Z"}
+{"id":"G29","status":"PASS","startedAt":"2026-10-26T14:33:43.134Z","finishedAt":"2026-10-26T14:33:45.520Z"}
+{"id":"G30","status":"PASS","startedAt":"2026-10-26T14:33:45.655Z","finishedAt":"2026-10-26T14:33:49.728Z"}
+{"id":"G31","status":"PASS","startedAt":"2026-10-26T14:33:49.853Z","finishedAt":"2026-10-26T14:33:50.599Z"}
+{"id":"G32","status":"PASS","startedAt":"2026-10-26T14:33:50.689Z","finishedAt":"2026-10-26T14:34:18.200Z"}
+{"id":"G33","status":"PASS","startedAt":"2026-10-26T14:34:18.339Z","finishedAt":"2026-10-26T14:34:19.194Z"}
+{"id":"G34","status":"PASS","startedAt":"2026-10-26T14:34:19.294Z","finishedAt":"2026-10-26T14:34:35.004Z"}
+{"id":"G35","status":"PASS","startedAt":"2026-10-26T14:34:35.133Z","finishedAt":"2026-10-26T14:34:51.505Z"}
+{"id":"G36","status":"PASS","startedAt":"2026-10-26T14:34:51.634Z","finishedAt":"2026-10-26T14:35:13.750Z"}
+{"id":"G37","status":"PASS","startedAt":"2026-10-26T14:35:13.885Z","finishedAt":"2026-10-26T14:35:29.994Z"}
+{"id":"G38","status":"PASS","startedAt":"2026-10-26T14:35:30.115Z","finishedAt":"2026-10-26T14:35:57.242Z"}
+{"id":"G39","status":"PASS","startedAt":"2026-10-26T14:35:57.374Z","finishedAt":"2026-10-26T14:35:57.443Z"}
+{"id":"G40","status":"PASS","startedAt":"2026-10-26T14:35:57.570Z","finishedAt":"2026-10-26T14:36:25.515Z"}
+{"id":"G41","status":"PASS","startedAt":"2026-10-26T14:36:25.653Z","finishedAt":"2026-10-26T14:37:22.870Z"}
+{"id":"G42","status":"PASS","startedAt":"2026-10-26T14:37:22.991Z","finishedAt":"2026-10-26T14:37:51.291Z"}
+{"id":"G43","status":"PASS","startedAt":"2026-10-26T14:37:51.401Z","finishedAt":"2026-10-26T14:37:51.471Z"}
+{"id":"G44","status":"PASS","startedAt":"2026-10-26T14:37:51.579Z","finishedAt":"2026-10-26T14:37:51.649Z"}
+{"id":"G45","status":"PASS","startedAt":"2026-10-26T14:37:51.755Z","finishedAt":"2026-10-26T14:37:52.382Z"}
+{"id":"G46","status":"PASS","startedAt":"2026-10-26T14:37:52.481Z","finishedAt":"2026-10-26T14:38:03.872Z"}
+{"id":"G47","status":"PASS","startedAt":"2026-10-26T14:38:04.005Z","finishedAt":"2026-10-26T14:38:04.071Z"}
+{"id":"G48","status":"PASS","startedAt":"2026-10-26T14:38:04.180Z","finishedAt":"2026-10-26T14:38:05.542Z"}
+{"id":"G49","status":"PASS","startedAt":"2026-10-26T14:38:05.643Z","finishedAt":"2026-10-26T14:38:07.275Z"}
+{"id":"G50","status":"PASS","startedAt":"2026-10-26T14:38:07.378Z","finishedAt":"2026-10-26T14:38:08.158Z"}
+{"id":"G51","status":"PASS","startedAt":"2026-10-26T14:38:08.256Z","finishedAt":"2026-10-26T14:38:09.743Z"}
+{"id":"G52","status":"PASS","startedAt":"2026-10-26T14:38:09.853Z","finishedAt":"2026-10-26T14:38:13.046Z"}
+{"id":"G53","status":"PASS","startedAt":"2026-10-26T14:38:13.140Z","finishedAt":"2026-10-26T14:38:25.324Z"}
+{"id":"G54","status":"PASS","startedAt":"2026-10-26T14:38:25.432Z","finishedAt":"2026-10-26T14:38:25.536Z"}
+{"id":"G55","status":"PASS","startedAt":"2026-10-26T14:38:25.638Z","finishedAt":"2026-10-26T14:38:25.735Z"}
+{"id":"G56","status":"PASS","startedAt":"2026-10-26T14:38:25.843Z","finishedAt":"2026-10-26T14:38:25.937Z"}
+{"id":"G57","status":"PASS","startedAt":"2026-10-26T14:38:26.039Z","finishedAt":"2026-10-26T14:38:26.174Z"}
+{"id":"G58","status":"PASS","startedAt":"2026-10-26T14:38:26.279Z","finishedAt":"2026-10-26T14:38:26.371Z"}
+{"id":"G59","status":"PASS","startedAt":"2026-10-26T14:38:26.481Z","finishedAt":"2026-10-26T14:38:26.570Z"}
+{"id":"G60","status":"PASS","startedAt":"2026-10-26T14:38:26.674Z","finishedAt":"2026-10-26T14:38:30.889Z"}
+{"id":"G61","status":"PASS","startedAt":"2026-10-26T14:38:30.979Z","finishedAt":"2026-10-26T14:38:58.465Z"}
+{"id":"G62","status":"PASS","startedAt":"2026-10-26T14:38:58.571Z","finishedAt":"2026-10-26T14:38:58.643Z"}
+{"id":"G63","status":"PASS","startedAt":"2026-10-26T14:38:58.732Z","finishedAt":"2026-10-26T14:38:58.796Z"}
+{"id":"G64","status":"PASS","startedAt":"2026-10-26T14:38:58.880Z","finishedAt":"2026-10-26T14:38:58.949Z"}
+{"id":"G65","status":"PASS","startedAt":"2026-10-26T14:38:59.050Z","finishedAt":"2026-10-26T14:38:59.114Z"}
+{"id":"G66","status":"PASS","startedAt":"2026-10-26T14:38:59.196Z","finishedAt":"2026-10-26T14:38:59.267Z"}
+{"id":"G67","status":"PASS","startedAt":"2026-10-26T14:38:59.366Z","finishedAt":"2026-10-26T14:38:59.962Z"}
+{"id":"G68","status":"PASS","startedAt":"2026-10-26T14:39:00.059Z","finishedAt":"2026-10-26T14:39:00.735Z"}
+{"id":"G69","status":"PASS","startedAt":"2026-10-26T14:39:00.846Z","finishedAt":"2026-10-26T14:39:01.108Z"}
+{"id":"G70","status":"PASS","startedAt":"2026-10-26T14:39:01.184Z","finishedAt":"2026-10-26T14:39:01.756Z"}
+{"id":"G71","status":"PASS","startedAt":"2026-10-26T14:39:01.838Z","finishedAt":"2026-10-26T14:39:02.918Z"}
+{"id":"G72","status":"PASS","startedAt":"2026-10-26T14:39:03.003Z","finishedAt":"2026-10-26T14:39:04.189Z"}
+{"id":"G73","status":"PASS","startedAt":"2026-10-26T14:39:04.286Z","finishedAt":"2026-10-26T14:39:05.780Z"}
+{"id":"G74","status":"PASS","startedAt":"2026-10-26T14:39:05.885Z","finishedAt":"2026-10-26T14:39:07.813Z"}
+{"id":"G75","status":"PASS","startedAt":"2026-10-26T14:39:07.923Z","finishedAt":"2026-10-26T14:39:09.689Z"}
+{"id":"G76","status":"PASS","startedAt":"2026-10-26T14:39:09.785Z","finishedAt":"2026-10-26T14:39:25.375Z"}
+{"id":"G77","status":"PASS","startedAt":"2026-10-26T14:39:25.467Z","finishedAt":"2026-10-26T14:39:26.084Z"}
+{"id":"G78","status":"PASS","startedAt":"2026-10-26T14:39:26.160Z","finishedAt":"2026-10-26T14:39:26.880Z"}
+{"id":"G79","status":"PASS","startedAt":"2026-10-26T14:39:26.965Z","finishedAt":"2026-10-26T14:39:27.035Z"}
+{"id":"G80","status":"PASS","startedAt":"2026-10-26T14:39:27.118Z","finishedAt":"2026-10-26T14:39:27.193Z"}
+{"id":"G81","status":"PASS","startedAt":"2026-10-26T14:39:27.267Z","finishedAt":"2026-10-26T14:39:27.331Z"}
+{"id":"G82","status":"PASS","startedAt":"2026-10-26T14:39:27.416Z","finishedAt":"2026-10-26T14:39:30.116Z"}
+{"id":"G83","status":"PASS","startedAt":"2026-10-26T14:39:30.216Z","finishedAt":"2026-10-26T14:39:32.087Z"}
+{"id":"G84","status":"PASS","startedAt":"2026-10-26T14:39:32.162Z","finishedAt":"2026-10-26T14:39:35.752Z"}
+{"id":"G85","status":"PASS","startedAt":"2026-10-26T14:39:35.752Z","finishedAt":"2026-10-26T14:39:37.345Z"}
+{"id":"G86","status":"PASS","startedAt":"2026-10-26T14:39:37.407Z","finishedAt":"2026-10-26T14:39:38.175Z"}
+{"id":"G87","status":"PASS","startedAt":"2026-10-26T14:39:38.176Z","finishedAt":"2026-10-26T14:39:39.592Z"}
+{"id":"G88","status":"PASS","startedAt":"2026-10-26T14:39:39.682Z","finishedAt":"2026-10-26T14:40:01.812Z"}
+{"id":"G89","status":"PASS","startedAt":"2026-10-26T14:40:01.895Z","finishedAt":"2026-10-26T14:40:02.574Z"}
+{"id":"G90","status":"PASS","startedAt":"2026-10-26T14:40:02.574Z","finishedAt":"2026-10-26T14:40:03.216Z"}
+{"id":"G91","status":"PASS","startedAt":"2026-10-26T14:40:03.216Z","finishedAt":"2026-10-26T14:40:04.145Z"}
+{"id":"G92","status":"PASS","startedAt":"2026-10-26T14:40:04.145Z","finishedAt":"2026-10-26T14:40:04.824Z"}
+{"id":"G93","status":"PASS","startedAt":"2026-10-26T14:40:04.824Z","finishedAt":"2026-10-26T14:40:05.571Z"}
+{"id":"G94","status":"PASS","startedAt":"2026-10-26T14:40:05.571Z","finishedAt":"2026-10-26T14:40:06.563Z"}
+{"id":"G95","status":"PASS","startedAt":"2026-10-26T14:40:06.563Z","finishedAt":"2026-10-26T14:40:07.208Z"}
+{"id":"G96","status":"PASS","startedAt":"2026-10-26T14:40:07.208Z","finishedAt":"2026-10-26T14:40:07.829Z"}
+{"id":"G97","status":"PASS","startedAt":"2026-10-26T14:40:07.829Z","finishedAt":"2026-10-26T14:40:08.454Z"}
+{"id":"G98","status":"PASS","startedAt":"2026-10-26T14:40:08.454Z","finishedAt":"2026-10-26T14:40:13.172Z"}
+{"id":"G99","status":"PASS","startedAt":"2026-10-26T14:40:13.172Z","finishedAt":"2026-10-26T14:40:13.794Z"}
+{"id":"G100","status":"PASS","startedAt":"2026-10-26T14:40:13.794Z","finishedAt":"2026-10-26T14:40:15.425Z"}
+{"id":"G101","status":"PASS","startedAt":"2026-10-26T14:40:15.425Z","finishedAt":"2026-10-26T14:40:19.919Z"}
+{"id":"G102","status":"PASS","startedAt":"2026-10-26T14:40:19.919Z","finishedAt":"2026-10-26T14:40:21.001Z"}
+{"id":"G103","status":"PASS","startedAt":"2026-10-26T14:40:21.001Z","finishedAt":"2026-10-26T14:40:22.341Z"}
+{"id":"G104","status":"PASS","startedAt":"2026-10-26T14:40:22.341Z","finishedAt":"2026-10-26T14:40:23.757Z"}
+{"id":"G105","status":"PASS","startedAt":"2026-10-26T14:40:23.757Z","finishedAt":"2026-10-26T14:40:25.198Z"}
+{"id":"G106","status":"PASS","startedAt":"2026-10-26T14:40:25.198Z","finishedAt":"2026-10-26T14:40:26.742Z"}
+{"id":"G107","status":"PASS","startedAt":"2026-10-26T14:40:26.743Z","finishedAt":"2026-10-26T14:40:28.143Z"}
+{"id":"G108","status":"PASS","startedAt":"2026-10-26T14:40:28.143Z","finishedAt":"2026-10-26T14:40:31.852Z"}
+{"id":"G109","status":"PASS","startedAt":"2026-10-26T14:40:31.852Z","finishedAt":"2026-10-26T14:40:33.258Z"}
+{"id":"G110","status":"PASS","startedAt":"2026-10-26T14:40:33.259Z","finishedAt":"2026-10-26T14:40:33.891Z"}
+{"id":"G111","status":"PASS","startedAt":"2026-10-26T14:40:33.891Z","finishedAt":"2026-10-26T14:40:35.690Z"}
+{"id":"G112","status":"PASS","startedAt":"2026-10-26T14:40:35.690Z","finishedAt":"2026-10-26T14:40:36.318Z"}
+{"id":"G113","status":"PASS","startedAt":"2026-10-26T14:40:36.318Z","finishedAt":"2026-10-26T14:40:37.700Z"}
+{"id":"G114","status":"PASS","startedAt":"2026-10-26T14:40:37.700Z","finishedAt":"2026-10-26T14:40:39.612Z"}
+{"id":"G115","status":"PASS","startedAt":"2026-10-26T14:40:39.612Z","finishedAt":"2026-10-26T14:40:51.871Z"}
+{"id":"G116","status":"UNTESTED","dependency":"needs NEBIUS_API_KEY","startedAt":"2026-10-26T14:40:51.871Z","finishedAt":"2026-10-26T14:40:51.871Z"}
+{"id":"G117","status":"UNTESTED","dependency":"needs NEBIUS_API_KEY","startedAt":"2026-10-26T14:40:51.872Z","finishedAt":"2026-10-26T14:40:51.872Z"}
+{"id":"G118","status":"PASS","startedAt":"2026-10-26T14:40:51.872Z","finishedAt":"2026-10-26T14:40:52.489Z"}
+{"id":"G119","status":"UNTESTED","dependency":"needs TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM and ALERT_PHONE; no real-money call authorized","startedAt":"2026-10-26T14:40:52.489Z","finishedAt":"2026-10-26T14:40:52.489Z"}
+{"id":"G120","status":"UNTESTED","dependency":"needs TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID","startedAt":"2026-10-26T14:40:52.489Z","finishedAt":"2026-10-26T14:40:52.489Z"}
+{"id":"G121","status":"UNTESTED","dependency":"needs ESP32 CSI nodes on the LAN","startedAt":"2026-10-26T14:40:52.490Z","finishedAt":"2026-10-26T14:40:52.490Z"}
+{"id":"G122","status":"UNTESTED","dependency":"needs ESP32 CSI nodes on the LAN","startedAt":"2026-10-26T14:40:52.490Z","finishedAt":"2026-10-26T14:40:52.490Z"}
+{"id":"G123","status":"UNTESTED","dependency":"needs ESP32 CSI nodes on the LAN and local Wi-Fi configuration","startedAt":"2026-10-26T14:40:52.490Z","finishedAt":"2026-10-26T14:40:52.490Z"}
+{"id":"G124","status":"UNTESTED","dependency":"needs HOTARU hardware","startedAt":"2026-10-26T14:40:52.490Z","finishedAt":"2026-10-26T14:40:52.490Z"}
+{"id":"G125","status":"UNTESTED","dependency":"needs HOTARU hardware and its external GHOST-link firmware","startedAt":"2026-10-26T14:40:52.490Z","finishedAt":"2026-10-26T14:40:52.490Z"}
+{"id":"G126","status":"UNTESTED","dependency":"needs ESP32 CSI nodes on the LAN and HOTARU hardware","startedAt":"2026-10-26T14:40:52.491Z","finishedAt":"2026-10-26T14:40:52.491Z"}
+{"id":"G127","status":"UNTESTED","dependency":"needs HOTARU hardware and ESP32 CSI nodes on the LAN","startedAt":"2026-10-26T14:40:52.491Z","finishedAt":"2026-10-26T14:40:52.491Z"}
+{"id":"G128","status":"UNTESTED","dependency":"needs HOTARU hardware and an Arduino harness/firmware integrating these headers","startedAt":"2026-10-26T14:40:52.491Z","finishedAt":"2026-10-26T14:40:52.491Z"}
+{"id":"G129","status":"PASS","startedAt":"2026-10-26T14:40:52.491Z","finishedAt":"2026-10-26T14:40:53.115Z"}
+{"id":"G130","status":"PASS","startedAt":"2026-10-26T14:40:53.115Z","finishedAt":"2026-10-26T14:40:55.569Z"}
+{"id":"G131","status":"PASS","startedAt":"2026-10-26T14:40:55.569Z","finishedAt":"2026-10-26T14:40:57.000Z"}
+{"id":"G132","status":"PASS","startedAt":"2026-10-26T14:40:57.000Z","finishedAt":"2026-10-26T14:40:57.621Z"}
+{"id":"G133","status":"PASS","startedAt":"2026-10-26T14:40:57.622Z","finishedAt":"2026-10-26T14:40:58.245Z"}
+{"id":"G134","status":"PASS","startedAt":"2026-10-26T14:40:58.245Z","finishedAt":"2026-10-26T14:40:58.865Z"}

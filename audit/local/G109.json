@@ -1,13 +1,13 @@
 {
   "id": "G109",
   "status": "PASS",
-  "note": ".....                                                                    [100%]\n5 passed in 0.43s\n",
+  "note": ".....                                                                    [100%]\n5 passed in 0.48s\n",
   "console": "",
   "network": [],
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "pytest",
         "-q",
@@ -18,7 +18,7 @@
         "tests/test_evidence.py::test_witness_writes_numbers_from_the_readings"
       ],
       "exit": 0,
-      "stdout": ".....                                                                    [100%]\n5 passed in 0.43s\n",
+      "stdout": ".....                                                                    [100%]\n5 passed in 0.48s\n",
       "stderr": ""
     }
   ]

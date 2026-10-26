@@ -1,13 +1,13 @@
 {
   "id": "G113",
   "status": "PASS",
-  "note": "..                                                                       [100%]\n2 passed in 0.44s\n",
+  "note": "..                                                                       [100%]\n2 passed in 0.46s\n",
   "console": "",
   "network": [],
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "pytest",
         "-q",
@@ -15,7 +15,7 @@
         "tests/test_audit_contracts.py::test_truncated_csi_does_not_yield_a_partial_frame"
       ],
       "exit": 0,
-      "stdout": "..                                                                       [100%]\n2 passed in 0.44s\n",
+      "stdout": "..                                                                       [100%]\n2 passed in 0.46s\n",
       "stderr": ""
     }
   ]

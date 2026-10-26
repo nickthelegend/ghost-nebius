@@ -1,4 +1,2 @@
-command: .venv/bin/python -m pytest -q
-exit_code: 0
 .........................................................                [100%]
-57 passed in 68.02s (0:01:08)
+57 passed in 68.00s (0:01:07)

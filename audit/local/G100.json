@@ -1,20 +1,20 @@
 {
   "id": "G100",
   "status": "PASS",
-  "note": "Real headless save/reload recorded in G98; the production maintenance function directly verified real JSON persistence, next-day fitting after noon, no second fit on the same day, and matching reloaded history. No routine, model, hardware, or clock implementation was mocked.",
+  "note": ".                                                                        [100%]\n1 passed in 0.60s\n",
   "console": "",
   "network": [],
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "pytest",
         "-q",
         "tests/test_audit_contracts.py::test_headless_calendar_maintenance_uses_real_persisted_history"
       ],
       "exit": 0,
-      "stdout": ".                                                                        [100%]\n1 passed in 1.01s\n",
+      "stdout": ".                                                                        [100%]\n1 passed in 0.60s\n",
       "stderr": ""
     }
   ]

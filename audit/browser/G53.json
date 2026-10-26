@@ -2,9 +2,56 @@
   "id": "G53",
   "status": "PASS",
   "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:38:13.140Z",
+  "finishedAt": "2026-10-26T14:38:25.324Z",
   "console": [],
   "pageErrors": [],
-  "network": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/restart"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/restart",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/jump"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/jump",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/pause"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/pause",
+      "type": "application/json"
+    }
+  ],
   "expectedFault": false,
   "unexpectedConsole": [],
   "unexpectedNetwork": []

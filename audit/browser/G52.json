@@ -2,12 +2,9 @@
   "id": "G52",
   "status": "PASS",
   "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:38:09.853Z",
+  "finishedAt": "2026-10-26T14:38:13.046Z",
   "console": [
-    {
-      "type": "error",
-      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
-      "url": "http://127.0.0.1:8780/"
-    },
     {
       "type": "error",
       "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
@@ -16,16 +13,6 @@
   ],
   "pageErrors": [],
   "network": [
-    {
-      "event": "request",
-      "method": "GET",
-      "url": "http://127.0.0.1:8780/api/stream"
-    },
-    {
-      "event": "failed",
-      "url": "http://127.0.0.1:8780/api/stream",
-      "error": "net::ERR_CONNECTION_REFUSED"
-    },
     {
       "event": "request",
       "method": "GET",

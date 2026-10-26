@@ -2,6 +2,8 @@
   "id": "G23",
   "status": "PASS",
   "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:33:32.115Z",
+  "finishedAt": "2026-10-26T14:33:32.618Z",
   "console": [
     {
       "type": "warning",

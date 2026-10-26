@@ -1,20 +1,29 @@
 {
   "id": "G114",
   "status": "PASS",
-  "note": ".                                                                        [100%]\n1 passed in 0.99s\n",
+  "note": ".                                                                        [100%]\n1 passed in 0.95s\n",
   "console": "",
-  "network": [],
+  "network": [
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18770)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18771)"
+    }
+  ],
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "pytest",
         "-q",
         "tests/test_hub.py::test_link_hello_commands_and_csi"
       ],
       "exit": 0,
-      "stdout": ".                                                                        [100%]\n1 passed in 0.99s\n",
+      "stdout": ".                                                                        [100%]\n1 passed in 0.95s\n",
       "stderr": ""
     }
   ]

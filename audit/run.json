@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-26",
+  "startedAt": "2026-10-26T14:32:52.018Z",
+  "port": 8780,
+  "browser": "156.0.8078.4",
+  "entryCommand": [
+    ".venv/bin/python",
+    "-m",
+    "hub.server",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8780"
+  ],
+  "desktopWidth": 1440,
+  "phoneWidth": 375,
+  "slot": "ghost-nebius-reaudit",
+  "responsesSubstituted": false
+}
