@@ -29,7 +29,11 @@ export default function App() {
   useEffect(() => {
     if (!snap) return;
     const n = snap.timeline.length;
-    if (n < lastCount.current) setPinned(null); // the night restarted
+    if (n < lastCount.current) { // the night restarted
+      setPinned(null);
+      setFlash(false);
+      setLinked(null);
+    }
     if (n > lastCount.current && lastCount.current >= 0) {
       // a capture just fired: for a few seconds the room, its trace, the capture and HOTARU share its colour
       const c = snap.timeline[n - 1];
