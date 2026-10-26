@@ -60,10 +60,10 @@ export GHOST_LOG_MODEL=nvidia/Nemotron-3_5-Lightning   # or nvidia/NVIDIA-Nemotr
 |---|---|---|
 | `hub/agent.py` `Reasoner.decide` | **Nemotron 3 Ultra** on Token Factory | Gets each event, the rule's severity floor and numbered evidence (CSI readings, the learned routine, what HOTARU heard). Returns severity, an explanation that cites `[E#]`, what HOTARU says, and the family message. Citations to evidence that doesn't exist are stripped; the rules' floor always holds; a check-in always comes before a call. |
 | `hub/agent.py` `Reasoner.summarize` | **Nemotron 3.5 Lightning** (or Nemotron 3 Nano) | Writes the running log line every few seconds with reasoning switched off (`chat_template_kwargs.enable_thinking=false`, falling back if refused). |
-| `python -m hub.routine fit` | Nebius **Serverless Job** (planned) | The nightly refit of the routine model as a batch job over the day's presence. |
+| `python -m hub.routine fit/show <file>` | Local JSON operations | Fit or inspect the local presence history. Running the refit as a Nebius **Serverless Job** is planned/optional; no cloud job runs in this repo today. |
 
 Without a key everything still runs on the rules and plain-language templates, and the dashboard
-says so ("Rules + templates").
+says "Setup required: NEBIUS_API_KEY"; captures remain attributed to rules + templates.
 
 ## What's in the hub
 
