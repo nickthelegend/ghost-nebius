@@ -56,10 +56,10 @@ class Session:
         if recording is not None:
             self.rec = Recording.load(recording)
             live = ROOT / "data" / "live" / "routine.json"
-            if self.rec.header.get("synthetic") or not live.exists():
+            if self.rec.header.get("synthetic"):
                 self.routine = scenario.build_routine(self.rec.scene_start)  # the demo's two weeks
             else:
-                self.routine = Routine.load(live)
+                self.routine = Routine.load(live) if live.exists() else Routine()
                 self.routine.fit(before=self.rec.scene_start)
             self.hub = lamp_hub or VirtualHub(VirtualLamp(reply=reply))
             self.g = Guardian(self.hub, Config.replay() if self.rec.scale > 1 else Config(), rooms, reasoner, "auto",
