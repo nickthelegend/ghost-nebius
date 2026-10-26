@@ -1,0 +1,24 @@
+{
+  "id": "G111",
+  "status": "PASS",
+  "note": "......                                                                   [100%]\n6 passed in 0.87s\n",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_hub.py::test_breathing_rate",
+        "tests/test_hub.py::test_empty_room_has_no_confident_breathing",
+        "tests/test_hub.py::test_walking_raises_motion_and_suppresses_rate",
+        "tests/test_audit_contracts.py::test_sensor_warmup_is_waiting_instead_of_invented_empty"
+      ],
+      "exit": 0,
+      "stdout": "......                                                                   [100%]\n6 passed in 0.87s\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "G12",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:33:09.740Z",
+  "finishedAt": "2026-10-26T14:33:14.064Z",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=1"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=1",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=2",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

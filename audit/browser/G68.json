@@ -1,0 +1,30 @@
+{
+  "id": "G68",
+  "status": "PASS",
+  "note": "{\"status\":200,\"type\":\"text/event-stream\",\"cache\":\"no-store\",\"connection\":\"keep-alive\",\"eventSpacingMs\":502}",
+  "startedAt": "2026-10-26T14:39:00.059Z",
+  "finishedAt": "2026-10-26T14:39:00.735Z",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/stream"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/stream",
+      "type": "text/event-stream"
+    },
+    {
+      "event": "expected-stream-close",
+      "url": "http://127.0.0.1:8780/api/stream",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

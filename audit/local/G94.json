@@ -1,0 +1,79 @@
+{
+  "id": "G94",
+  "status": "PASS",
+  "note": "All explicit assertions passed.",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "hub.routine"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: routine.py [-h] {fit,show} path [room]\nroutine.py: error: the following arguments are required: cmd, path\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "hub.routine",
+        "fit"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: routine.py [-h] {fit,show} path [room]\nroutine.py: error: the following arguments are required: path\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "hub.routine",
+        "fit",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-e0pw5tlb/absent"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: routine.py [-h] {fit,show} path [room]\nroutine.py: error: cannot read routine: [Errno 2] No such file or directory: '/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-e0pw5tlb/absent'\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "hub.routine",
+        "fit",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-e0pw5tlb/bad.json"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: routine.py [-h] {fit,show} path [room]\nroutine.py: error: cannot read routine: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "hub.routine",
+        "show",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-e0pw5tlb/routine.json",
+        "unknown"
+      ],
+      "exit": 2,
+      "stdout": "",
+      "stderr": "usage: routine.py [-h] {fit,show} path [room]\nroutine.py: error: unknown room 'unknown'; choose from ['bathroom', 'bedroom', 'kitchen', 'living']\n"
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "hub.routine",
+        "fit",
+        "/var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-e0pw5tlb/empty.json"
+      ],
+      "exit": 0,
+      "stdout": "fit /var/folders/tp/gcpvr1451r350sq27v4csrq40000gn/T/ghost-audit-e0pw5tlb/empty.json: 0 days, rooms []\n",
+      "stderr": ""
+    }
+  ]
+}

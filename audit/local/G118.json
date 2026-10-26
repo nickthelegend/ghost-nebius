@@ -1,0 +1,8 @@
+{
+  "id": "G118",
+  "status": "PASS",
+  "note": "All explicit assertions passed.",
+  "console": "[alert] (no Twilio configured) would call family: GHOST audit printed-only probe\n[alert] (no Telegram configured) GHOST audit printed-only probe\n",
+  "network": [],
+  "commands": []
+}

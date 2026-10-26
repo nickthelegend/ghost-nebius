@@ -1,0 +1,69 @@
+{
+  "id": "G73",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:39:04.286Z",
+  "finishedAt": "2026-10-26T14:39:05.780Z",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/pause"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/pause",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=2",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x="
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=2&x=4"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=2&x=4",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

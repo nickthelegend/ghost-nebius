@@ -26,8 +26,8 @@ the current night is always judged against the nights before it.
 from __future__ import annotations
 
 import json
+import argparse
 import math
-import sys
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -255,14 +255,23 @@ class Routine:
 
 
 if __name__ == "__main__":
-    cmd, path = sys.argv[1], sys.argv[2]
-    r = Routine.load(path)
-    r.fit()
-    if cmd == "fit":
-        r.save(path)
-        print(f"fit {path}: {r.nights} days, rooms {sorted(r.model)}")
-    elif cmd == "show":
-        room = sys.argv[3]
+    ap = argparse.ArgumentParser(description="Fit or inspect a local JSON presence history.")
+    ap.add_argument("cmd", choices=("fit", "show"))
+    ap.add_argument("path")
+    ap.add_argument("room", nargs="?")
+    a = ap.parse_args()
+    try:
+        r = Routine.load(a.path)
+        r.fit()
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as ex:
+        ap.error(f"cannot read routine: {ex}")
+    if a.cmd == "fit":
+        r.save(a.path)
+        print(f"fit {a.path}: {r.nights} days, rooms {sorted(r.model)}")
+    else:
+        room = a.room
+        if room not in r.model:
+            ap.error(f"unknown room {room!r}; choose from {sorted(r.model)}")
         m = r.model[room]
         for b in range(r.bins):
             print(f"{r.bin_label(b)}  {'#' * round(m.baseline[b] * 40):40s} {m.occupied_days[b]}/{m.days[b]}")

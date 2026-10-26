@@ -1,0 +1,25 @@
+{
+  "id": "G66",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:38:59.196Z",
+  "finishedAt": "2026-10-26T14:38:59.267Z",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/state"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/state",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

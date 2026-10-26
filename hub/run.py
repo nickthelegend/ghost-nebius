@@ -54,7 +54,7 @@ class Guardian:
         self._ring_set = False  # the ring is put in "follow" (breathing) mode on the first tick
         self._queue: asyncio.Queue[Event] | None = None
         self._worker: asyncio.Task | None = None
-        if live_csi:
+        if live_csi and hub is not None:
             hub.csi_listeners.append(self.feed)
 
     def feed(self, f: CsiFrame) -> None:
@@ -69,7 +69,7 @@ class Guardian:
             if r is not None:
                 events += self.rules.update(room, r, now)
                 self.witness.record(room, now, r, self.rules.rooms[room].present)
-        lamp = self.hub.lamp
+        lamp = self.hub.lamp if self.hub else None
         if lamp:
             lamp.clock = self.clock
             if not self._ring_set and not self.decisions:
@@ -131,7 +131,7 @@ class Guardian:
                  "lamp": [], "outcome": ""}
         self.decisions.append(entry)
         log.info("[%s] %s in %s -> %s (%s): %s", d.by, e.kind, e.room, d.severity, e.floor, d.explain)
-        lamp = self.hub.lamp
+        lamp = self.hub.lamp if self.hub else None
         for step in plan(d, e, self.rooms):
             if step["op"] == "call":
                 entry["lamp"].append(step)
@@ -188,7 +188,7 @@ class Guardian:
         sensor = self.sensors.get(room)
         present = bool(s and s.present)
         moving = bool(r and r.motion >= self.cfg.motion_on)
-        state = "moving" if moving else ("breathing" if r and r.bpm else ("still" if present else "empty"))
+        state = "waiting" if r is None else "moving" if moving else ("breathing" if r.bpm else ("still" if present else "empty"))
         view = {"present": present, "state": state, "bpm": round(r.bpm, 1) if r and r.bpm else None,
                 "confidence": round(r.confidence, 2) if r else None, "motion": round(r.motion, 1) if r else None,
                 "jolt": round(r.jolt) if r else None, "trace": sensor.trace if sensor else [],
@@ -207,6 +207,19 @@ def load_rooms(path: str | Path | None = None) -> dict:
         return {"lamp": {"pan": 0}}
     j = json.loads(p.read_text())
     return j.get("rooms", j)  # either {"rooms": {...}, "plan": ...} or the bare room map
+
+
+def maintain_routine(routine: Routine, path: Path, now: float, last_save: float,
+                     fitted_day: int) -> tuple[float, int]:
+    """Save and refit against the same sampled wall-clock time, including at midnight."""
+    if now - last_save > 600:
+        routine.save(path)
+        last_save = now
+    today = time.localtime(now)
+    if today.tm_yday != fitted_day and today.tm_hour >= 12:
+        routine.fit(before=now)
+        fitted_day = today.tm_yday
+    return last_save, fitted_day
 
 
 async def main(demo: bool, port: int, follow: str | None) -> None:
@@ -231,12 +244,7 @@ async def main(demo: bool, port: int, follow: str | None) -> None:
         if now - last_log > (15 if demo else 60):
             last_log = now
             log.info("status: %s", await g.status_line())
-        if now - last_save > 600:
-            last_save = now
-            routine.save(routine_path)
-        if time.localtime().tm_yday != fitted_day and time.localtime().tm_hour >= 12:
-            fitted_day = time.localtime().tm_yday  # the nightly refit (or run it as a Nebius Serverless Job)
-            routine.fit()
+        last_save, fitted_day = maintain_routine(routine, routine_path, now, last_save, fitted_day)
 
 
 if __name__ == "__main__":

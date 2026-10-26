@@ -1,0 +1,290 @@
+{
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/?once=1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 409 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "url": "http://127.0.0.1:8780/"
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,63 @@
+{
+  "id": "G75",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:39:07.923Z",
+  "finishedAt": "2026-10-26T14:39:09.689Z",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 400 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    }
+  ],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=banana"
+    },
+    {
+      "event": "response",
+      "status": 400,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=banana",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=NaN"
+    },
+    {
+      "event": "response",
+      "status": 400,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=NaN",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=Infinity"
+    },
+    {
+      "event": "response",
+      "status": 400,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=Infinity",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": true,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

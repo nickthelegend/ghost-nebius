@@ -1,0 +1,24 @@
+4c2708d orchestra t3: Browser audit and root-cause fixes
+cb662e0 Normalize audit log and harness whitespace
+8250245 Record final audit evidence
+d2a196e Update the verified regression test count to 57
+917b3f4 Use one timestamp for routine saves and daily refits
+7097c1f Preserve selected replay key contrast on hover
+35da99a Meet contrast for secondary screen text
+f5eab36 Meet text contrast on red alert indicators
+b4b096f Update the verified regression test count to 56
+3429aee Cover local provenance, framing, warmup, and queue regressions
+341b134 Describe routine fitting as a local JSON operation
+459b4bd Keep motion readouts visible on phone widths
+a83fdc7 Keep empty recording playheads finite
+f39ce54 Clear capture highlights when restarting a night
+ad63e47 Expose lost hub state and reject failed frozen snapshots
+df8f368 Show the missing Nebius key as setup required
+771a715 Retain armed button answers and disarm cancelled check-ins
+cae7bcb Keep synthetic routines out of unlabelled recordings
+8c5d12c Validate HTTP request methods, framing, and replay speeds
+320040f Report waiting until a room has a sensor reading
+02817ea Allow local live sessions without a connected lamp
+ba5a629 Validate routine CLI arguments before loading history
+d420a2d Reject truncated GHOSTCSI recording records
+02e4ed3 Reject truncated CSI amplitude records

@@ -1,0 +1,25 @@
+{
+  "id": "G109",
+  "status": "PASS",
+  "note": ".....                                                                    [100%]\n5 passed in 0.48s\n",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_evidence.py::test_cite_strips_invented_ids_and_keeps_real_ones",
+        "tests/test_evidence.py::test_cite_adds_citations_when_the_model_gave_none",
+        "tests/test_evidence.py::test_cite_honours_the_cites_list",
+        "tests/test_evidence.py::test_rules_only_explanations_cite_too",
+        "tests/test_evidence.py::test_witness_writes_numbers_from_the_readings"
+      ],
+      "exit": 0,
+      "stdout": ".....                                                                    [100%]\n5 passed in 0.48s\n",
+      "stderr": ""
+    }
+  ]
+}

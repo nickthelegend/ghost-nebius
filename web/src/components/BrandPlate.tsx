@@ -15,7 +15,7 @@ export function BrandPlate({ snap, link }: { snap: Snapshot | null; link: Link }
   const sensed = snap ? Object.values(snap.rooms).filter((r) => r.sensor !== false && r.state !== "waiting").length : 0;
   const model = snap?.model;
   const lamp = snap?.lamp;
-  const reason = model?.online ? (model.reason ?? "").replace(/^nvidia\//, "") : "Rules + templates (no Nebius key)";
+  const reason = model?.online ? (model.reason ?? "").replace(/^nvidia\//, "") : "Setup required: NEBIUS_API_KEY";
   const act = !lamp ? "—" : !lamp.connected ? "Waiting for HOTARU" : lamp.kind === "virtual" ? "Virtual HOTARU" : "HOTARU connected";
   return (
     <header className="plate">

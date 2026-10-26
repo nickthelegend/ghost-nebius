@@ -1,0 +1,25 @@
+{
+  "id": "G13",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:33:14.176Z",
+  "finishedAt": "2026-10-26T14:33:14.507Z",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/restart"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/restart",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

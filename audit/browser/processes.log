@@ -1,0 +1,42 @@
+hub PID 54072 port 8780
+Chrome PID 54073
+stopped hub PID 54072
+hub PID 54093 port 8780
+stopped hub PID 54093
+hub PID 56713 port 8780
+stopped hub PID 56713
+hub PID 75039 port 8780 args --live --lamp-port 38770
+stopped hub PID 75039
+hub PID 75040 port 8780
+stopped hub PID 75040
+hub PID 79373 port 8780
+stopped hub PID 79373
+hub PID 79382 port 8780
+stopped hub PID 79382
+hub PID 79389 port 8780 args --live --lamp-port 38770
+stopped hub PID 79389
+hub PID 80926 port 8780
+stopped hub PID 80926
+hub PID 82192 port 8780
+stopped hub PID 82192
+hub PID 7984 port 8780 args --live --lamp-port 38770
+stopped hub PID 7984
+hub PID 7985 port 8780
+stopped hub PID 7985
+hub PID 7998 port 8780 args --live --lamp-port 38770
+stopped hub PID 7998
+hub PID 8189 port 8780
+stopped hub PID 8189
+hub PID 9652 port 8780 args --recording /tmp/ghost-audit-observer-VFayPV/custom.ghostcsi --speed 2
+stopped hub PID 9652
+hub PID 9654 port 8780 args --recording /tmp/ghost-audit-observer-VFayPV/plain.ghostcsi --speed 2
+stopped hub PID 9654
+hub PID 9661 port 8780 args --recording /tmp/ghost-audit-observer-VFayPV/empty.ghostcsi
+stopped hub PID 9661
+hub PID 9887 port 8780
+stopped hub PID 9887
+hub PID 12281 port 8780 args --reply I'm OK
+stopped hub PID 12281
+hub PID 23855 port 8780
+closed Chrome PID 54073
+stopped hub PID 23855

@@ -1,0 +1,36 @@
+{
+  "id": "G98",
+  "status": "PASS",
+  "note": "All explicit assertions passed.",
+  "console": "",
+  "network": [],
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "hub.run",
+        "--port",
+        "39770"
+      ],
+      "pid": 27126,
+      "exit": -15,
+      "stdout": "20:10:09 GHOST hub listening on tcp 39770, csi udp 39771\n20:10:09 GHOST running: rules only (set NEBIUS_API_KEY + GHOST_REASON_MODEL), real timings, rooms ['lamp'], routine from 0 days\n20:10:10 status: no readings\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "hub.run",
+        "--demo",
+        "--port",
+        "39772",
+        "--follow",
+        ""
+      ],
+      "pid": 28298,
+      "exit": -15,
+      "stdout": "20:10:11 GHOST hub listening on tcp 39772, csi udp 39773\n20:10:11 GHOST running: rules only (set NEBIUS_API_KEY + GHOST_REASON_MODEL), demo timings, rooms ['lamp'], routine from 0 days\n20:10:12 status: no readings\n"
+    }
+  ]
+}

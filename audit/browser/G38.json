@@ -1,0 +1,47 @@
+{
+  "id": "G38",
+  "status": "PASS",
+  "note": "{\"events\":[[\"got_up\",\"bedroom\",\"watch\"],[\"moved\",\"bathroom\",\"watch\"],[\"fall_suspected\",\"bathroom\",\"watch\"],[\"long_stay\",\"bathroom\",\"check_in\"],[\"no_answer\",\"bathroom\",\"alert\"]],\"outcome\":\"family alerted (dry run: replay never places real calls)\",\"hubOutboundConnections\":0}",
+  "startedAt": "2026-10-26T14:35:30.115Z",
+  "finishedAt": "2026-10-26T14:35:57.242Z",
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/restart"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/restart",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/jump"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/jump",
+      "type": "application/json"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+      "type": "application/json"
+    }
+  ],
+  "expectedFault": false,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

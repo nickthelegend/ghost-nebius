@@ -1,0 +1,207 @@
+{
+  "id": "G80",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:39:27.118Z",
+  "finishedAt": "2026-10-26T14:39:27.193Z",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    }
+  ],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "PUT",
+      "url": "http://127.0.0.1:8780/api/state"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/api/state",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "PUT",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "PATCH",
+      "url": "http://127.0.0.1:8780/api/state"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/api/state",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "PATCH",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "DELETE",
+      "url": "http://127.0.0.1:8780/api/state"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/api/state",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "DELETE",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "OPTIONS",
+      "url": "http://127.0.0.1:8780/api/state"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/api/state",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "OPTIONS",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "HEAD",
+      "url": "http://127.0.0.1:8780/api/state"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/api/state",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "HEAD",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "POST",
+      "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+    },
+    {
+      "event": "response",
+      "status": 405,
+      "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+      "type": "text/plain"
+    }
+  ],
+  "expectedFault": true,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

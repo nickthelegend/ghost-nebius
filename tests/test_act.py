@@ -62,3 +62,34 @@ def test_virtual_lamp_tap_answers_a_check_in():
 def test_virtual_lamp_voice_answer():
     r = asyncio.run(VirtualLamp(reply="I'm fine, just slow", speed=0.01).ask("Are you okay?", 2000))
     assert r == {"answered": True, "how": "voice", "text": "I'm fine, just slow"}
+
+
+def test_tap_during_speech_is_retained_once():
+    async def go():
+        lamp = VirtualLamp(speed=0.05)
+        task = asyncio.create_task(lamp.ask("Are you okay?", 1000))
+        while not lamp.state.speaking:
+            await asyncio.sleep(0)
+        assert lamp.state.checkin and not lamp.state.listening
+        lamp.tap()
+        lamp.tap()
+        result = await task
+        assert not lamp.state.checkin
+        assert not any(op["op"] == "listen" for op in lamp.ops)
+        return result
+    assert asyncio.run(go()) == {"answered": True, "how": "button", "text": ""}
+
+
+def test_cancelled_checkin_disarms_the_lamp():
+    async def go():
+        lamp = VirtualLamp()
+        task = asyncio.create_task(lamp.ask("Are you okay?"))
+        while not lamp.state.checkin:
+            await asyncio.sleep(0)
+        task.cancel()
+        try:
+            await task
+        except asyncio.CancelledError:
+            pass
+        assert not lamp.state.checkin
+    asyncio.run(go())

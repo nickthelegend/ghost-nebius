@@ -1,0 +1,127 @@
+{
+  "id": "G79",
+  "status": "PASS",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:39:26.965Z",
+  "finishedAt": "2026-10-26T14:39:27.035Z",
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Error)",
+      "url": "http://127.0.0.1:8780/"
+    }
+  ],
+  "pageErrors": [],
+  "network": [
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/replay/restart"
+    },
+    {
+      "event": "response",
+      "status": 404,
+      "url": "http://127.0.0.1:8780/api/replay/restart",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/replay/jump"
+    },
+    {
+      "event": "response",
+      "status": 404,
+      "url": "http://127.0.0.1:8780/api/replay/jump",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/replay/pause"
+    },
+    {
+      "event": "response",
+      "status": 404,
+      "url": "http://127.0.0.1:8780/api/replay/pause",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/replay/resume"
+    },
+    {
+      "event": "response",
+      "status": 404,
+      "url": "http://127.0.0.1:8780/api/replay/resume",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/replay/speed"
+    },
+    {
+      "event": "response",
+      "status": 404,
+      "url": "http://127.0.0.1:8780/api/replay/speed",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/lamp/tap"
+    },
+    {
+      "event": "response",
+      "status": 404,
+      "url": "http://127.0.0.1:8780/api/lamp/tap",
+      "type": "text/plain"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/not-real"
+    },
+    {
+      "event": "response",
+      "status": 404,
+      "url": "http://127.0.0.1:8780/api/not-real",
+      "type": "text/plain"
+    }
+  ],
+  "expectedFault": true,
+  "unexpectedConsole": [],
+  "unexpectedNetwork": []
+}

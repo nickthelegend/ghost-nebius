@@ -1,0 +1,56 @@
+{
+  "id": "G101",
+  "status": "PASS",
+  "note": "Ran the explicitly synthetic fake_lamp CLI over real TCP/UDP; no hardware validation is claimed.",
+  "console": "{\"syntheticUtility\": true, \"hello\": {\"ev\": \"hello\", \"id\": \"fake-hotaru\", \"fw\": \"hotaru3-ghost\", \"ip\": \"127.0.0.1\", \"rssi\": -50, \"actions\": 60, \"csi\": true}, \"csi_frames\": 144, \"answer\": {\"answered\": true, \"how\": \"voice\", \"text\": \"Audit utility reply\"}, \"retry_before_listener\": true}\n",
+  "network": [
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 39820)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 39820)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 39820)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 39821)"
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-m",
+        "hub.fake_lamp",
+        "--help"
+      ],
+      "exit": 0,
+      "stdout": "usage: fake_lamp.py [-h] [--hub HUB] [--port PORT] [--bpm BPM] [--reply REPLY]\n\noptions:\n  -h, --help     show this help message and exit\n  --hub HUB\n  --port PORT\n  --bpm BPM\n  --reply REPLY  what the person answers to a check-in; '' = silence\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
+        "-u",
+        "-m",
+        "hub.fake_lamp",
+        "--hub",
+        "127.0.0.1",
+        "--port",
+        "39820",
+        "--bpm",
+        "14",
+        "--reply",
+        "Audit utility reply"
+      ],
+      "pid": 28678,
+      "exit": -15,
+      "stdout": "[lamp] eye {'mode': 'path'}\n[lamp] look {'pan': -40}\n[lamp] action {'name': 'nod'}\n[lamp] says: Audit utility check\n[lamp] listening 1000 ms\n"
+    }
+  ]
+}
