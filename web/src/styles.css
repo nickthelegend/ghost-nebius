@@ -162,7 +162,7 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em
   color: var(--scr-ink-3); border: 1px solid #26312c; background: #0d1311; transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
 .trig-lamp.lamp-watch.is-lit { color: #1d1606; background: var(--sev-watch); border-color: var(--sev-watch); }
 .trig-lamp.lamp-check_in.is-lit { color: #231200; background: var(--sev-check); border-color: var(--sev-check); }
-.trig-lamp.lamp-alert.is-lit { color: #fff; background: var(--sev-alert); border-color: var(--sev-alert); }
+.trig-lamp.lamp-alert.is-lit { color: var(--ink); background: var(--sev-alert); border-color: var(--sev-alert); }
 .trig-lamp.lamp-alert.is-now { animation: alarm 1.6s ease-in-out infinite; }
 @keyframes alarm { 50% { background: #b8281e; } }
 .trig-note { margin: 0; font-size: 15px; color: var(--scr-ink-2); }
@@ -178,7 +178,7 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em
 .sev-badge { font: 700 13px/1 var(--cond); letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 8px 4px; border-radius: 4px; border: 1px solid; }
 .sev-badge.sev-none { color: var(--sev-none); } .sev-badge.sev-watch { color: var(--sev-watch); }
 .sev-badge.sev-check_in { color: #231200; background: var(--sev-check); border-color: var(--sev-check); }
-.sev-badge.sev-alert { color: #fff; background: var(--sev-alert); border-color: var(--sev-alert); }
+.sev-badge.sev-alert { color: var(--ink); background: var(--sev-alert); border-color: var(--sev-alert); }
 .cap-by { font-size: 14px; color: var(--scr-ink-2); }
 .cap-text { margin: 0; font-size: 16px; line-height: 1.55; color: var(--scr-ink); max-width: 64ch; }
 .cite { display: inline-block; margin: 0 1px; padding: 0 5px; min-width: 26px; border-radius: 4px; border: 1px solid #39504a; background: #12201c; color: var(--ch2);
