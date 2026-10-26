@@ -25,7 +25,7 @@ async function start(args=[]){
   hub=child;hubs.add(child);let startup='';
   const capture=data=>{fs.appendFileSync(path.join(out,'hub.log'),data);startup=(startup+data.toString()).slice(-16384);};
   child.stdout.on('data',capture);child.stderr.on('data',capture);
-  fs.appendFileSync(path.join(out,'processes.log'),`hub PID ${child.pid} port ${port} args ${args.join(' ')}\n`);
+  fs.appendFileSync(path.join(out,'processes.log'),`hub PID ${child.pid} port ${port}${args.length?' args '+args.join(' '):''}\n`);
   for(let i=0;i<150;i++){
     if(child.exitCode!==null||child.signalCode!==null)throw new Error(`hub PID ${child.pid} exited before listening`);
     if(startup.includes(`GHOST dashboard on http://127.0.0.1:${port}`)){const r=await fetch(base+'/api/state');assert(r.ok);return;}
@@ -259,4 +259,3 @@ try{
  fs.writeFileSync(path.join(out,'network-all.json'),JSON.stringify(network,null,2));fs.writeFileSync(path.join(out,'console-all.json'),JSON.stringify({console:consoleLog,pageErrors},null,2));
 }catch(e){console.error(e.stack);process.exitCode=1;}
 finally{await cleanup();}
-

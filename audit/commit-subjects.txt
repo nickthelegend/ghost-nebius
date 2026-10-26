@@ -19,4 +19,5 @@ f5eab36 Meet text contrast on red alert indicators
 7097c1f Preserve selected replay key contrast on hover
 917b3f4 Use one timestamp for routine saves and daily refits
 d2a196e Update the verified regression test count to 57
-Record final audit evidence
+8250245 Record final audit evidence
+Normalize audit log and harness whitespace

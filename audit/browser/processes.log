@@ -1,19 +1,19 @@
-hub PID 99610 port 8780 args 
+hub PID 99610 port 8780 args
 Chrome PID 99704
 stopped hub PID 99610
-hub PID 99808 port 8780 args 
+hub PID 99808 port 8780 args
 stopped hub PID 99808
-hub PID 92204 port 8780 args 
+hub PID 92204 port 8780 args
 stopped hub PID 92204
-hub PID 92212 port 8780 args 
+hub PID 92212 port 8780 args
 stopped hub PID 92212
-hub PID 92773 port 8780 args 
+hub PID 92773 port 8780 args
 stopped hub PID 92773
-hub PID 94049 port 8780 args 
+hub PID 94049 port 8780 args
 stopped hub PID 94049
 hub PID 22859 port 8780 args --live --lamp-port 38770
 stopped hub PID 22859
-hub PID 23132 port 8780 args 
+hub PID 23132 port 8780 args
 stopped hub PID 23132
 hub PID 23134 port 8780 args --recording /tmp/ghost-audit-observer-U0nBBi/custom.ghostcsi --speed 2
 stopped hub PID 23134
@@ -21,14 +21,14 @@ hub PID 23136 port 8780 args --recording /tmp/ghost-audit-observer-U0nBBi/plain.
 stopped hub PID 23136
 hub PID 23138 port 8780 args --recording /tmp/ghost-audit-observer-U0nBBi/empty.ghostcsi
 stopped hub PID 23138
-hub PID 23144 port 8780 args 
+hub PID 23144 port 8780 args
 stopped hub PID 23144
 hub PID 23235 port 8780 args --reply I'm OK
 stopped hub PID 23235
-hub PID 30598 port 8780 args 
+hub PID 30598 port 8780 args
 stopped hub PID 30598
 hub PID 30693 port 8780 args --live --lamp-port 38770
 stopped hub PID 30693
-hub PID 32134 port 8780 args 
+hub PID 32134 port 8780 args
 closed Chrome PID 99704
 stopped hub PID 32134
