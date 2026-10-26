@@ -1,7 +1,9 @@
 {
   "id": "G83",
   "status": "PASS",
-  "note": "All four live-mode replay actions returned the expected 404 JSON unknown-action response; restart returned 200 and retained live mode. Expected 404s and the deliberate hub-swap transport outage are identified negative probes.",
+  "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:39:30.216Z",
+  "finishedAt": "2026-10-26T14:39:32.087Z",
   "console": [
     {
       "type": "error",
@@ -36,6 +38,105 @@
   ],
   "pageErrors": [],
   "network": [
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/",
+      "type": "text/html"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+      "type": "text/css"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+      "type": "text/javascript"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/api/stream"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/api/stream",
+      "type": "text/event-stream"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+      "type": "font/woff2"
+    },
+    {
+      "event": "response",
+      "status": 200,
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+      "type": "font/woff2"
+    },
     {
       "event": "request",
       "method": "POST",
@@ -224,6 +325,5 @@
   ],
   "expectedFault": true,
   "unexpectedConsole": [],
-  "unexpectedNetwork": [],
-  "classificationCorrection": "Added G83 to the explicit expected-404 probe map; all original console and network events are retained unchanged."
+  "unexpectedNetwork": []
 }

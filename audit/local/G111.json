@@ -1,13 +1,13 @@
 {
   "id": "G111",
   "status": "PASS",
-  "note": "......                                                                   [100%]\n6 passed in 0.78s\n",
+  "note": "......                                                                   [100%]\n6 passed in 0.87s\n",
   "console": "",
   "network": [],
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "pytest",
         "-q",
@@ -17,7 +17,7 @@
         "tests/test_audit_contracts.py::test_sensor_warmup_is_waiting_instead_of_invented_empty"
       ],
       "exit": 0,
-      "stdout": "......                                                                   [100%]\n6 passed in 0.78s\n",
+      "stdout": "......                                                                   [100%]\n6 passed in 0.87s\n",
       "stderr": ""
     }
   ]

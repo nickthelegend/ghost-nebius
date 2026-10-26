@@ -1,7 +1,9 @@
 {
   "id": "G68",
   "status": "PASS",
-  "note": "{\"status\":200,\"type\":\"text/event-stream\",\"cache\":\"no-store\",\"connection\":\"keep-alive\",\"eventSpacingMs\":503}",
+  "note": "{\"status\":200,\"type\":\"text/event-stream\",\"cache\":\"no-store\",\"connection\":\"keep-alive\",\"eventSpacingMs\":502}",
+  "startedAt": "2026-10-26T14:39:00.059Z",
+  "finishedAt": "2026-10-26T14:39:00.735Z",
   "console": [],
   "pageErrors": [],
   "network": [

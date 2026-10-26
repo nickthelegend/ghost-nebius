@@ -3,11 +3,36 @@
   "status": "PASS",
   "note": "..........                                                               [100%]\n10 passed in 11.26s\n",
   "console": "",
-  "network": [],
+  "network": [
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18770)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18771)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18770)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18771)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18770)"
+    },
+    {
+      "event": "socket.connect",
+      "address": "('127.0.0.1', 18771)"
+    }
+  ],
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "pytest",
         "-q",

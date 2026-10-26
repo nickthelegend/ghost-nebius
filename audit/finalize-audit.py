@@ -12,6 +12,17 @@ for group in ('browser','local'):
     for row in json.loads((root/f'audit/{group}/results.json').read_text()):
         assert row['id'] not in results, row['id']
         results[row['id']]=row
+sequence=[json.loads(line) for line in (root/'audit/sequence.jsonl').read_text().splitlines()]
+assert [r['id'] for r in sequence]==[f'G{i}' for i in range(1,135)], 'audit must run top to bottom'
+assert all(r['status']==('UNTESTED' if int(r['id'][1:]) in untested else 'PASS') for r in sequence)
+assert all(a['finishedAt']<=b['startedAt'] for a,b in zip(sequence,sequence[1:])), 'rows overlap'
+assert not json.loads((root/'audit/browser/console-all.json').read_text())['pageErrors']
+assert not (root/'audit/browser/hub-network.jsonl').read_text(), 'hub made outbound connections'
+assert not json.loads((root/'audit/browser/cleanup.json').read_text())['remaining']
+pytest_summary=re.search(r'^(\d+) passed in ([\d.]+)s(?: \(.*\))?$', (root/'audit/pytest-final.txt').read_text(), re.M)
+assert pytest_summary, 'pytest must end in a passing-only summary'
+collected=json.loads((root/'audit/local/G131.json').read_text())['note']
+assert f'{pytest_summary[1]} tests collected' in collected, 'pytest execution and collected counts differ'
 expected={f'G{i}' for i in range(1,135) if i not in untested}
 assert set(results)==expected, f'missing: {sorted(expected-set(results))}'
 failures=[r for r in results.values() if r['status']!='PASS']
@@ -19,6 +30,8 @@ assert not failures, [(r['id'],r['note']) for r in failures]
 for r in results.values():
     log=json.loads((root/r['log']).read_text())
     assert log['status']=='PASS', r['id']
+    if r['log'].startswith('audit/local/'):
+        assert all(event['address'].startswith(("('127.0.0.1',", "('::1',")) for event in log['network']), r['id']+' made an external connection'
     assert not log.get('pageErrors'), r['id']
     assert not log.get('unexpectedConsole') and not log.get('unexpectedNetwork'), r['id']
     if 'screenshot' in r:
@@ -58,11 +71,13 @@ fixes={
  'G97':'Describe routine fit/show as local JSON work; Serverless remains planned/optional (341b134).',
  'G113':'Discard incomplete CSI amplitude payloads (02e4ed3).',
  'G130':'Rebuilt web/dist in each frontend fix commit; served through the Python hub.',
- 'G131':'Added ten regressions; the complete suite now has 57 tests.',
+ 'G131':f'The independent full suite and collection both report {pytest_summary[1]} tests; see audit/pytest-final.txt.',
  'G134':'Make missing-key setup explicit and remove any synthetic-routine injection into unlabelled recordings (df8f368, cae7bcb, 341b134).',
 }
 original=subprocess.check_output(['git','show','02e4ed3^:AUDIT.md'],cwd=root,text=True)
 original_expected={line.split('|')[1].strip():line.split('|')[3].strip() for line in original.splitlines() if re.match(r'^\| G\d+ \|',line)}
+current_expected={line.split('|')[1].strip():line.split('|')[3].strip() for line in (root/'AUDIT.md').read_text().splitlines() if re.match(r'^\| G\d+ \|',line)}
+assert current_expected==original_expected, 'expected results changed during the audit'
 lines=[];deps={}
 for line in original.splitlines():
     match=re.match(r'^\| (G\d+) \|',line)
@@ -88,6 +103,7 @@ for line in original.splitlines():
     elif re.match(r'^134 rows,',line):
         line='134 rows, 122 PASS, 0 FAIL, 12 UNTESTED.'
     lines.append(line)
+lines.append('Final independent rerun: 2026-10-26 · [ordered record](audit/sequence.jsonl) · [run metadata](audit/run.json) · [cleanup](audit/resource-cleanup.json).')
 (root/'AUDIT.md').write_text('\n'.join(lines)+'\n')
 (root/'audit/dependencies.json').write_text(json.dumps(deps,indent=2)+'\n')
 assert deps['G116']=='needs NEBIUS_API_KEY' and deps['G117']=='needs NEBIUS_API_KEY'

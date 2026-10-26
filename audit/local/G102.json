@@ -7,13 +7,13 @@
   "commands": [
     {
       "command": [
-        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t3/.venv/bin/python",
+        "/Volumes/Extreme SSD/Projects/wave1/.loom-worktrees/ghost-nebius-933aa14d268a/omvp5nodu/t4/.venv/bin/python",
         "-m",
         "hub.demo_3am",
         "--help"
       ],
       "exit": 0,
-      "stdout": "usage: python -m hub.demo_3am [-h] [--auto] [--port PORT]\n\noptions:\n  -h, --help   show this help message and exit\n  --auto\n  --port PORT\n",
+      "stdout": "usage: demo_3am.py [-h] [--auto] [--port PORT]\n\noptions:\n  -h, --help   show this help message and exit\n  --auto\n  --port PORT\n",
       "stderr": ""
     }
   ]

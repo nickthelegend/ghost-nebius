@@ -38,6 +38,138 @@
     "url": "http://127.0.0.1:8780/api/stream"
   },
   {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/pause"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/pause",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/",
+    "type": "text/html"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+    "type": "text/css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+    "type": "text/javascript"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
     "event": "request",
     "method": "GET",
     "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
@@ -118,6 +250,17 @@
     "status": 200,
     "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
     "type": "font/woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
   },
   {
     "event": "request",
@@ -265,6 +408,490 @@
   {
     "event": "request",
     "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/pause"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/pause",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/pause"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/pause",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/pause"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/pause",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/pause"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/pause",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/lamp/tap"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/lamp/tap",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/lamp/tap"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/lamp/tap",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/lamp/tap"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/lamp/tap",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/lamp/tap"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/lamp/tap",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/lamp/tap"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/lamp/tap",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/lamp/tap"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/lamp/tap",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
     "url": "http://127.0.0.1:8780/api/replay/pause"
   },
   {
@@ -331,314 +958,6 @@
   {
     "event": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/jump"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/jump",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/lamp/tap"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/lamp/tap",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/jump"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/jump",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/lamp/tap"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/lamp/tap",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/jump"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/jump",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/lamp/tap"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/lamp/tap",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/lamp/tap"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/lamp/tap",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/jump"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/jump",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/lamp/tap"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/lamp/tap",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/lamp/tap"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/lamp/tap",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/jump"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/jump",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/pause"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/pause",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/resume"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/resume",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/jump"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/jump",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
     "url": "http://127.0.0.1:8780/api/replay/pause"
   },
   {
@@ -705,23 +1024,56 @@
   {
     "event": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/resume"
+    "url": "http://127.0.0.1:8780/api/replay/restart"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/resume",
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/jump"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/jump",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
     "type": "application/json"
   },
   {
     "event": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:8780/?once=1"
+    "url": "http://127.0.0.1:8780/"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/?once=1",
+    "url": "http://127.0.0.1:8780/",
     "type": "text/html"
   },
   {
@@ -749,13 +1101,13 @@
   {
     "event": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:8780/api/state"
+    "url": "http://127.0.0.1:8780/api/stream"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/api/state",
-    "type": "application/json"
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
   },
   {
     "event": "request",
@@ -780,7 +1132,7 @@
   {
     "event": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
   },
   {
     "event": "response",
@@ -809,19 +1161,28 @@
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
     "type": "font/woff2"
   },
   {
     "event": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
   },
   {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
-    "type": "font/woff2"
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-CNwfPWQD.woff"
+  },
+  {
+    "event": "failed",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "error": "net::ERR_CONNECTION_REFUSED"
+  },
+  {
+    "event": "failed",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-CNwfPWQD.woff",
+    "error": "net::ERR_CONNECTION_REFUSED"
   },
   {
     "event": "request",
@@ -924,14 +1285,25 @@
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
     "type": "font/woff2"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
     "type": "font/woff2"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
   },
   {
     "event": "request",
@@ -947,97 +1319,34 @@
   {
     "event": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=2"
+    "url": "http://127.0.0.1:8780/api/replay/resume"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/speed?x=2",
+    "url": "http://127.0.0.1:8780/api/replay/resume",
     "type": "application/json"
   },
   {
     "event": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
+    "url": "http://127.0.0.1:8780/api/replay/resume"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "url": "http://127.0.0.1:8780/api/replay/resume",
     "type": "application/json"
   },
   {
     "event": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:8780/api/stream"
+    "url": "http://127.0.0.1:8780/?once=1"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/api/stream",
-    "type": "text/event-stream"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "failed",
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "error": "net::ERR_CONNECTION_REFUSED"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/api/stream"
-  },
-  {
-    "event": "failed",
-    "url": "http://127.0.0.1:8780/api/stream",
-    "error": "net::ERR_CONNECTION_REFUSED"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/api/stream"
-  },
-  {
-    "event": "failed",
-    "url": "http://127.0.0.1:8780/api/stream",
-    "error": "net::ERR_CONNECTION_REFUSED"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/api/stream"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/stream",
-    "type": "text/event-stream"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/",
+    "url": "http://127.0.0.1:8780/?once=1",
     "type": "text/html"
   },
   {
@@ -1065,13 +1374,13 @@
   {
     "event": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:8780/api/stream"
+    "url": "http://127.0.0.1:8780/api/state"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/api/stream",
-    "type": "text/event-stream"
+    "url": "http://127.0.0.1:8780/api/state",
+    "type": "application/json"
   },
   {
     "event": "request",
@@ -1178,11 +1487,6 @@
     "url": "http://127.0.0.1:8780/api/state"
   },
   {
-    "event": "failed",
-    "url": "http://127.0.0.1:8780/api/state",
-    "error": "net::ERR_CONNECTION_REFUSED"
-  },
-  {
     "event": "request",
     "method": "GET",
     "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
@@ -1214,12 +1518,12 @@
   },
   {
     "event": "failed",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
     "error": "net::ERR_CONNECTION_REFUSED"
   },
   {
     "event": "failed",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
     "error": "net::ERR_CONNECTION_REFUSED"
   },
   {
@@ -1238,14 +1542,19 @@
     "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-fsAxiSwU.woff"
   },
   {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-Dmwat-ge.woff"
+    "event": "failed",
+    "url": "http://127.0.0.1:8780/api/state",
+    "error": "net::ERR_CONNECTION_REFUSED"
   },
   {
     "event": "request",
     "method": "GET",
     "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-HIEiP5Ov.woff"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-Dmwat-ge.woff"
   },
   {
     "event": "request",
@@ -1264,12 +1573,12 @@
   },
   {
     "event": "failed",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-Dmwat-ge.woff",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-HIEiP5Ov.woff",
     "error": "net::ERR_CONNECTION_REFUSED"
   },
   {
     "event": "failed",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-HIEiP5Ov.woff",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-Dmwat-ge.woff",
     "error": "net::ERR_CONNECTION_REFUSED"
   },
   {
@@ -1299,6 +1608,312 @@
     "url": "http://127.0.0.1:8780/api/replay/restart"
   },
   {
+    "event": "failed",
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "error": "net::ERR_CONNECTION_REFUSED"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/pause"
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "http://127.0.0.1:8780/api/replay/pause",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/",
+    "type": "text/html"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+    "type": "text/css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+    "type": "text/javascript"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "failed",
+    "url": "http://127.0.0.1:8780/api/stream",
+    "error": "net::ERR_CONNECTION_REFUSED"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/",
+    "type": "text/html"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+    "type": "text/css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+    "type": "text/javascript"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
     "event": "response",
     "status": 200,
     "url": "http://127.0.0.1:8780/api/replay/restart",
@@ -1431,13 +2046,13 @@
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
     "type": "font/woff2"
   },
   {
     "event": "response",
     "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
     "type": "font/woff2"
   },
   {
@@ -2003,6 +2618,246 @@
   },
   {
     "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/",
+    "type": "text/html"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+    "type": "text/css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+    "type": "text/javascript"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/lamp/tap"
+  },
+  {
+    "event": "response",
+    "status": 409,
+    "url": "http://127.0.0.1:8780/api/lamp/tap",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-CNwfPWQD.woff"
+  },
+  {
+    "event": "failed",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "error": "net::ERR_CONNECTION_REFUSED"
+  },
+  {
+    "event": "failed",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-CNwfPWQD.woff",
+    "error": "net::ERR_CONNECTION_REFUSED"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/",
+    "type": "text/html"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+    "type": "text/css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+    "type": "text/javascript"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "request",
     "method": "POST",
     "url": "http://127.0.0.1:8780/api/not-a-real-action"
   },
@@ -2245,6 +3100,160 @@
   },
   {
     "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/",
+    "type": "text/html"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
+    "type": "text/css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
+    "type": "text/javascript"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/api/stream"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/stream",
+    "type": "text/event-stream"
+  },
+  {
+    "event": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+    "type": "font/woff2"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/pause"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/pause",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=2"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/speed?x=2",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:8780/api/replay/restart"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:8780/api/replay/restart",
+    "type": "application/json"
+  },
+  {
+    "event": "request",
     "method": "GET",
     "url": "http://127.0.0.1:8780/"
   },
@@ -2341,17 +3350,6 @@
     "status": 200,
     "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
     "type": "font/woff2"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/lamp/tap"
-  },
-  {
-    "event": "response",
-    "status": 409,
-    "url": "http://127.0.0.1:8780/api/lamp/tap",
-    "type": "application/json"
   },
   {
     "event": "request",
@@ -3137,138 +4135,6 @@
     "event": "response",
     "status": 200,
     "url": "http://127.0.0.1:8780/api/replay/speed?x=4",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/",
-    "type": "text/html"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/index-D_pus9pb.css",
-    "type": "text/css"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/index-DG4q_cWV.js",
-    "type": "text/javascript"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/api/stream"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/stream",
-    "type": "text/event-stream"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
-  },
-  {
-    "event": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-400-normal-qiz4-Cze.woff2",
-    "type": "font/woff2"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2",
-    "type": "font/woff2"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-500-normal-BgYH2mbd.woff2",
-    "type": "font/woff2"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-condensed-latin-600-normal-DepVgxBB.woff2",
-    "type": "font/woff2"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
-    "type": "font/woff2"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
-    "type": "font/woff2"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/pause"
-  },
-  {
-    "event": "response",
-    "status": 404,
-    "url": "http://127.0.0.1:8780/api/replay/pause",
-    "type": "application/json"
-  },
-  {
-    "event": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:8780/api/replay/restart"
-  },
-  {
-    "event": "response",
-    "status": 200,
-    "url": "http://127.0.0.1:8780/api/replay/restart",
     "type": "application/json"
   },
   {

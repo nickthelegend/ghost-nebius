@@ -2,6 +2,8 @@
   "id": "G74",
   "status": "PASS",
   "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:39:05.885Z",
+  "finishedAt": "2026-10-26T14:39:07.813Z",
   "console": [],
   "pageErrors": [],
   "network": [

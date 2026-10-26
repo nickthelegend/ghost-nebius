@@ -27,8 +27,21 @@ OUT.mkdir(exist_ok=True)
 ENV = {k:v for k,v in os.environ.items() if k not in {'NEBIUS_API_KEY','GHOST_REASON_MODEL','GHOST_LOG_MODEL','GHOST_LLM_BASE_URL','TWILIO_ACCOUNT_SID','TWILIO_AUTH_TOKEN','TWILIO_FROM','ALERT_PHONE','TELEGRAM_BOT_TOKEN','TELEGRAM_CHAT_ID'}}
 for key in set(os.environ)-set(ENV):
     os.environ.pop(key, None)
-results=[]
+selected=os.getenv('GHOST_AUDIT_ID')
+results=json.loads((OUT/'results.json').read_text()) if selected and (OUT/'results.json').exists() else []
 commands=[]
+observer=tempfile.TemporaryDirectory(prefix='ghost-local-network-')
+observer_source="""import json, os, sys
+def observe(event, args):
+    target=os.environ.get('GHOST_AUDIT_NETWORK_LOG')
+    if event == 'socket.connect' and target:
+        with open(target, 'a') as f:
+            f.write(json.dumps({'event':event,'address':str(args[1])})+'\\n')
+sys.addaudithook(observe)
+"""
+(Path(observer.name)/'sitecustomize.py').write_text(observer_source)
+exec(observer_source)
+ENV['PYTHONPATH']=observer.name+(os.pathsep+ENV['PYTHONPATH'] if ENV.get('PYTHONPATH') else '')
 
 def cmd(module, *args, ok=True):
     p=subprocess.run([sys.executable,'-m',module,*map(str,args)],cwd=ROOT,env=ENV,text=True,capture_output=True)
@@ -37,8 +50,12 @@ def cmd(module, *args, ok=True):
     return p.stdout+p.stderr
 
 def row(id, fn):
-    if os.getenv('GHOST_AUDIT_PREP') and id in {'G98','G100','G101','G114','G115'}:
+    if selected and selected != id:
         return
+    network_file=OUT/f'{id}-network.jsonl'
+    network_file.write_text('')
+    ENV['GHOST_AUDIT_NETWORK_LOG']=str(network_file)
+    os.environ['GHOST_AUDIT_NETWORK_LOG']=str(network_file)
     begin=len(commands)
     stream=io.StringIO()
     try:
@@ -46,8 +63,9 @@ def row(id, fn):
         status='PASS'
     except Exception as e:
         status='FAIL'; note=f'{type(e).__name__}: {e}'
-    log={'id':id,'status':status,'note':note or 'All explicit assertions passed.','console':stream.getvalue(),'network':[], 'commands':commands[begin:]}
+    log={'id':id,'status':status,'note':note or 'All explicit assertions passed.','console':stream.getvalue(),'network':[json.loads(line) for line in network_file.read_text().splitlines()], 'commands':commands[begin:]}
     (OUT/f'{id}.json').write_text(json.dumps(log,indent=2))
+    results[:]=[r for r in results if r['id']!=id]
     results.append({'id':id,'status':status,'note':log['note'],'log':f'audit/local/{id}.json'})
     (OUT/'results.json').write_text(json.dumps(results,indent=2))
     print(id,status,str(note or '')[:160],flush=True)
@@ -246,11 +264,33 @@ with tempfile.TemporaryDirectory(prefix='ghost-audit-') as temp:
         return cmd('pytest','-q','tests/test_audit_contracts.py::test_headless_calendar_maintenance_uses_real_persisted_history')
     row('G100',headless_persistence)
     def fake_cli():
+        from hub.lamp import LampHub
         text=cmd('hub.fake_lamp','--help');assert all(x in text for x in ['--hub','--port','--bpm','--reply'])
-        source=(ROOT/'hub/fake_lamp.py').read_text()
-        assert 'fake-hotaru' in source and 'hotaru3-ghost' in source and 'synthetic Wi-Fi CSI' in source
-        assert 'range(30)' in source
-        return cmd('pytest','-q','tests/test_hub.py::test_link_hello_commands_and_csi','tests/test_hub.py::test_ask_voice_answer')
+        async def exercise():
+            # Start the real CLI before its TCP listener to exercise its retry path.
+            hub=LampHub('127.0.0.1',39820)
+            argv=[sys.executable,'-u','-m','hub.fake_lamp','--hub','127.0.0.1','--port','39820','--bpm','14','--reply','Audit utility reply']
+            p=subprocess.Popen(argv,cwd=ROOT,env=ENV,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+            try:
+                await asyncio.sleep(1.2);assert p.poll() is None
+                await hub.start()
+                lamp=await hub.wait_for_lamp(5)
+                assert lamp.hello['id']=='fake-hotaru' and lamp.hello['fw']=='hotaru3-ghost'
+                await lamp.eye('path');await lamp.look(-40);await lamp.action('nod')
+                answer=await lamp.ask('Audit utility check',listen_ms=1000)
+                assert answer=={'answered':True,'how':'voice','text':'Audit utility reply'}
+                assert hub.csi_count>10
+                print(json.dumps({'syntheticUtility':True,'hello':lamp.hello,'csi_frames':hub.csi_count,'answer':answer,'retry_before_listener':True}))
+            finally:
+                p.terminate()
+                try:output=p.communicate(timeout=5)[0]
+                except subprocess.TimeoutExpired:p.kill();output=p.communicate(timeout=5)[0]
+                await hub.close()
+                commands.append({'command':argv,'pid':p.pid,'exit':p.returncode,'stdout':output})
+            assert '[lamp] eye' in output and '[lamp] look' in output and '[lamp] action' in output
+            assert '[lamp] says: Audit utility check' in output and '[lamp] listening 1000 ms' in output
+        asyncio.run(exercise())
+        return 'Ran the explicitly synthetic fake_lamp CLI over real TCP/UDP; no hardware validation is claimed.'
     row('G101',fake_cli)
     def demo_source():
         text=cmd('hub.demo_3am','--help');assert '--auto' in text and '--port' in text

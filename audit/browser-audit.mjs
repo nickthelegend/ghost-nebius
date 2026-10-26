@@ -14,15 +14,20 @@ fs.writeFileSync(path.join(out,'hub-network.jsonl'),'');
 fs.writeFileSync(path.join(observerDir,'sitecustomize.py'),`import sys, json\ndef observe(event, args):\n    if event == "socket.connect":\n        with open(${JSON.stringify(path.join(out,'hub-network.jsonl'))}, "a") as f:\n            f.write(json.dumps({"event": event, "address": str(args[1])}) + "\\n")\nsys.addaudithook(observe)\n`);
 env.PYTHONPATH=observerDir+(env.PYTHONPATH?':'+env.PYTHONPATH:'');
 let hub,browserServer,browser,ctx,page,port,base;
+const cases=new Map();
+async function row(id,fn,options={}){assert(!cases.has(id),id);cases.set(id,{fn,options});}
 const results=[], consoleLog=[], network=[], pageErrors=[], allSnapshots=[];
 const intentionalClosures=new WeakSet();
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function free(p){return new Promise(resolve=>{const s=net.createServer();s.once('error',()=>resolve(false));s.listen(p,'127.0.0.1',()=>s.close(()=>resolve(true)));});}
-const hubs=new Set();
+const hubs=new Set(),ownedPids=new Set();
+function processTable(){return spawnSync('ps',['-axo','pid=,ppid=,comm='],{encoding:'utf8'}).stdout.trim().split('\n').map(line=>{const m=line.trim().match(/^(\d+)\s+(\d+)\s+(.*)$/);return m?{pid:Number(m[1]),ppid:Number(m[2]),command:m[3]}:null;}).filter(Boolean);}
+function trackChildren(pid){ownedPids.add(pid);const table=processTable();let changed=true;while(changed){changed=false;for(const p of table)if(ownedPids.has(p.ppid)&&!ownedPids.has(p.pid)){ownedPids.add(p.pid);changed=true;}}}
+
 async function start(args=[]){
   assert(!hub||hub.exitCode!==null||hub.signalCode!==null,'previous hub must be stopped before starting another');
   const child=spawn(path.join(root,'.venv/bin/python'),['-m','hub.server','--host','127.0.0.1','--port',String(port),...args],{cwd:root,env,stdio:['ignore','pipe','pipe']});
-  hub=child;hubs.add(child);let startup='';
+  hub=child;hubs.add(child);ownedPids.add(child.pid);let startup='';
   const capture=data=>{fs.appendFileSync(path.join(out,'hub.log'),data);startup=(startup+data.toString()).slice(-16384);};
   child.stdout.on('data',capture);child.stderr.on('data',capture);
   fs.appendFileSync(path.join(out,'processes.log'),`hub PID ${child.pid} port ${port}${args.length?' args '+args.join(' '):''}\n`);
@@ -40,10 +45,14 @@ async function stop(){const child=hub;hub=null;await stopChild(child);}
 let cleaning=false;
 async function cleanup(){
  if(cleaning)return;cleaning=true;
+ if(browserServer)trackChildren(browserServer.process().pid);
  if(browser)await browser.close().catch(()=>{});
  if(browserServer){const pid=browserServer.process().pid;await browserServer.close().catch(()=>{});fs.appendFileSync(path.join(out,'processes.log'),`closed Chrome PID ${pid}\n`);}
  for(const child of hubs)await stopChild(child);hub=null;
  fs.rmSync(observerDir,{recursive:true,force:true});
+ const remaining=processTable().filter(p=>ownedPids.has(p.pid));
+ fs.writeFileSync(path.join(out,'cleanup.json'),JSON.stringify({checkedAt:new Date().toISOString(),port,ownedPids:[...ownedPids],remaining},null,2));
+ assert.deepEqual(remaining,[],'owned browser/hub process remains');
 }
 for(const [signal,code] of [['SIGTERM',143],['SIGINT',130]])process.once(signal,async()=>{await cleanup();process.exit(code);});
 process.once('unhandledRejection',async error=>{console.error(error);await cleanup();process.exit(1);});
@@ -71,11 +80,12 @@ async function jump(){await page.getByRole('button',{name:'Jump to just before h
 async function speed(x=4){await page.getByRole('button',{name:`${x}×`,exact:true}).click();await next(()=>window.audit.snapshot?.replay.speed===4);}
 async function checkin(){await fresh();await jump();await speed();await next(()=>window.audit.snapshot?.lamp.state.checkin,30000);}
 async function shot(id){const file=`${id}.webp`;await page.screenshot({path:path.join(out,file),type:'webp',quality:30,fullPage:true});assert(fs.statSync(path.join(out,file)).size<=200000,'screenshot exceeds 200KB');return 'audit/browser/'+file;}
-async function row(id,fn,{expectedFault=false}={}){
+async function executeRow(id,fn,{expectedFault=false}={}){
+ const startedAt=new Date().toISOString();
  const c=consoleLog.length,n=network.length,e=pageErrors.length;
- let status='PASS',note='';try{note=(await fn())||'Assertions matched the expected result.';}catch(err){status='FAIL';note=err.stack||String(err);}
+ let status='PASS',note='';try{await prepare(id);note=(await fn())||'Assertions matched the expected result.';}catch(err){status='FAIL';note=err.stack||String(err);}
  await wait(60);
- const logs={id,status,note,console:consoleLog.slice(c),pageErrors:pageErrors.slice(e),network:network.slice(n),expectedFault};
+ const logs={id,status,note,startedAt,finishedAt:new Date().toISOString(),console:consoleLog.slice(c),pageErrors:pageErrors.slice(e),network:network.slice(n),expectedFault};
  const errors=logs.console.filter(x=>x.type==='error'); const bad=logs.network.filter(x=>x.event==='failed'||(x.status>=400));
  const allowedStatus={G65:[404],G75:[400],G77:[409],G78:[404],G79:[404],G80:[405],G83:[404],G51:[404]}[id]||[];
  const transport=/net::ERR_(CONNECTION_REFUSED|CONNECTION_CLOSED|EMPTY_RESPONSE|INCOMPLETE_CHUNKED_ENCODING|ABORTED)/;
@@ -85,14 +95,35 @@ async function row(id,fn,{expectedFault=false}={}){
  logs.unexpectedConsole=unexpectedConsole;logs.unexpectedNetwork=unexpectedNetwork;
  let screenshot;try{screenshot=await shot(id);}catch(err){status='FAIL';note+='; '+err.message;}
  logs.status=status;logs.note=note;fs.writeFileSync(path.join(out,`${id}.json`),JSON.stringify(logs,null,2));
- results.push({id,status,note,screenshot,log:`audit/browser/${id}.json`});
+ results.push({id,status,note,startedAt,finishedAt:logs.finishedAt,screenshot,log:`audit/browser/${id}.json`});
  fs.writeFileSync(path.join(out,'results.json'),JSON.stringify(results,null,2));
  let audit=fs.readFileSync(path.join(root,'AUDIT.md'),'utf8');
  const lines=audit.split('\n').map(line=>{if(!line.startsWith('| '+id+' |'))return line;const cols=line.split('|').slice(1,-1).map(c=>c.trim());cols[3]=status;cols[4]=`[screenshot](${screenshot}) · [console/network](${logs.id?`audit/browser/${id}.json`:''})`;return '| '+cols.join(' | ')+' |';});
  fs.writeFileSync(path.join(root,'AUDIT.md'),lines.join('\n'));
+ fs.appendFileSync(path.join(root,'audit/sequence.jsonl'),JSON.stringify({id,status,startedAt,finishedAt:logs.finishedAt})+'\n');
  console.log(id,status,status==='FAIL'?note.split('\n').slice(0,3).join(' '):note.slice(0,100));
  for(const extra of ctx.pages().filter(p=>p!==page)){intentionalClosures.add(extra);await extra.close();}
  if(status==='FAIL'&&!hub&&expectedFault){await start();intentionalClosures.add(page);await page.reload();intentionalClosures.delete(page);await next(()=>!!window.audit.snapshot);}
+}
+
+async function pause(){await post('replay/pause');await next(()=>window.audit.snapshot.replay.paused);}
+async function reload(){intentionalClosures.add(page);await page.reload();intentionalClosures.delete(page);await next(()=>!!window.audit.snapshot);}
+async function bundled(){await stop();await start();await reload();}
+async function prepare(id){
+ if(id==='G1'){await page.goto(base);await next(()=>!!window.audit.snapshot);}
+ if(['G2','G7','G24','G31','G33'].includes(id)){await fresh();await pause();}
+ if(id==='G3'){intentionalClosures.add(page);await page.close();page=await observed(await ctx.newPage());}
+ if(['G16','G19','G25','G32','G38','G42'].includes(id)){
+   await fresh();await jump();await speed();
+   if(id==='G16')await next(()=>window.audit.snapshot.timeline.length>=3,20000);
+   if(id==='G38')await next(()=>window.audit.snapshot.timeline.some(c=>c.event==='no_answer'),40000);
+ }
+ if(id==='G46'){await bundled();await fresh();await pause();}
+ if(id==='G51'){await fresh();}
+ if(id==='G53'){await checkin();await pause();await page.setViewportSize({width:375,height:812});}
+ if(id==='G82'){await fresh();}
+ if(['G77','G83'].includes(id)){await stop();await start(['--live','--lamp-port','38770']);await reload();}
+ if(id==='G78'){await bundled();}
 }
 const has=async(text,scope=page)=>{await scope.waitForFunction(t=>document.body.textContent.includes(t),text,{timeout:5000});assert((await scope.locator('body').textContent()).includes(text),`missing ${text}`);};
 try{
@@ -108,7 +139,6 @@ try{
  },{expectedFault:true});
  await row('G4',async()=>{await start();await next(()=>!!window.audit.snapshot);assert.equal(await page.evaluate(()=>window.audit.active),1);await has('GHOST');},{expectedFault:true});
  await row('G1',async()=>{assert.equal((await snap()).mode,'replay');assert.equal((await snap()).lamp.kind,'virtual');await has('synthetic night');const html=await page.request.get(base);assert.equal(await html.text(),fs.readFileSync(path.join(root,'web/dist/index.html'),'utf8'));return JSON.stringify({url:base,browser:browser.version(),builtIndexMatch:true});});
- await fresh();await post('replay/pause');await next(()=>window.audit.snapshot.replay.paused);
  await row('G2',async()=>{const s=await snap();assert.equal(s.replay.speed,1);assert.equal(s.replay.scale,20);assert(Math.abs(s.replay.start-(s.now-s.replay.pos*20))<.11);assert.equal(new Date(s.replay.start*1000).getHours(),2);});
  await row('G6',async()=>{await has('CSI-4 home guardian · Wi-Fi sensing · no cameras');for(const x of ['Sense','Reason','Act'])await has(x);assert(await page.getByLabel('Scene time').isVisible());});
  await row('G7',async()=>{await has('No signal');await has('Virtual HOTARU');await post('replay/resume');await next(()=>Object.values(window.audit.snapshot.rooms).filter(r=>r.sensor!==false).every(r=>r.confidence!==null&&r.confidence!==undefined),15000);await has('4 channels');});
@@ -131,7 +161,6 @@ try{
  await row('G44',async()=>{const s=await snap();for(const [i,m] of Object.values(s.routine.rooms).entries()){const expected=m.today.filter((t,b)=>t!==null&&((t>0&&m.baseline[b]<.15)||(t===0&&m.baseline[b]>.85))).length;assert.equal(await page.locator('.mask-row').nth(i).locator('.mask-viol').count(),expected);assert.equal(await page.locator('.mask-row').nth(i).locator('.mask-live').count(),m.today.filter(t=>t>0).length);}assert.equal(await page.locator('.mask-now').first().getAttribute('x1'),'95.7');});
  await row('G47',async()=>{await has('MIT · ESP32 Wi-Fi CSI → Nemotron on Nebius Token Factory → HOTARU');await has('The bundled night and its 14-day routine are synthesized from the channel model until a real night is recorded.');});
  // Follow a real uninterrupted synthetic night, including its silent wall-clock check-in.
- await fresh();await jump();await speed();
  await row('G19',async()=>{await next(()=>window.audit.snapshot.followed==='bedroom'&&window.audit.snapshot.rooms.bedroom.state==='moving');assert.equal(await page.locator('.room.is-followed').count(),1);await next(()=>window.audit.snapshot.followed==='bathroom',15000);assert((await snap()).rooms.bathroom.present);});
  await row('G20',async()=>{await next(()=>window.audit.snapshot.rooms.bathroom.anomaly>=.2,12000);assert(await page.locator('.room-anom').count()>0);assert((await page.locator('.room-anom title').first().textContent()).startsWith('Routine anomaly '));assert((await page.locator('.hotaru-bearing').getAttribute('style')).includes('7deg'));});
  await row('G22',async()=>{await next(()=>window.audit.seen.some(s=>s.rooms.bathroom.jolt>=600),10000);const seen=await page.evaluate(()=>window.audit.seen);assert(seen.some(s=>Object.values(s.rooms).some(r=>r.state==='moving'&&!r.bpm)));assert(seen.every(s=>['kitchen','living'].every(n=>!s.rooms[n].bpm)));assert(seen.some(s=>s.rooms.bathroom.jolt>=600));assert(seen.some(s=>s.rooms.bedroom.motion>=3));});
@@ -143,10 +172,10 @@ try{
  await row('G16',async()=>{await page.locator('.acq-cap').first().click();assert.equal(await page.locator('.cap-title').innerText(),'Got up');await page.getByRole('button',{name:'Back to the latest capture',exact:true}).click();assert.notEqual(await page.locator('.cap-title').innerText(),'Got up');});
  await row('G29',async()=>{await page.locator('.acq-cap').first().click();const count=(await snap()).timeline.length;await next(new Function(`return window.audit.snapshot.timeline.length>${count}`),20000);assert.equal(await page.locator('.cap-title').innerText(),'Got up');assert.equal(await page.locator('.cap-row[aria-current=true]').count(),1);const ids=await page.locator('.cap-row .cap-row-ev').allTextContents();assert.equal(ids.at(-1),'Got up');await page.getByRole('button',{name:'Back to the latest capture',exact:true}).click();});
  await row('G30',async()=>{await next(()=>document.querySelectorAll('.mod.is-linked').length===4,12000);assert.equal(await page.locator('.room.is-linked').count(),1);assert.equal(await page.locator('.trace.is-linked').count(),1);await wait(4000);assert.equal(await page.locator('.mod.is-linked').count(),0);});
- await row('G32',async()=>{await next(()=>window.audit.snapshot.lamp.state.eye==='red',25000);const seen=await page.evaluate(()=>window.audit.seen);assert(seen.some(s=>s.lamp.state.eye==='path'&&s.lamp.state.pan===-47));assert(seen.some(s=>s.lamp.state.eye==='amber'&&s.lamp.state.speaking));assert(seen.some(s=>s.lamp.state.listening));assert.equal((await snap()).lamp.state.pan,7);});
+ await row('G32',async()=>{await next(()=>window.audit.snapshot.lamp.state.eye==='red',40000);const seen=await page.evaluate(()=>window.audit.seen);assert(seen.some(s=>s.lamp.state.eye==='path'&&s.lamp.state.pan===-47));assert(seen.some(s=>s.lamp.state.eye==='amber'&&s.lamp.state.speaking));assert(seen.some(s=>s.lamp.state.listening));assert.equal((await snap()).lamp.state.pan,7);});
  await row('G38',async()=>{const s=await snap();assert.deepEqual(s.timeline.map(c=>[c.event,c.room,c.severity]),[['got_up','bedroom','watch'],['moved','bathroom','watch'],['fall_suspected','bathroom','watch'],['long_stay','bathroom','check_in'],['no_answer','bathroom','alert']]);assert.equal(s.timeline.at(-1).outcome,'family alerted (dry run: replay never places real calls)');assert(!network.some(r=>/twilio|telegram/i.test(r.url)));assert.equal(fs.readFileSync(path.join(out,'hub-network.jsonl'),'utf8'),'');return JSON.stringify({events:s.timeline.map(c=>[c.event,c.room,c.severity]),outcome:s.timeline.at(-1).outcome,hubOutboundConnections:0});});
  await row('G39',async()=>{const s=await snap();assert(await page.locator('.cmd-log li').count()<=6);assert(s.lamp.recent.every(c=>!['level','ping'].includes(c.op)));const cmd=await page.locator('.cmd-log li').allTextContents();assert(cmd.length>0);});
- await row('G42',async()=>{await next(()=>window.audit.snapshot.replay.done,15000);const t=(await snap()).clock;await wait(700);assert.equal((await snap()).clock,t);await page.getByRole('button',{name:'Run the night again',exact:true}).click();await next(()=>window.audit.snapshot.replay.pos<1);assert.equal((await snap()).timeline.length,0);});
+ await row('G42',async()=>{await next(()=>window.audit.snapshot.replay.done,45000);const t=(await snap()).clock;await wait(700);assert.equal((await snap()).clock,t);await page.getByRole('button',{name:'Run the night again',exact:true}).click();await next(()=>window.audit.snapshot.replay.pos<1);assert.equal((await snap()).timeline.length,0);});
  await row('G34',async()=>{await checkin();await next(()=>window.audit.snapshot.lamp.state.listening,10000);await page.getByRole('button',{name:"Tap HOTARU's button: I'm OK",exact:true}).click();await next(()=>window.audit.snapshot.timeline.some(c=>c.event==='answered'));const s=await snap();assert.equal(s.timeline.filter(c=>c.event==='answered').length,1);assert(!s.timeline.some(c=>c.event==='no_answer'));assert.equal(s.lamp.state.eye,'path');assert.equal(s.lamp.state.action,'nod');assert.equal(s.timeline.find(c=>c.event==='long_stay').outcome,'answered by button');await has('Stood down: answered by button');});
  await row('G35',async()=>{await checkin();assert((await snap()).lamp.state.speaking);assert(!(await snap()).lamp.state.listening);await page.getByRole('button',{name:"Tap HOTARU's button: I'm OK",exact:true}).click();await next(()=>window.audit.snapshot.timeline.some(c=>c.event==='answered'),10000);await wait(1000);assert(!(await snap()).timeline.some(c=>c.event==='no_answer'));});
  await row('G36',async()=>{await checkin();await next(()=>window.audit.snapshot.lamp.state.listening,10000);await next(()=>window.audit.snapshot.lamp.state.checkin&&!window.audit.snapshot.lamp.state.listening&&!window.audit.snapshot.lamp.state.speaking,10000);await page.getByRole('button',{name:"Tap HOTARU's button: I'm OK",exact:true}).click();await next(()=>window.audit.snapshot.timeline.some(c=>c.event==='answered'));assert(!(await snap()).lamp.state.checkin);assert(await page.getByRole('button',{name:"HOTARU's button (arms on a check-in)",exact:true}).isDisabled());});
@@ -154,13 +183,12 @@ try{
  await row('G40',async()=>{await checkin();await page.getByRole('button',{name:'Stop the replay',exact:true}).click();await next(()=>window.audit.snapshot.replay.paused);const s=await snap();await next(()=>window.audit.snapshot.timeline.some(c=>c.event==='no_answer'),20000);const a=await snap();assert.equal(a.replay.pos,s.replay.pos);assert.equal(a.timeline.at(-1).t,a.now);await page.getByRole('button',{name:'Run the replay',exact:true}).click();await wait(700);assert.equal((await snap()).timeline.filter(c=>c.event==='no_answer').length,1);});
  await row('G41',async()=>{for(const action of ['replay/restart','replay/jump']){await checkin();await post(action);await next(()=>window.audit.snapshot.timeline.length===0);await post('replay/pause');await next(()=>window.audit.snapshot.replay.paused);await wait(16000);assert.equal((await snap()).timeline.length,0);assert(!(await snap()).lamp.state.checkin);}});
  await row('G48',async()=>{await post('replay/resume');const p=await observed(await ctx.newPage());const n=network.length;await p.goto(base+'/?once=1');await p.waitForSelector('.bench');const clock=await p.getByLabel('Scene time').innerText();await wait(1200);assert.equal(await p.getByLabel('Scene time').innerText(),clock);assert.equal(await p.evaluate(()=>window.audit.created),0);assert.equal(network.slice(n).filter(r=>r.event==='request'&&r.url.endsWith('/api/state')).length,1);assert.notEqual((await snap()).clock,clock);intentionalClosures.add(p);await p.close();});
- await row('G82',async()=>{const p=await observed(await ctx.newPage());await p.goto(base);await next(()=>!!window.audit.snapshot,15000,p);await page.getByRole('button',{name:'Stop the replay',exact:true}).click();await next(()=>window.audit.snapshot.replay.paused,15000,p);assert.equal((await snap(p)).replay.pos,(await snap()).replay.pos);await p.getByRole('button',{name:'2×',exact:true}).click();await next(()=>window.audit.snapshot.replay.speed===2);await p.getByRole('button',{name:'Restart the night from 02:50',exact:true}).click();await next(()=>window.audit.snapshot.replay.pos<1);intentionalClosures.add(p);await p.close();await wait(700);assert((await snap()).replay.pos>0);});
+ await row('G82',async()=>{const p=await observed(await ctx.newPage());await p.goto(base);await next(()=>!!window.audit.snapshot,15000,p);await page.getByRole('button',{name:'Stop the replay',exact:true}).click();await next(()=>window.audit.snapshot.replay.paused,15000,p);await next(()=>window.audit.snapshot.replay.paused);assert.equal((await snap(p)).replay.pos,(await snap()).replay.pos);await p.getByRole('button',{name:'2×',exact:true}).click();await next(()=>window.audit.snapshot.replay.speed===2);await p.getByRole('button',{name:'Restart the night from 02:50',exact:true}).click();await next(()=>window.audit.snapshot.replay.pos<1&&window.audit.snapshot.replay.speed===1&&!window.audit.snapshot.replay.paused);intentionalClosures.add(p);await p.close();await wait(700);assert((await snap()).replay.pos>0);});
  // Actual outage, then restart the same built hub; only these induced transport failures are expected.
  await row('G5',async()=>{await stop();await page.getByText('Lost the hub.',{exact:true}).waitFor();await has('Hub link lost · retrying');await start();await next(()=>document.querySelector('.plate-clock-note').textContent.includes('Replay'));},{expectedFault:true});
  await row('G50',async()=>{await stop();await page.getByRole('button',{name:'Restart the night from 02:50',exact:true}).click();await page.getByRole('alert').waitFor();await has("The hub didn't answer. Is python -m hub.server still running?");await start();await page.getByRole('button',{name:'Restart the night from 02:50',exact:true}).click();await next(()=>window.audit.snapshot.replay.pos<2);assert.equal(await page.getByRole('alert').count(),0);},{expectedFault:true});
  await row('G52',async()=>{await stop();await wait(1900);assert.equal(await page.evaluate(()=>window.audit.active),0);await start();await next(()=>window.audit.active===1&&document.querySelector('.plate-clock-note').textContent.includes('Replay'));assert.equal(await page.evaluate(()=>window.audit.active),1);const p=await observed(await ctx.newPage());await p.goto(base);await next(()=>window.audit.active===1,15000,p);await p.goto('about:blank');assert.equal(network.filter(r=>r.event==='request'&&r.url.includes('tokenfactory')).length,0);intentionalClosures.add(p);await p.close();},{expectedFault:true});
  await row('G49',async()=>{let release;const gate=new Promise(r=>release=r);const p=await observed(await ctx.newPage());await p.route('**/api/state',async r=>{await gate;await r.continue().catch(()=>{});});await p.goto(base+'/?once=1');await stop();release();await p.getByText('Lost the hub.',{exact:true}).waitFor();assert((await p.locator('body').textContent()).includes('/api/stream'));assert((await p.locator('body').textContent()).includes('Hub link lost · retrying'));assert.equal(await p.locator('.bench').count(),0);intentionalClosures.add(p);await p.close();await start();await next(()=>document.querySelector('.plate-clock-note').textContent.includes('Replay'));},{expectedFault:true});
- await checkin();await post('replay/pause');await next(()=>window.audit.snapshot.replay.paused);await page.setViewportSize({width:375,height:812});
  for(const id of ['G53','G54','G55','G56','G57','G58','G59'])await row(id,async()=>{
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'page horizontal overflow');
    const selector={G53:'.plate',G54:'.acq',G55:'.m-plan',G56:'.m-traces',G57:'.m-trigger',G58:'.m-hotaru',G59:'.m-mask'}[id];await page.locator(selector).scrollIntoViewIfNeeded();
@@ -256,6 +284,31 @@ try{
  await row('G51',async()=>{let release;const gate=new Promise(r=>release=r);await page.route('**/api/stream',async r=>{await gate;await r.continue().catch(()=>{});});await stop();await start(['--live','--lamp-port','38770']);await page.getByRole('button',{name:'Stop the replay',exact:true}).click();await has('unknown action');await page.getByRole('button',{name:'Restart the night from 02:50',exact:true}).click();await page.getByRole('alert').waitFor({state:'hidden'});release();await page.unrouteAll({behavior:'wait'});await stop();await start();intentionalClosures.add(page);await page.reload();intentionalClosures.delete(page);await next(()=>!!window.audit.snapshot);},{expectedFault:true});
  await row('G62',async()=>{const normal=results.filter(r=>!JSON.parse(fs.readFileSync(path.join(root,r.log))).expectedFault);const bad=normal.filter(r=>{const l=JSON.parse(fs.readFileSync(path.join(root,r.log)));return l.pageErrors.length||l.console.some(c=>c.type==='error');});assert.deepEqual(bad.map(r=>r.id),[]);});
  await row('G63',async()=>{const bad=results.filter(r=>!JSON.parse(fs.readFileSync(path.join(root,r.log))).expectedFault).filter(r=>JSON.parse(fs.readFileSync(path.join(root,r.log))).network.some(x=>x.event==='failed'||x.status>=400));assert.deepEqual(bad.map(r=>r.id),[]);assert.equal(network.filter(x=>/tokenfactory|twilio|telegram/i.test(x.url)).length,0);});
+
+ fs.writeFileSync(path.join(root,'audit/run.json'),JSON.stringify({date:'2026-10-26',startedAt:new Date().toISOString(),port,browser:browser.version(),entryCommand:['.venv/bin/python','-m','hub.server','--host','127.0.0.1','--port',String(port)],desktopWidth:1440,phoneWidth:375,slot:'ghost-nebius-reaudit',responsesSubstituted:false},null,2));
+ const deps=JSON.parse(fs.readFileSync(path.join(root,'audit/dependencies.json'),'utf8'));
+ fs.writeFileSync(path.join(root,'audit/sequence.jsonl'),'');
+ fs.rmSync(path.join(root,'audit/local'),{recursive:true,force:true});fs.mkdirSync(path.join(root,'audit/local'));
+ for(let number=1;number<=134;number++){
+   const id=`G${number}`;
+   if(cases.has(id)){
+     const {fn,options}=cases.get(id);await executeRow(id,fn,{...options,expectedFault:options.expectedFault||['G46','G83'].includes(id)});
+   }else if(deps[id]){
+     const at=new Date().toISOString();
+     fs.appendFileSync(path.join(root,'audit/sequence.jsonl'),JSON.stringify({id,status:'UNTESTED',dependency:deps[id],startedAt:at,finishedAt:at})+'\n');
+     console.log(id,'UNTESTED',deps[id]);
+   }else{
+     const at=new Date().toISOString();
+     const run=spawnSync(path.join(root,'.venv/bin/python'),['audit/local-audit.py'],{cwd:root,env:{...env,PYTHONPATH:process.env.PYTHONPATH||'',GHOST_AUDIT_ID:id},encoding:'utf8'});
+     process.stdout.write(run.stdout||'');process.stderr.write(run.stderr||'');assert.equal(run.status,0,`local harness failed for ${id}`);
+     const result=JSON.parse(fs.readFileSync(path.join(root,`audit/local/${id}.json`),'utf8'));
+     fs.appendFileSync(path.join(root,'audit/sequence.jsonl'),JSON.stringify({id,status:result.status,startedAt:at,finishedAt:new Date().toISOString()})+'\n');
+   }
+ }
+ assert.equal(fs.readFileSync(path.join(out,'hub-network.jsonl'),'utf8'),'','hub made an outbound connection');
+ assert(!results.some(r=>r.status==='FAIL'),'browser rows failed');
+ const local=JSON.parse(fs.readFileSync(path.join(root,'audit/local/results.json'),'utf8'));
+ assert(!local.some(r=>r.status==='FAIL'),'local rows failed');
  fs.writeFileSync(path.join(out,'network-all.json'),JSON.stringify(network,null,2));fs.writeFileSync(path.join(out,'console-all.json'),JSON.stringify({console:consoleLog,pageErrors},null,2));
 }catch(e){console.error(e.stack);process.exitCode=1;}
-finally{await cleanup();}
+finally{fs.writeFileSync(path.join(out,'network-all.json'),JSON.stringify(network,null,2));fs.writeFileSync(path.join(out,'console-all.json'),JSON.stringify({console:consoleLog,pageErrors},null,2));await cleanup();}

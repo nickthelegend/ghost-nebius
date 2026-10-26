@@ -2,6 +2,8 @@
   "id": "G48",
   "status": "PASS",
   "note": "Assertions matched the expected result.",
+  "startedAt": "2026-10-26T14:38:04.180Z",
+  "finishedAt": "2026-10-26T14:38:05.542Z",
   "console": [],
   "pageErrors": [],
   "network": [
@@ -83,6 +85,11 @@
     {
       "event": "request",
       "method": "GET",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
+    },
+    {
+      "event": "request",
+      "method": "GET",
       "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2"
     },
     {
@@ -112,18 +119,13 @@
     {
       "event": "response",
       "status": 200,
-      "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
       "type": "font/woff2"
-    },
-    {
-      "event": "request",
-      "method": "GET",
-      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2"
     },
     {
       "event": "response",
       "status": 200,
-      "url": "http://127.0.0.1:8780/assets/barlow-latin-500-normal-BPAOfeC8.woff2",
+      "url": "http://127.0.0.1:8780/assets/barlow-latin-600-normal-DILqtrty.woff2",
       "type": "font/woff2"
     }
   ],
