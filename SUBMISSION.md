@@ -1,5 +1,7 @@
 # GHOST: submission kit
 
+Live demo: https://ghost-nebius.201-18-198-162.sslip.io/
+
 Nebius x NVIDIA Global AI Hackathon · **Physical AI track** · deadline **Fri Oct 30, 2026, 10:00 AM PT**
 (Devpost rules §1). Submit on Oct 29. Sources for every rule below are in [RESEARCH.md](RESEARCH.md).
 

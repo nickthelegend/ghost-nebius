@@ -1,0 +1,32 @@
+services:
+  server:
+    build: .
+    image: hk-ghost-nebius:latest
+    restart: unless-stopped
+    mem_limit: 768m
+    memswap_limit: 1g
+    cpus: 1.0
+    environment:
+      GHOST_REASON_MODEL: nvidia/Nemotron-3-Ultra-550b-a55b
+      GHOST_LOG_MODEL: nvidia/Nemotron-3_5-Lightning
+    volumes:
+      - ghost-data:/app/data
+    networks: [coolify]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8780/api/state', timeout=5).close()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.hk-ghost-nebius.rule=Host(`ghost-nebius.201-18-198-162.sslip.io`)
+      - traefik.http.routers.hk-ghost-nebius.entrypoints=https
+      - traefik.http.routers.hk-ghost-nebius.tls=true
+      - traefik.http.routers.hk-ghost-nebius.tls.certresolver=letsencrypt
+      - traefik.http.services.hk-ghost-nebius.loadbalancer.server.port=8780
+volumes:
+  ghost-data:
+networks:
+  coolify:
+    external: true

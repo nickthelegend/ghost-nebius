@@ -1,5 +1,7 @@
 # GHOST
 
+Live demo: https://ghost-nebius.201-18-198-162.sslip.io/
+
 **A camera-less guardian.** ESP32 Wi-Fi nodes sense presence, breathing and movement in every room,
 through walls. GHOST learns each room's routine with no labels. Nemotron on Nebius Token Factory
 explains anything unusual, citing the sensor evidence by number. HOTARU, a robot desk lamp, then

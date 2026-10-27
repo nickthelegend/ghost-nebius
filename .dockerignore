@@ -1,0 +1,17 @@
+.env*
+.git/
+.github/
+.loom/
+.venv/
+**/__pycache__/
+**/node_modules/
+data/
+firmware/
+tests/
+web/src/
+web/public/
+web/*.ts
+web/*.json
+web/*.html
+*.mp4
+*.mov
